@@ -31,12 +31,11 @@ li { list-style-type: none; }
 
 .search-nav {
     position: relative;
-    margin-left: 50px;
+    margin-left: 12.5%;
 }
 
 .profile-nav {
     float: right;
-    margin-left: 50px;
 }
 
 .search-nav input[type="text"] {

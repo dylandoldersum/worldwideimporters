@@ -21,7 +21,7 @@ li { list-style-type: none; }
 
 .nav-bar {
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 1200px;
 }
 
 .logo-nav, .search-nav, .profile-nav {

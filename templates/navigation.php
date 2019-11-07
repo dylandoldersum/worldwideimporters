@@ -24,7 +24,12 @@
         <div class="profile-nav">
             <span class="welkom">Welkom <br> <b>Dylan</b></span>
             <a href="#"><img class="profile" src="assets/images/profile-ico.png"/></a>
-            <a href="#"><img class="cart" src="assets/images/cart-ico.png"/></a>
+            
+            <div class="cart-container">
+                <a href="#"><img class="cart" src="assets/images/cart-ico.png"/></a>
+                <span class="cart-count">1</span>
+            </div>
+
         </div>
     </nav>
 </div>

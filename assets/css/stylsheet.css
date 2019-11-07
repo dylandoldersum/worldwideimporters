@@ -56,8 +56,26 @@ li { list-style-type: none; }
     margin-left: 20px;
 }
 
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
 span.welkom {
     margin-right: 20px;
+}
+
+span.cart-count {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -12px;
+    font-size: 12px;
+    width: 13px;
+    text-align: center;
+    background: #00bcf2;
+    border-radius: 360px;
 }
 
 input.search {

@@ -6,8 +6,6 @@
  * Date: 2019-11-07
  * Time: 19:27
  */
-
-
 ?>
 
 <div class="nav-container">
@@ -28,7 +26,6 @@
                 <a href="#"><img class="cart" src="assets/images/cart-ico.png"/></a>
                 <span class="cart-count">1</span>
             </div>
-
         </div>
     </nav>
 </div>

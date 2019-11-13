@@ -12,4 +12,6 @@ include_once 'assets/autoloader.php';
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
+
+include_once 'templates/categorie.php';
 ?>

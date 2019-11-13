@@ -88,3 +88,28 @@ input.search {
     top: 6px;
     cursor: pointer;
 }
+
+/*------------------ Categorie --------------------*/
+.categoriecontainer {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: gray;
+  text-align: center;
+}
+
+.categoriebalk li {
+  padding-left: 20px;
+  display: inline-block;
+}
+
+.categoriebalk li a {
+  color: white;
+  display: block;
+  padding: 13px;
+}
+
+.categoriebalk li a:hover {
+  color: gray;
+  background-color: blue;
+}

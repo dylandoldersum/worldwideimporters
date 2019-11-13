@@ -7,15 +7,47 @@
   </head>
   <body>
 
-    <div class="categoriecontainer">
-      <ul class="categoriebalk">
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-      </ul>
+    <div class="category-container">
+      <nav class="category-bar">
+        <ul>
+          <li><a href="#">Lorem Ipsum</a>
+            <ul>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Lorem Ipsum</a>
+            <ul>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Lorem Ipsum</a>
+            <ul>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Lorem Ipsum</a>
+            <ul>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Lorem Ipsum</a>
+            <ul>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+              <li><a href="#">Penis</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </div>
-
+    
   </body>
 </html>

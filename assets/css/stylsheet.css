@@ -90,26 +90,54 @@ input.search {
 }
 
 /*------------------ Categorie --------------------*/
-.categoriecontainer {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: gray;
+.category-container {
   text-align: center;
 }
 
-.categoriebalk li {
-  padding-left: 20px;
-  display: inline-block;
+.category-bar {
+  width: 100%;
+  height: 60px;
+  background-color: #0b6db3;
+
 }
 
-.categoriebalk li a {
-  color: white;
+.category-bar ul {
+  float: left;
+}
+
+.category-bar ul li {
+  float: left;
+  list-style: none;
+  position: relative;
+}
+
+.category-bar ul li a {
   display: block;
-  padding: 13px;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
 }
 
-.categoriebalk li a:hover {
-  color: gray;
-  background-color: blue;
+.category-bar ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #0d4b77;
+  padding: 10px;
+}
+
+.category-bar ul li:hover ul {
+  display: block;
+}
+
+.category-bar ul li ul li {
+  width: 100px;
+}
+
+.category-bar ul li ul li a {
+  padding: 15px;
+  font-size: 14;
+}
+
+.category-bar ul li ul li a:hover {
+  background-color: #033457;
 }

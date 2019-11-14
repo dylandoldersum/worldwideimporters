@@ -12,12 +12,13 @@
 
         <?php
 
-        $sql = "SELECT StockGroupName FROM stockgroups";
+        $sql = "SELECT StockGroupName, StockGroupID FROM stockgroups";
         $result = mysqli_query($conn, $sql);
 
         foreach ($result as $value) {
           $url = $value['StockGroupName'];
-          print("<li><a href='product-list.php?=$url'> ". $value['StockGroupName'] . "</a></li>");
+          $catID = $value['StockGroupID'];
+          print("<li><a href='product-list.php?CatID=$catID'> ". $value['StockGroupName'] . "</a></li>");
 
         }
 

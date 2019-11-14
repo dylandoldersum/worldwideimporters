@@ -94,7 +94,7 @@ input.search {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: gray;
+  background-color: #00bcf3;
   text-align: center;
 }
 
@@ -110,6 +110,16 @@ input.search {
 }
 
 .categoriebalk li a:hover {
-  color: gray;
-  background-color: blue;
+  color: white;
+  background-color: #165c8f;
+}
+
+.categoriebalk .dropdown {
+  display: none;
+  width: 100px;
+}
+
+.categoriebalk li:hover > .dropdown {
+  display: block;
+
 }

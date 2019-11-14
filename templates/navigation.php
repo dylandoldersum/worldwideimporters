@@ -12,7 +12,8 @@
         $result = mysqli_query($conn, $sql);
 
         foreach ($result as $item) {
-             $response[] = $item['StockItemName'];
+             $response[] = $item;
+
         }
     }
 ?>
@@ -41,14 +42,15 @@
     </nav>
 </div>
 
+
 <?php
 include_once 'templates/category.php';
  ?>
 
 <?php
-if (isset($_GET['search']) && !empty($_GET['search'])) {
-    foreach ($response as $item) {
-        echo $item . "<br>";
+if (isset($_GET['search']) && !empty($_GET['search'] && !empty($response))) {
+    foreach ($response as $val) {
+        echo '<a href="product-detail.php?='.$val['StockItemID'].'">'.$val['StockItemName'].'</a> <br>';
     }
 }
 ?>

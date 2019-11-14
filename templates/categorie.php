@@ -6,12 +6,6 @@
 
   </head>
   <body>
-    <div class="categoriecontainer">
-      <ul class="categoriebalk">
-        <li><a href="#">Lorem ipsum</a>
-          </ul>
-        </li>
-      </ul>
     <div class="category-container">
       <nav class="category-bar">
         <ul>

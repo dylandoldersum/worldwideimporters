@@ -6,46 +6,37 @@
 
   </head>
   <body>
-
     <div class="categoriecontainer">
       <ul class="categoriebalk">
         <li><a href="#">Lorem ipsum</a>
-          <ul class="dropdown">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Lorem ipsum</a>
-          <ul class="dropdown">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Lorem ipsum</a>
-          <ul class="dropdown">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Lorem ipsum</a>
-          <ul class="dropdown">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Lorem ipsum</a>
-          <ul class="dropdown">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
           </ul>
         </li>
       </ul>
+    <div class="category-container">
+      <nav class="category-bar">
+        <ul>
+
+        <?php
+
+        $sql = "SELECT StockGroupName FROM stockgroups";
+        $result = mysqli_query($conn, $sql);
+
+        foreach ($result as $value) {
+          $url = $value['StockGroupName'];
+          print("<li><a href='product-list.php?=$url'> ". $value['StockGroupName'] . "</a></li>");
+
+        }
+
+        mysqli_close($conn);
+
+
+         ?>
+
+        </ul>
+      </nav>
     </div>
+
+
 
   </body>
 </html>

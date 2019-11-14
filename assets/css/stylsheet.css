@@ -90,23 +90,42 @@ input.search {
 }
 
 /*------------------ Categorie --------------------*/
-.categoriecontainer {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #00bcf3;
+.category-container {
   text-align: center;
 }
 
-.categoriebalk li {
-  padding-left: 20px;
-  display: inline-block;
+.category-bar {
+  width: 100%;
+  height: 60px;
+  background-color: #0b6db3;
 }
 
-.categoriebalk li a {
-  color: white;
+.category-bar ul {
+
+}
+
+.category-bar ul li {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+}
+
+.category-bar ul li a {
   display: block;
-  padding: 13px;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
+
+.category-bar ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #0d4b77;
+  padding: 10px;
+}
+
+.category-bar ul li:hover ul {
+  display: block;
 }
 
 .categoriebalk li a:hover {

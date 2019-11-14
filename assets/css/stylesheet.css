@@ -126,12 +126,20 @@ input.search {
   width: 400px;
   padding: 25px;
   margin: auto;
+  margin-top: 50px;
   text-align: center;
   background-color: gray;
-  border-radius: 5px;
+  border-style: groove;
+  border-radius: 15px;
   color: white;
 }
 
-.mapslocation {
+.contactinfo span {
+  color: #0d4b77;
+}
 
+.mapslocation {
+  text-align: center;
+  padding: 20px;
+  margin: auto;
 }

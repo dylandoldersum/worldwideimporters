@@ -117,28 +117,6 @@ input.search {
   padding: 20px;
 }
 
-.category-bar ul li ul {
-  display: none;
-  position: absolute;
-  background-color: #0d4b77;
-  padding: 10px;
-}
-
-.category-bar ul li:hover ul {
-  display: block;
-}
-
-.categoriebalk li a:hover {
-  color: white;
-  background-color: #165c8f;
-}
-
-.categoriebalk .dropdown {
-  display: none;
-  width: 100px;
-}
-
-.categoriebalk li:hover > .dropdown {
-  display: block;
-
+.category-bar li a:hover {
+  background: #117fce;
 }

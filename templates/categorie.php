@@ -9,11 +9,41 @@
 
     <div class="categoriecontainer">
       <ul class="categoriebalk">
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
+        <li><a href="#">Lorem ipsum</a>
+          <ul class="dropdown">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Lorem ipsum</a>
+          <ul class="dropdown">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Lorem ipsum</a>
+          <ul class="dropdown">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Lorem ipsum</a>
+          <ul class="dropdown">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Lorem ipsum</a>
+          <ul class="dropdown">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
 

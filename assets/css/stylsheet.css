@@ -102,11 +102,11 @@ input.search {
 }
 
 .category-bar ul {
-  float: left;
+
 }
 
 .category-bar ul li {
-  float: left;
+  display: inline-block;
   list-style: none;
   position: relative;
 }

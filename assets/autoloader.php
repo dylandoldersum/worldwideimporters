@@ -27,4 +27,6 @@
     <title>KBS</title>
     <link rel="stylesheet" type="text/css" href="assets/css/stylsheet.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/product-detail.css"/>
+
 </head>

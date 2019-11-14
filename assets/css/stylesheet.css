@@ -145,10 +145,10 @@ input.search {
 }
 
 /*-----------------------Footer--------------------------*/
+
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: relative;
+  margin-top: auto;
   width: 100%;
   padding: 10px;
   background-color: gray;

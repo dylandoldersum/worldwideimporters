@@ -8,7 +8,9 @@
  */
 ?>
 
-<div class="footer">
-    <p class="copyright">&copy WideWorldImporters 2019</p>
-    <a href="contact.php">Contact</a>
+<div class="footer-container">
+  <div class="footer">
+      <p class="copyright">&copy WideWorldImporters 2019</p>
+      <a href="contact.php">Contact</a>
+  </div>
 </div>

@@ -2,7 +2,7 @@
 ?>
 
 <body>
-<div class="container">
+<div class="product-container">
     <div class="productname">
         <H1>naam product</H1>
     </div>

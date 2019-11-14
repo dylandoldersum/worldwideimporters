@@ -1,10 +1,33 @@
+.container{
+    max-width: 1200px;
+    background: transparent;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
 .productname{
     text-align: left;
     max-width: 1200px;
-    background: blue;
+    background: transparent;
     margin-left: auto;
     margin-right: auto;
 }
 .picture{
-        
+    float:left;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.picture img {
+    width: 600px;
+}
+.description{
+    margin-top: 100px;
+    float: left;
+    width: 598px;
+    height: 598px;
+    background: transparent;
+    border: 1px solid black;
 }

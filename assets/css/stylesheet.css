@@ -160,3 +160,8 @@ input.search {
 .footer a {
   color: white;
 }
+
+/*------------------ product-list --------------------*/
+.showProduct {
+  background-color: green;
+}

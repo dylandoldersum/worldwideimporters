@@ -48,5 +48,27 @@
         </ul>
       </nav>
     </div>
+<?php
+
+$sql = "SELECT StockGroupName FROM stockgroups";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    print("<ul>");
+    while($row = mysqli_fetch_assoc($result)) {
+        echo $row["StockGroupName"]. "<br>";
+    }
+    print("</ul>");
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+
+
+ ?>
+
+
   </body>
 </html>

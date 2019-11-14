@@ -17,13 +17,8 @@
         $result = mysqli_query($conn, $sql);
 
         foreach ($result as $value) {
-          print("<li><a href='#'> ". $value['StockGroupName'] . "</a>
-            <ul>
-              <li><a href='#'>Penis</a></li>
-              <li><a href='#'>Penis</a></li>
-              <li><a href='#'>Penis</a></li>
-            </ul>
-          </li>");
+          $url = $value['StockGroupName'];
+          print("<li><a href='product-list.php?=$url'> ". $value['StockGroupName'] . "</a></li>");
 
         }
 

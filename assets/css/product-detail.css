@@ -38,5 +38,8 @@
     border: 1px solid black;
 }
 .buy{
-
+    width: 200px;
+    height: 30px;
+    background: red;
+    border: 0.5px solid black;
 }

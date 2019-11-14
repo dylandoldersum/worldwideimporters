@@ -16,7 +16,7 @@
 .price{
     margin-left: 50%;
     margin-right: 35%;
-    background: red;
+    background: #0d4b77;
     border-radius: 10px;
 }
 .picture{
@@ -40,6 +40,6 @@
 .buy{
     width: 200px;
     height: 30px;
-    background: red;
+    background: #0d4b77;
     border: 0.5px solid black;
 }

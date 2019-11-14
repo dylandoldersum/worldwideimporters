@@ -6,18 +6,29 @@
  * Date: 2019-11-07
  * Time: 19:27
  */
+
+    if (isset($_GET['search']) && !empty($_GET['search'])) {
+        $sql = "SELECT * FROM stockitems WHERE StockItemName LIKE '%" . $_GET['search'] . "%'";
+        $result = mysqli_query($conn, $sql);
+
+        foreach ($result as $item) {
+             $response[] = $item['StockItemName'];
+        }
+    }
 ?>
 
 <div class="nav-container">
     <nav class="nav-bar">
         <div class="logo-nav">
-            <img class="logo" src="assets/images/logo.png"/>
+            <a href="../worldwideimporters"><img class="logo" src="assets/images/logo.png"/></a>
         </div>
         <div class="search-nav">
-            <input placeholder="Waar ben je naar opzoek?" type="text"/>
-            <div class="submit-container">
-                <input type="submit" value="" class="search">
-            </div>
+            <form method="GET" action="">
+            <input name="search" placeholder="Waar ben je naar opzoek?" type="text"/>
+                <div class="submit-container">
+                    <input type="submit" value="" class="search">
+                </div>
+            </form>
         </div>
         <div class="profile-nav">
             <span class="welkom">Welkom <br> <b>Dylan</b></span>
@@ -38,3 +49,9 @@
 <?php
 include_once 'templates/category.php';
  ?>
+
+<?php
+foreach ($response as $item) {
+    echo $item ."<br>";
+}
+?>

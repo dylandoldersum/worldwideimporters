@@ -23,9 +23,9 @@ include_once 'templates/navigation.php';
     <div class="description">
         <H1>omschrijving</H1>
     </div>
-    <div class="buy">
+    <div class="buybutton">
 
-        <input type="submit" value="BUY NOW" class="buy">
+        <input type="submit" value="IN WINKELWAGEN" class="buy">
     </div>
 
 </div>

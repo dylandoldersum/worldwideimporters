@@ -15,14 +15,21 @@ include_once 'templates/navigation.php';
 
 <?php
 
-$sql = "SELECT StockItemID FROM stockitemstockgroups /* WHERE stockgroups = " . $_GET['CatID'] */;
+$sql = "SELECT StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemID IN
+(SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
 $result = mysqli_query($conn, $sql);
 
-print($result);
-
-
+foreach ($result as $value) {
+  $itemName = $value['StockItemName'];
+  $price = $value['RecommendedRetailPrice'];
+  print("<div class='showProduct' width='200px', height='200px'>
+    <img src='#' alt='#' width='160px', height='120px'>
+    <p>" . $itemName . " -> " . $price . "</p>
+    </div>");
+}
 
 ?>
+
 
 
 

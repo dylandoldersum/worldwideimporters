@@ -143,3 +143,20 @@ input.search {
   padding: 20px;
   margin: auto;
 }
+
+/*-----------------------Footer--------------------------*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer a {
+  color: white;
+}

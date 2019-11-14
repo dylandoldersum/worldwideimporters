@@ -27,5 +27,6 @@ include_once 'templates/navigation.php';
       </p>
     </div>
 
+
   </body>
 </html>

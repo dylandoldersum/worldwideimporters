@@ -13,6 +13,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+.price{
+    margin-left: 50%;
+    margin-right: 35%;
+    background: red;
+    border-radius: 10px;
+}
 .picture{
     float:left;
     margin-left: auto;
@@ -27,7 +33,10 @@
     margin-top: 100px;
     float: left;
     width: 598px;
-    height: 598px;
+    height: 400px;
     background: transparent;
     border: 1px solid black;
+}
+.buy{
+
 }

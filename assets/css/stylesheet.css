@@ -120,3 +120,18 @@ input.search {
 .category-bar li a:hover {
   background: #117fce;
 }
+
+/*------------------------Contact---------------------*/
+.contactinfo {
+  width: 400px;
+  padding: 25px;
+  margin: auto;
+  text-align: center;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+}
+
+.mapslocation {
+
+}

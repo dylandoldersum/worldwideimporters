@@ -15,5 +15,15 @@ include_once 'templates/navigation.php';
   </head>
   <body>
 
+    <div class="contactinfo">
+      <p>Email: tyfus.aids@cholera.yeet</p>
+      <p>Telefoonnummer: 911-112-09112001</p>
+      <p>Adres: Auschwitz-Birkenau Poland</p>
+    </div>
+
+    <div class="mapslocation">
+
+    </div>
+
   </body>
 </html>

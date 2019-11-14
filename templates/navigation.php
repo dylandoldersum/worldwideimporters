@@ -23,7 +23,7 @@
             <a href="../worldwideimporters"><img class="logo" src="assets/images/logo.png"/></a>
         </div>
         <div class="search-nav">
-            <form method="GET" action="">
+            <form method="GET" action="index.php">
             <input name="search" placeholder="Waar ben je naar opzoek?" type="text"/>
                 <div class="submit-container">
                     <input type="submit" value="" class="search">
@@ -51,7 +51,9 @@ include_once 'templates/category.php';
  ?>
 
 <?php
-foreach ($response as $item) {
-    echo $item ."<br>";
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    foreach ($response as $item) {
+        echo $item . "<br>";
+    }
 }
 ?>

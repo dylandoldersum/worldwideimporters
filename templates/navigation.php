@@ -29,3 +29,7 @@
         </div>
     </nav>
 </div>
+
+<?php
+include_once 'templates/category.php';
+ ?>

@@ -50,7 +50,7 @@ include_once 'templates/category.php';
 <?php
 if (isset($_GET['search']) && !empty($_GET['search'] && !empty($response))) {
     foreach ($response as $val) {
-        echo '<a href="product-detail.php?='.$val['StockItemID'].'">'.$val['StockItemName'].'</a> <br>';
+        echo '<a href="product-detail.php?itemID='.$val['StockItemID'].'">'.$val['StockItemName'].'</a> <br>';
     }
 }
 ?>

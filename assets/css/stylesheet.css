@@ -164,4 +164,18 @@ input.search {
 /*------------------ product-list --------------------*/
 .showProduct {
   background-color: green;
+  width: 40%;
+  height: 300px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 5%;
+
+}
+
+.products-container{
+    max-width: 1200px;
+    background: transparent;
+    margin-right: auto;
+    margin-left: auto;
+
 }

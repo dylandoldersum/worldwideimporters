@@ -11,7 +11,7 @@ include_once 'templates/navigation.php';
 <body>
 <?php
 
-$sql= "SELECT StockItemName From Stockitems WHERE StockItemID=". $_GET['itemID'];
+$sql= "SELECT StockItemName From stockitems WHERE StockItemID=". $_GET['itemID'];
 $result = mysqli_query($conn, $sql);
 
 foreach ($result as $value){

@@ -12,7 +12,7 @@ include_once 'templates/navigation.php';
     <title></title>
   </head>
   <body>
-
+<div class="product-container">
 <?php
 
 $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID FROM stockitems WHERE StockItemID IN
@@ -23,7 +23,7 @@ foreach ($result as $value) {
   $itemName = $value['StockItemName'];
   $price = $value['RecommendedRetailPrice'];
   $itemID = $value['StockItemID'];
-  print("<a href='product-detail.php?itemID=$itemID'><div class='showProduct' width='200px', height='200px'>
+  print("<a href='product-detail.php?itemID=$itemID'><div class='showProduct'>
     <img src='#' alt='#' width='160px', height='120px'>
     <p>" . $itemName . " -> " . $price . "</p>
     </div></a>");
@@ -31,7 +31,7 @@ foreach ($result as $value) {
 
 ?>
 
-
+</div>
 
 <?php
 include_once 'templates/footer.php';

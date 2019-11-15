@@ -11,13 +11,20 @@ include_once 'templates/navigation.php';
 <body>
 <?php
 
+
 $sql= "SELECT StockItemName, RecommendedRetailPrice, TypicalWeightPerUnit From Stockitems WHERE StockItemID=". $_GET['itemID'];
+
+$sql= "SELECT StockItemName From stockitems WHERE StockItemID=". $_GET['itemID'];
+
 $result = mysqli_query($conn, $sql);
 
-foreach ($result as $value){
+foreach ($result as $value) {
     $itemName = $value['StockItemName'];
+
     $itemPrice = $value['RecommendedRetailPrice'];
     $itemWeight = $value['TypicalWeightPerUnit'];
+
+
 }
 
 ?>

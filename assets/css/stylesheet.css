@@ -176,3 +176,22 @@ input.search {
     margin-left: auto;
 
 }
+
+/*--------------------Index Body------------------*/
+
+.indexbody {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-style: dotted;
+}
+
+.body-p {
+  color: blue;
+  font-size: 20;
+}
+
+.favorites {
+  margin-bottom: 20px;
+  display: inline-block;
+}

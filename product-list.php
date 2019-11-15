@@ -24,11 +24,15 @@ foreach ($result as $value) {
   $price = $value['RecommendedRetailPrice'];
   $itemID = $value['StockItemID'];
   $photo = $value['Photo'];
+
   if($photo === ""){
     $source = "assets/images/logo.png";
   }
+
   print("<a href='product-detail.php?itemID=$itemID'><div class='showProduct'>
-    <img src='". $source . "' alt='#' width='160px', height='120px'>
+
+    <img src='data:image/jpeg;base64,".base64_encode($photo)."' alt='#' width='160px', height='120px'>
+
     <p>" . $itemName . " -> " . $price . "</p>
     </div></a>");
 }

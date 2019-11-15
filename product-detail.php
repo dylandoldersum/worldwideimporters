@@ -9,9 +9,20 @@ include_once 'templates/navigation.php';
 ?>
 
 <body>
+<?php
+
+$sql= "SELECT StockItemName From Stockitems WHERE StockItemID=". $_GET['itemID'];
+$result = mysqli_query($conn, $sql);
+
+foreach ($result as $value){
+    $itemName = $value['StockItemName'];
+    
+}
+
+?>
 <div class="product-container">
     <div class="productname">
-        <H1>naam product</H1>
+        <H1><?php print $itemName ?></H1>
     </div>
     <div class="price">
         <H1> €199</H1>

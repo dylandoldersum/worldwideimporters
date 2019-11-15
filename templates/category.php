@@ -16,7 +16,6 @@
         $result = mysqli_query($conn, $sql);
 
         foreach ($result as $value) {
-          $url = $value['StockGroupName'];
           $catID = $value['StockGroupID'];
           print("<li><a href='product-list.php?CatID=$catID'> ". $value['StockGroupName'] . "</a></li>");
 

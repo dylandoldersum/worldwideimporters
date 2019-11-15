@@ -1,4 +1,6 @@
 .product-container{
+    margin-top: 100px;
+    margin-bottom: 100px;
     max-width: 1200px;
     background: transparent;
     margin-right: auto;
@@ -14,6 +16,7 @@
     margin-right: auto;
 }
 .price{
+
     margin-left: 50%;
     margin-right: 35%;
     background: #0d4b77;
@@ -30,7 +33,7 @@
     width: 600px;
 }
 .description{
-    margin-top: 100px;
+
     float: left;
     width: 598px;
     height: 400px;

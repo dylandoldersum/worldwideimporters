@@ -25,6 +25,7 @@ foreach ($result as $value) {
     $itemWeight = $value['TypicalWeightPerUnit'];
     $itemDescription1 = $value['Tags'];
     $itemDescription2 = $value['SearchDetails'];
+    $stock = $value['LastStocktakeQuantity'];
 }
 $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'', $itemDescription1);
 
@@ -42,12 +43,13 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
         <img src="https://cdn.babymarkt.com/babymarkt/img/107440/900/steiff-teddybeer-finn-40-cm-beige-a021097.jpg">
         </div>
         <div class="description">
-            <H2>omschrijving</H2> <br>
-            <H4><?php print $itemDescription?> </H4> <br>
-            <H4>gewicht</H4> <br>
-            <H4><?php print $itemWeight ?> KG</H4> <br>
-            <H4>Verzendtijd</H4> <br>
+            <H4><?php print $itemDescription?> </H4>
+            <H4>gewicht:</H4>
+            <H4><?php print $itemWeight ?> KG</H4>
+            <H4>Verzendtijd:</H4>
             <H4><?php print $itemDelivery ?> dagen </H4>
+            <H4>Voorraad:</H4>
+            <H4><?php print $stock ?> </H4>
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>

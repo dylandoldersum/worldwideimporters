@@ -34,9 +34,7 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
         <div class="productname">
             <H1><?php print $itemName ?></H1>
         </div>
-        <div class="price">
-            <H1> € <?php print $itemPrice ?></H1>
-        </div>
+
     </div>
     <div class="mid-row">
         <div class="picture">
@@ -53,7 +51,11 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>
+            <div class="price">
+                <H1> € <?php print $itemPrice ?></H1>
+            </div>
         </div>
+
     </div>
 </div>
 </body>

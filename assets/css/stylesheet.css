@@ -1,5 +1,5 @@
 * { padding: 0; margin: 0; }
-body {font-family: Produkt,Arial,Helvetica,sans-serif;}
+body {font-family: "Bahnschrift", Times, serif;}
 a { text-decoration: none; }
 li { list-style-type: none; }
 :focus { outline:0; }
@@ -161,7 +161,7 @@ input.search {
 
 /*------------------ product-list --------------------*/
 .showProduct {
-  background-color: green;
+  background-color: #0d4b77;
   width: 40%;
   height: 300px;
   display: inline-block;
@@ -170,10 +170,39 @@ input.search {
 
 }
 
+.product_photo {
+  margin-left: 10%;
+}
+
+.product_text {
+  margin-left: 10%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
 .products-container{
     max-width: 1200px;
-    background: transparent;
     margin-right: auto;
     margin-left: auto;
 
+}
+
+/*--------------------Index Body------------------*/
+
+.indexbody {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-style: dotted;
+}
+
+.body-p {
+  color: blue;
+  font-size: 20;
+}
+
+.favorites {
+  margin-bottom: 20px;
+  display: inline-block;
 }

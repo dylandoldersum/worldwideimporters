@@ -27,11 +27,13 @@ foreach ($result as $value) {
 
   if($photo === ""){
     $source = "assets/images/logo.png";
+  } else {
+    $source = "data:image/jpeg;base64,".base64_encode($photo);
   }
 
   print("<a href='product-detail.php?itemID=$itemID'><div class='showProduct'>
 
-    <img src='data:image/jpeg;base64,".base64_encode($photo)."' alt='#' width='160px', height='120px'>
+    <img src='" .$source. "' alt='#' width='160px', height='120px'>
 
     <p>" . $itemName . " -> " . $price . "</p>
     </div></a>");

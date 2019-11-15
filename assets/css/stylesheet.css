@@ -161,7 +161,7 @@ input.search {
 
 /*------------------ product-list --------------------*/
 .showProduct {
-  background-color: green;
+  background-color: #0d4b77;
   width: 40%;
   height: 300px;
   display: inline-block;
@@ -172,8 +172,26 @@ input.search {
 
 .products-container{
     max-width: 1200px;
-    background: transparent;
     margin-right: auto;
     margin-left: auto;
 
+}
+
+/*--------------------Index Body------------------*/
+
+.indexbody {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-style: dotted;
+}
+
+.body-p {
+  color: blue;
+  font-size: 20;
+}
+
+.favorites {
+  margin-bottom: 20px;
+  display: inline-block;
 }

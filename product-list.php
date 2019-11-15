@@ -15,16 +15,17 @@ include_once 'templates/navigation.php';
 <div class="products-container">
 <?php
 
-$sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID FROM stockitems WHERE StockItemID IN
+$sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
 $result = mysqli_query($conn, $sql);
 
 foreach ($result as $value) {
+    $photo = $value['Photo'];
   $itemName = $value['StockItemName'];
   $price = $value['RecommendedRetailPrice'];
   $itemID = $value['StockItemID'];
   print("<a href='product-detail.php?itemID=$itemID'><div class='showProduct'>
-    <img src='#' alt='#' width='160px', height='120px'>
+    <img src='data:image/jpeg;base64,".base64_encode($photo)."' alt='#' width='160px', height='120px'>
     <p>" . $itemName . " -> " . $price . "</p>
     </div></a>");
 }

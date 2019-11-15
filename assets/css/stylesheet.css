@@ -172,6 +172,7 @@ input.search {
 
 .product_photo {
   margin-left: 10%;
+  border: 1px solid white;
 }
 
 .product_text {

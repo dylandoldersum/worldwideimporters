@@ -49,7 +49,7 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
             <H4>Verzendtijd:</H4>
             <H4><?php print $itemDelivery ?> dagen </H4>
             <H4>Voorraad:</H4>
-            <H4><?php print $stock ?> </H4>
+            <H4><?php print $stock ?> stuks</H4>
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>

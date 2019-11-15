@@ -29,9 +29,7 @@ foreach ($result as $value) {
         <div class="productname">
             <H1><?php print $itemName ?></H1>
         </div>
-        <div class="price">
-            <H1> € <?php print $itemPrice ?></H1>
-        </div>
+
     </div>
     <div class="mid-row">
         <div class="picture">
@@ -47,7 +45,11 @@ foreach ($result as $value) {
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>
+            <div class="price">
+                <H1> € <?php print $itemPrice ?></H1>
+            </div>
         </div>
+
     </div>
 </div>
 </body>

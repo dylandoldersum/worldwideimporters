@@ -1,24 +1,12 @@
 <?php
-
 /** Automatisch laden van header */
 include_once 'assets/autoloader.php';
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 
-?>
 
-<body>
-<?php
-
-
-$sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity 
-        From stockitems AS I 
-        JOIN stockitemholdings AS H ON I.StockitemID = H.StockitemID
-        WHERE I.StockItemID=". $_GET['itemID'];
-$result = mysqli_query($conn, $sql);
-
-foreach ($result as $value) {
+foreach ($products->getProductInfo() as $value) {
     $itemName = $value['StockItemName'];
     $itemPrice = $value['RecommendedRetailPrice'];
     $itemDelivery = $value['LeadTimeDays'];
@@ -28,8 +16,9 @@ foreach ($result as $value) {
     $stock = $value['LastStocktakeQuantity'];
 }
 $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'', $itemDescription1);
-
 ?>
+
+<body>
 <div class="product-container">
     <div class="first-row">
         <div class="productname">

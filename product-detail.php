@@ -12,7 +12,10 @@ include_once 'templates/navigation.php';
 <?php
 
 
-$sql= "SELECT StockItemName, RecommendedRetailPrice, LeadTimeDays, TypicalWeightPerUnit From stockitems WHERE StockItemID=". $_GET['itemID'];
+$sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity 
+        From stockitems AS I 
+        JOIN stockitemholdings AS H ON I.StockitemID = H.StockitemID
+        WHERE I.StockItemID=". $_GET['itemID'];
 $result = mysqli_query($conn, $sql);
 
 foreach ($result as $value) {
@@ -20,8 +23,10 @@ foreach ($result as $value) {
     $itemPrice = $value['RecommendedRetailPrice'];
     $itemDelivery = $value['LeadTimeDays'];
     $itemWeight = $value['TypicalWeightPerUnit'];
-
+    $itemDescription1 = $value['Tags'];
+    $itemDescription2 = $value['SearchDetails'];
 }
+$itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'', $itemDescription1);
 
 ?>
 <div class="product-container">
@@ -39,11 +44,12 @@ foreach ($result as $value) {
         <img src="https://cdn.babymarkt.com/babymarkt/img/107440/900/steiff-teddybeer-finn-40-cm-beige-a021097.jpg">
         </div>
         <div class="description">
-            <H1>omschrijving</H1> <br>
-            <H2>gewicht</H2> <br>
-            <H3><?php print $itemWeight ?> KG</H3> <br>
+            <H2>omschrijving</H2> <br>
+            <H4><?php print $itemDescription?> </H4> <br>
+            <H4>gewicht</H4> <br>
+            <H4><?php print $itemWeight ?> KG</H4> <br>
             <H4>Verzendtijd</H4> <br>
-            <H5><?php print $itemDelivery ?> dagen </H5>
+            <H4><?php print $itemDelivery ?> dagen </H4>
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>

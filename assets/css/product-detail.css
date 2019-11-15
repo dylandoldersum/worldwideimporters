@@ -1,43 +1,63 @@
 .first-row, .mid-row {
     display: flex;
+    background: white;
+}
+.mid-row{
+    margin-top: 80px;
+    background: white;
 }
 
 .product-container{
-    margin-top: 100px;
+    background: white;
+    margin-top: 50px;
     margin-bottom: 100px;
     max-width: 1200px;
-    background: transparent;
+
     margin-right: auto;
     margin-left: auto;
     position: relative;
 
 }
+body{
+    background: url("https://lekkergezond.nl/content/uploads/sites/2/201749.lekker-gezond.pepernoten.jpg");
+    
+}
 
 .productname{
+    font-family: "Impact", Times, serif;
     display: inline-block;
     text-align: left;
     max-width: 1200px;
-    background: transparent;
+    background: white;
 }
-.price{
-    display: inline-block;
-    background: #0d4b77;
-    border-radius: 10px;
-}
+
 
 .picture img {
     width: 600px;
+    background: white;
 }
 .description {
     position: relative;
     width: 598px;
     height: 400px;
-    background: transparent;
     border: 1px solid black;
+    padding: 5px;
+    background: white;
 }
+.price{
+    position: absolute;
+     display: inline-block;
+     background: #0d4b77;
+     border-radius: 10px;
+    bottom: -48px;
+
+
+ }
 .buybutton {
     position: absolute;
-    bottom: 0;
+    bottom: -48px;
+    right: 0px;
+    background: white;
 }
 .buy {
     width: 200px;

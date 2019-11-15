@@ -12,7 +12,7 @@ include_once 'templates/navigation.php';
     <title></title>
   </head>
   <body>
-<div class="product-container">
+<div class="products-container">
 <?php
 
 $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID FROM stockitems WHERE StockItemID IN

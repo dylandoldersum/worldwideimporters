@@ -171,3 +171,11 @@ input.search {
   margin-left: 5%;
 
 }
+
+.products-container{
+    max-width: 1200px;
+    background: transparent;
+    margin-right: auto;
+    margin-left: auto;
+
+}

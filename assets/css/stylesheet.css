@@ -1,5 +1,5 @@
 * { padding: 0; margin: 0; }
-body { font-family: Arial; }
+body {font-family: Produkt,Arial,Helvetica,sans-serif;}
 a { text-decoration: none; }
 li { list-style-type: none; }
 :focus { outline:0; }

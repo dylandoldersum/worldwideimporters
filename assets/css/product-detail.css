@@ -1,3 +1,7 @@
+.first-row, .mid-row {
+    display: flex;
+}
+
 .product-container{
     margin-top: 100px;
     margin-bottom: 100px;
@@ -5,42 +9,37 @@
     background: transparent;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
 
 }
 
 .productname{
+    display: inline-block;
     text-align: left;
     max-width: 1200px;
     background: transparent;
-    margin-left: auto;
-    margin-right: auto;
 }
 .price{
-
-    margin-left: 50%;
-    margin-right: 35%;
+    display: inline-block;
     background: #0d4b77;
     border-radius: 10px;
-}
-.picture{
-    float:left;
-    margin-left: auto;
-    margin-right: auto;
-
 }
 
 .picture img {
     width: 600px;
 }
-.description{
-
-    float: left;
+.description {
+    position: relative;
     width: 598px;
     height: 400px;
     background: transparent;
     border: 1px solid black;
 }
-.buy{
+.buybutton {
+    position: absolute;
+    bottom: 0;
+}
+.buy {
     width: 200px;
     height: 30px;
     background: #0d4b77;

@@ -32,10 +32,9 @@ foreach ($result as $value) {
   }
 
   print("<a href='product-detail.php?itemID=$itemID'><div class='showProduct'>
-
-    <img src='" .$source. "' alt='#' width='160px', height='120px'>
-
-    <p>" . $itemName . " -> " . $price . "</p>
+    <h3 class='product_text'>$itemName</h3>
+    <img class='product_photo' src='" .$source. "' alt='#' width='80%', height='200px'>
+    <p class='product_text'>'PRICE: €' . $price</p>
     </div></a>");
 }
 

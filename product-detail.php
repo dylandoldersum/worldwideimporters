@@ -16,7 +16,7 @@ $result = mysqli_query($conn, $sql);
 
 foreach ($result as $value){
     $itemName = $value['StockItemName'];
-    
+
 }
 
 ?>

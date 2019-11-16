@@ -21,7 +21,7 @@ class Products extends Database
 
     public function getFavouriteItems() {
         $this->connect();
-        $sql = "SELECT StockItemName, RecommendedRetailPrice 
+        $sql = "SELECT StockItemName, RecommendedRetailPrice
                 FROM stockitems
                 WHERE StockItemID = 2 OR StockItemID = 23";
         $result = mysqli_query($this->connection, $sql);
@@ -57,7 +57,7 @@ class Products extends Database
                     <p class='product_text'>PRICE: €$price</p>
                     </div></a>");
 
-            if($count === 25){
+            if($count === $ShowPerPage){
                 break;
             }
         }
@@ -65,8 +65,8 @@ class Products extends Database
 
     public function getProductInfo() {
         $this->connect();
-        $sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity 
-        From stockitems AS I 
+        $sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity
+        From stockitems AS I
         JOIN stockitemholdings AS H ON I.StockitemID = H.StockitemID
         WHERE I.StockItemID=". $_GET['itemID'];
         $result = mysqli_query($this->connection, $sql);

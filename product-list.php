@@ -16,9 +16,10 @@ include_once 'templates/navigation.php';
 <?php
 
 $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
-(SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
+(SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID =" . $_GET['CatID'] . ")";
 $result = mysqli_query($conn, $sql);
 $count = 0;
+var_dump($result);
 
 foreach ($result as $value) {
   $itemName = $value['StockItemName'];
@@ -46,7 +47,7 @@ foreach ($result as $value) {
 
 ?>
 
-<form action="product-list.php?CatID=$catID" method="get">
+<form method="get">
   <input type="submit" value="25" name="25">
 </form>
 

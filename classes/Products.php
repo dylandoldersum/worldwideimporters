@@ -21,14 +21,16 @@ class Products extends Database
 
     public function getFavouriteItems() {
         $this->connect();
-        $sql = "SELECT StockItemName, RecommendedRetailPrice
+        $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
                 FROM stockitems
                 WHERE StockItemID = 2 OR StockItemID = 23";
         $result = mysqli_query($this->connection, $sql);
 
         foreach ($result as $value) {
             $itemName = $value['StockItemName'];
-            print("<a href=''><div class='favorites'>" . $itemName . "</a></div>");
+            $price = $value['RecommendedRetailPrice'];
+            $itemID = $value['StockItemID'];
+            print("<a href='product-detail.php?itemID=$itemID'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg height='300px' width='300'>" . "</a></div>");
         }
     }
 
@@ -37,7 +39,7 @@ class Products extends Database
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
         $result = mysqli_query($this->connection, $sql);
-      
+
         foreach ($result as $value) {
             $itemName = $value['StockItemName'];
             $price = $value['RecommendedRetailPrice'];

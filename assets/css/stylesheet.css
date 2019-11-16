@@ -196,15 +196,26 @@ input.search {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  border-style: dotted;
+  border-style: groove;
 }
 
 .body-p {
   color: blue;
   font-size: 20;
+  color: #2448c9;
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 2px, 2px, black;
 }
 
 .favorites {
   margin-bottom: 20px;
   display: inline-block;
+  padding: 20px;
+  border-style: dashed;
+  background-color: #6299f0;
+}
+
+.favorites a {
+  color: white;
 }

@@ -37,7 +37,7 @@ class Products extends Database
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
         $result = mysqli_query($this->connection, $sql);
-        $count = 0;
+      
         foreach ($result as $value) {
             $itemName = $value['StockItemName'];
             $price = $value['RecommendedRetailPrice'];
@@ -57,9 +57,6 @@ class Products extends Database
                     <p class='product_text'>PRICE: €$price</p>
                     </div></a>");
 
-            if($count === 25){
-                break;
-            }
         }
     }
 

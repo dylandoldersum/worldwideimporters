@@ -18,6 +18,8 @@ include_once 'templates/navigation.php';
 
 $products->getProductsFromCategory();
 
+
+
 ?>
 
 </div>

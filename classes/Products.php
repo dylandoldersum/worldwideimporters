@@ -57,7 +57,7 @@ class Products extends Database
                     <p class='product_text'>PRICE: €$price</p>
                     </div></a>");
 
-            if($count === $ShowPerPage){
+            if($count === 25){
                 break;
             }
         }

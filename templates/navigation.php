@@ -6,16 +6,6 @@
  * Date: 2019-11-07
  * Time: 19:27
  */
-
-    if (isset($_GET['search']) && !empty($_GET['search'])) {
-        $sql = "SELECT * FROM stockitems WHERE StockItemName LIKE '%" . $_GET['search'] . "%'";
-        $result = mysqli_query($conn, $sql);
-
-        foreach ($result as $item) {
-             $response[] = $item;
-
-        }
-    }
 ?>
 
 <div class="nav-container">
@@ -24,7 +14,7 @@
             <a href="../worldwideimporters"><img class="logo" src="assets/images/logo.png"/></a>
         </div>
         <div class="search-nav">
-            <form method="GET" action="index.php">
+            <form method="GET" action="search.php">
             <input name="search" placeholder="Waar ben je naar opzoek?" type="text"/>
                 <div class="submit-container">
                     <input type="submit" value="" class="search">
@@ -45,12 +35,4 @@
 
 <?php
 include_once 'templates/category.php';
- ?>
 
-<?php
-if (isset($_GET['search']) && !empty($_GET['search'] && !empty($response))) {
-    foreach ($response as $val) {
-        echo '<a href="product-detail.php?itemID='.$val['StockItemID'].'">'.$val['StockItemName'].'</a> <br>';
-    }
-}
-?>

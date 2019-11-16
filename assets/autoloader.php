@@ -7,20 +7,14 @@
  * Time: 19:38
  */
 
+require_once 'classes/Database.php';
+require_once 'classes/Products.php';
 
- $servername = "localhost";
- $username = "root";
- $password = "";
- $dbname = "wideworldimporters";
+$db = new Database();
+$products = new Products();
 
- // Create connection
- $conn = new mysqli($servername, $username, $password, $dbname);
- // Check connection
- if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
- }
-
-
+if(!$db->connect())
+    exit;
 
 ?>
 <head>

@@ -119,6 +119,8 @@ input.search {
 
 .category-bar li a:hover {
   background: #117fce;
+  font-weight: bold;
+  text-shadow: 1px 1px gray;
 }
 
 /*------------------------Contact---------------------*/
@@ -205,7 +207,7 @@ input.search {
   color: #2448c9;
   font-weight: bold;
   font-size: 24px;
-  text-shadow: 2px, 2px, black;
+  text-shadow: 1.5px 1.5px gray;
 }
 
 .favorites {
@@ -218,4 +220,5 @@ input.search {
 
 .favorites a {
   color: white;
+  text-shadow: 1px 1px gray;
 }

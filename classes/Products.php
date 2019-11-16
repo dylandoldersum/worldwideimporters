@@ -30,7 +30,7 @@ class Products extends Database
             $itemName = $value['StockItemName'];
             $price = $value['RecommendedRetailPrice'];
             $itemID = $value['StockItemID'];
-            print("<a href='product-detail.php?itemID=$itemID'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg height='300px' width='300'>" . "</a></div>");
+            print("<a href='product-detail.php?itemID=$itemID'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg' height='300px' width='300'>" . "</a></div>");
         }
     }
 

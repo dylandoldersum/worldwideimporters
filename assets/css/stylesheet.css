@@ -162,32 +162,39 @@ input.search {
 }
 
 /*------------------ product-list --------------------*/
-.showProduct {
-  background-color: #0d4b77;
-  width: 40%;
-  height: 300px;
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 5%;
+.product-list {
+    width: 350px;
+    height: 300px;
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 23px;
+    padding: 10px;
+    text-align: center;
 
 }
 
+.product-anchor {
+    background-color: #0d4b77;
+    padding: 10px;
+    display: block;
+}
+
 .product_photo {
-  margin-left: 10%;
   border: 1px solid white;
 }
 
 .product_text {
-  margin-left: 10%;
   margin-bottom: 10px;
   margin-top: 10px;
   color: white;
+    height: 35px;
 }
 
 .products-container {
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 25px;
 
 }
 

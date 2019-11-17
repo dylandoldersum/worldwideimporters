@@ -73,4 +73,13 @@ class Products extends Database
         return $result;
     }
 
+    public function getProductImage($photo) {
+        if ($photo === "" || empty($photo)) {
+            $source = "assets/images/logo.png";
+        } else {
+            $source = "data:image/jpeg;base64," . base64_encode($photo);
+        }
+        return $source;
+    }
+
 }

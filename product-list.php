@@ -12,7 +12,16 @@ include_once 'templates/navigation.php';
     <title></title>
   </head>
   <body>
-<div class="products-container">
+<div class="products-container"
+
+        <form action="" method=get>
+          <select>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <input type="submit" value="GO" name="">
+          </select>
+        </form>
 
 <?php
 $products->getProductsFromCategory();

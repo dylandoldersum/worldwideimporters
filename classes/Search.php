@@ -10,17 +10,7 @@
 
 class Search extends Database
 {
-    public function getResults() {
-            $this->connect();
-            $sql = "SELECT * FROM stockitems WHERE StockItemName LIKE '%" . $_GET['search'] . "%'";
-            $result = mysqli_query($this->connection, $sql);
-            $response = [];
 
-            foreach ($result as $item) {
-                $response[] = $item;
-            }
-            return $response;
-    }
 
 
 }

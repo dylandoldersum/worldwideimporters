@@ -16,6 +16,10 @@
         <div class="search-nav">
             <form method="GET" action="search.php">
             <input name="search" placeholder="Waar ben je naar opzoek?" type="text"/>
+                <select class="select-search">
+                    <option >Productname</option>
+                    <option>Articlenumber</option>
+                </select>
                 <div class="submit-container">
                     <input type="submit" value="" class="search">
                 </div>

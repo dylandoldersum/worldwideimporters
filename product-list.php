@@ -4,6 +4,9 @@ include_once 'assets/autoloader.php';
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
+include_once 'classes/Products.php';
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -12,10 +15,32 @@ include_once 'templates/navigation.php';
     <title></title>
   </head>
   <body>
-<div class="products-container">
+<div class="products-container"
+        <form action="" method=get>
+          <select>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <input type="submit" value="GO" name="">
+          </select>
+        </form>
 
 <?php
-$products->getProductsFromCategory();
+$dbName = 'wideworldimporters';
+$user = 'root';
+$password = '';
+$connection = mysqli_connect($host, $user, $password, $dbName);
+
+    $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
+            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = ".$_GET['CatID'].")";
+     $result = mysqli_query($connection, $sql);
+     foreach ($result as $item) {
+         var_dump($item);
+     }
+ ?>
+
+<?php
+getProductsFromCategory();
 ?>
 
 </div>

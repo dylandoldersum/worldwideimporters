@@ -5,10 +5,8 @@ include_once 'assets/autoloader.php';
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 
-foreach ($products->getProductImage() as $value){
-    $photo = $value['Photo'];
-}
-foreach ($products->getProductInfo() as $value) {
+
+foreach (getProductInfo() as $value) {
     $itemName = $value['StockItemName'];
     $itemPrice = $value['RecommendedRetailPrice'];
     $itemDelivery = $value['LeadTimeDays'];

@@ -26,7 +26,8 @@ function getProductImage($photo) {
     return $source;
 }
 
-function getFavouriteItems() {    $host = 'localhost';
+function getFavouriteItems() {
+    $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
     $password = '';

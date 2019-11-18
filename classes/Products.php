@@ -1,8 +1,7 @@
 <?php
 
-class Products extends Database
-{
-    public function getCategoriesForNavigation() {
+
+function getCategoriesForNavigation() {
         $this->connect();
         $sql = "SELECT StockGroupName, StockGroupID FROM stockgroups";
         $result = mysqli_query($this->connection, $sql);
@@ -12,7 +11,7 @@ class Products extends Database
         }
     }
 
-    public function getFavouriteItems() {
+function getFavouriteItems() {
         $this->connect();
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
                 FROM stockitems
@@ -27,7 +26,7 @@ class Products extends Database
         }
     }
 
-    public function getProductsFromCategory() {
+function getProductsFromCategory() {
         $this->connect();
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
@@ -52,7 +51,7 @@ class Products extends Database
         }
     }
 
-    public function getProductInfo() {
+function getProductInfo() {
         $this->connect();
         $sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity
         From stockitems AS I
@@ -62,7 +61,7 @@ class Products extends Database
         return $result;
     }
 
-    public function getProductImage($photo) {
+function getProductImage($photo) {
         if ($photo === "" || empty($photo)) {
             $source = "assets/images/logo.png";
         } else {
@@ -70,5 +69,3 @@ class Products extends Database
         }
         return $source;
     }
-
-}

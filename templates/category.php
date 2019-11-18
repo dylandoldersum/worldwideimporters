@@ -3,7 +3,7 @@
       <nav class="category-bar">
         <ul>
         <?php
-        $products->getCategoriesForNavigation();
+        getCategoriesForNavigation();
 
          ?>
         </ul>

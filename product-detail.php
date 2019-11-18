@@ -5,7 +5,9 @@ include_once 'assets/autoloader.php';
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 
-
+foreach ($products->getProductImage() as $value){
+    $photo = $value['Photo'];
+}
 foreach ($products->getProductInfo() as $value) {
     $itemName = $value['StockItemName'];
     $itemPrice = $value['RecommendedRetailPrice'];
@@ -29,16 +31,16 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
     <div class="mid-row">
         <div class="picture">
              <H1></H1>
-        <img src="https://cdn.babymarkt.com/babymarkt/img/107440/900/steiff-teddybeer-finn-40-cm-beige-a021097.jpg">
+        <img <?php print $photo?> >
         </div>
         <div class="description">
-            <H4><?php print $itemDescription?> </H4>
-            <H4>gewicht:</H4>
-            <H4><?php print $itemWeight ?> KG</H4>
+            <p><?php print $itemDescription?> </p><br>
+            <H4>Gewicht:</H4>
+            <p><?php print $itemWeight ?> KG</p><br>
             <H4>Verzendtijd:</H4>
-            <H4><?php print $itemDelivery ?> dagen </H4>
+            <p><?php print $itemDelivery ?> dagen </p><br>
             <H4>Voorraad:</H4>
-            <H4><?php print $stock ?> stuks</H4>
+            <p><?php print $stock ?> stuks</p><br>
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>

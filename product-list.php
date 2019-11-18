@@ -34,7 +34,7 @@ $password = '';
 $connection = mysqli_connect($host, $user, $password, $dbName);
 
    $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
-            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = 1)";
+            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = ".$_GET['CatID'].")";
     $result = mysqli_query($connection, $sql);
 
      foreach ($result as $item) {

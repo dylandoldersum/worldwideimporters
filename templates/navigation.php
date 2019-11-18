@@ -18,14 +18,14 @@
             <input name="search" placeholder="Waar ben je naar opzoek?" type="text"/>
                 <select name="type" class="select-search">
                     <?php
-                    if($_GET['type'] == "pname") {
+                    if($_GET['type'] === "pname") {
                         ?>
                         <option selected value="pname">Productname</option>
                         <option value="aname">Articlenumber</option>
                         <?php
                         } else {
                         ?>
-                        <option value="aname">Productname</option>
+                        <option value="pname">Productname</option>
                         <option selected value="aname">Articlenumber</option>
                         <?php
                         }

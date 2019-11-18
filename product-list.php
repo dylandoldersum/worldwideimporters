@@ -33,15 +33,19 @@ $password = '';
 $connection = mysqli_connect($host, $user, $password, $dbName);
 
    $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
-            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = 3)";
+            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = 1)";
     $result = mysqli_query($connection, $sql);
-    echo $number_of_results =+ mysqli_num_rows($result); 
 
-     //foreach ($result as $item) {
-         //$total = $item["COUNT(*)"];
-     //}
+     foreach ($result as $item) {
+         echo $total_items = $item["COUNT(*)"];
+     }
 
-     $sql = "SELECT COUNT(*) FROM ";
+     $results_per_page = 25;
+     echo $number_of_pages = ceil($total_items / $results_per_page);
+
+     for ($page = 1; $page <= $number_of_pages; $page++) {
+       echo '<a href="testv1.php?page=' . $page . '" class="pagination">' . $page .  '</a>';
+     }
 
  /////////////End/////////////////////////////////////?>
 

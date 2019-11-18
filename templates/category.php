@@ -1,17 +1,15 @@
 <div class="category-container">
+
+  <select>
+    <option value="25">25</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+  </select>
+
       <nav class="category-bar">
         <ul>
         <?php
         $products->getCategoriesForNavigation();
-
-//        $sql = "SELECT StockGroupName, StockGroupID FROM stockgroups";
-//        $result = mysqli_query($conn, $sql);
-//
-//        foreach ($result as $value) {
-//          $catID = $value['StockGroupID'];
-//          print("<li><a href='product-list.php?CatID=$catID'> ". $value['StockGroupName'] . "</a></li>");
-//
-//        }
 
          ?>
         </ul>

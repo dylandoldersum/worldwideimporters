@@ -27,6 +27,7 @@ include_once 'classes/Products.php';
 
 
 <?php /////////////////////////Item Amount Selection Per Page///////////////////
+$host = 'localhost';
 $dbName = 'wideworldimporters';
 $user = 'root';
 $password = '';

@@ -15,7 +15,7 @@ function getCategoriesForNavigation() {
             $catID = $value['StockGroupID'];
             print("<li><a href='product-list.php?CatID=$catID'> ". $value['StockGroupName'] . "</a></li>");
         }
-    }
+}
 
 function getProductImage($photo) {
     if ($photo === "" || empty($photo)) {
@@ -86,15 +86,27 @@ function getProductInfo() {
         return $result;
 }
 
+function checkSearchType() {
+    if ($_GET['type'] == "pname") {
+        $sql = "SELECT * FROM stockitems WHERE StockItemName LIKE '%" . $_GET['search'] . "%'";
+    }
+    else {
+        $sql = "SELECT * FROM stockitems WHERE StockItemId = " . $_GET['search'];
+    }
+    return $sql;
+}
+
 function getResults() {
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
+    $result = mysqli_query($connection, checkSearchType());
 
-    $sql = "SELECT * FROM stockitems WHERE StockItemName LIKE '%" . $_GET['search'] . "%'";
-    $result = mysqli_query($connection, $sql);
+    if($result == null || empty($result))
+        return false;
+
     $response = [];
 
     foreach ($result as $item) {

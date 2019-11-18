@@ -16,9 +16,25 @@
         <div class="search-nav">
             <form method="GET" action="search.php">
             <input name="search" placeholder="Waar ben je naar opzoek?" type="text"/>
-                <select class="select-search">
-                    <option >Productname</option>
-                    <option>Articlenumber</option>
+                <select name="type" class="select-search">
+                    <?php
+                    if($_GET['type'] === "pname") {
+                        ?>
+                        <option selected value="pname">Productname</option>
+                        <option value="aname">Articlenumber</option>
+                        <?php
+                        } else if ($_GET['type'] == "aname") {
+                        ?>
+                        <option value="pname">Productname</option>
+                        <option selected value="aname">Articlenumber</option>
+                        <?php
+                        } else {
+                        ?>
+                        <option selected value="pname">Productname</option>
+                        <option value="aname">Articlenumber</option>
+                        <?php
+                    }
+                    ?>
                 </select>
                 <div class="submit-container">
                     <input type="submit" value="" class="search">

@@ -40,7 +40,8 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
          $total = $item["COUNT(*)"];
      }
 
-     print($total);
+     $limit = 25;
+     $pages = ceil($total / $limit);
 
  ?>
 

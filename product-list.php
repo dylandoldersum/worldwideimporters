@@ -16,7 +16,6 @@ $db->connect();
   </head>
   <body>
 <div class="products-container"
-
         <form action="" method=get>
           <select>
             <option value="25">25</option>

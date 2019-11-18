@@ -1,15 +1,7 @@
 <?php
-/**
- *
- * Created by PhpStorm.
- * User: Dylan Doldersum
- * Date: 2019-11-15
- * Time: 18:07
- */
 
-class Products extends Database
-{
-    public function getCategoriesForNavigation() {
+
+function getCategoriesForNavigation() {
         $this->connect();
         $sql = "SELECT StockGroupName, StockGroupID FROM stockgroups";
         $result = mysqli_query($this->connection, $sql);
@@ -19,7 +11,7 @@ class Products extends Database
         }
     }
 
-    public function getFavouriteItems() {
+function getFavouriteItems() {
         $this->connect();
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
                 FROM stockitems
@@ -34,7 +26,7 @@ class Products extends Database
         }
     }
 
-    public function getProductsFromCategory() {
+function getProductsFromCategory() {
         $this->connect();
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
@@ -48,22 +40,18 @@ class Products extends Database
             $photo = $value['Photo'];
             $count++;
 
-            if($photo === "") {
-                $source = "assets/images/logo.png";
-            } else {
-                $source = "data:image/jpeg;base64,".base64_encode($photo);
-            }
+
 
             print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                     <h3 class='product_text'>$itemName</h3>
-                    <img class='product_photo' src='". $source . "' alt='#' width='80%', height='200px'>
+                    <img class='product_photo' src='". $this->getProductImage($photo) . "' alt='#' width='80%', height='200px'>
                     <p class='product_text'>PRICE: €$price</p>
                     </a></li>");
 
         }
     }
 
-    public function getProductInfo() {
+function getProductInfo() {
         $this->connect();
         $sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity
         From stockitems AS I
@@ -73,7 +61,7 @@ class Products extends Database
         return $result;
     }
 
-    public function getProductImage($photo) {
+function getProductImage($photo) {
         if ($photo === "" || empty($photo)) {
             $source = "assets/images/logo.png";
         } else {
@@ -81,5 +69,3 @@ class Products extends Database
         }
         return $source;
     }
-
-}

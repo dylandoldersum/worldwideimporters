@@ -1,11 +1,4 @@
 <?php
-/**
- *
- * Created by PhpStorm.
- * User: Dylan Doldersum
- * Date: 2019-11-15
- * Time: 18:07
- */
 
 class Products extends Database
 {

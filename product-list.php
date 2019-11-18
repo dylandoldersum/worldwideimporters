@@ -4,6 +4,9 @@ include_once 'assets/autoloader.php';
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
+$db = new Database();
+$db->connect();
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -22,6 +25,13 @@ include_once 'templates/navigation.php';
             <input type="submit" value="GO" name="">
           </select>
         </form>
+
+<?php
+    $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
+            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = ".$_GET['CatID'].")";
+     $result = mysqli_query($db->connection(), $sql);
+     var_dump($result);
+ ?>
 
 <?php
 $products->getProductsFromCategory();

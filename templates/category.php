@@ -4,7 +4,6 @@
         <ul>
         <?php
         getCategoriesForNavigation();
-
          ?>
         </ul>
       </nav>

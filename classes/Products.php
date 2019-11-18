@@ -1,22 +1,41 @@
 <?php
 
 
+
 function getCategoriesForNavigation() {
-        $this->connect();
-        $sql = "SELECT StockGroupName, StockGroupID FROM stockgroups";
-        $result = mysqli_query($this->connection, $sql);
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+
+    $sql = "SELECT StockGroupName, StockGroupID FROM stockgroups";
+        $result = mysqli_query($connection, $sql);
         foreach ($result as $value) {
             $catID = $value['StockGroupID'];
             print("<li><a href='product-list.php?CatID=$catID'> ". $value['StockGroupName'] . "</a></li>");
         }
     }
 
-function getFavouriteItems() {
-        $this->connect();
+function getProductImage($photo) {
+    if ($photo === "" || empty($photo)) {
+        $source = "assets/images/logo.png";
+    } else {
+        $source = "data:image/jpeg;base64," . base64_encode($photo);
+    }
+    return $source;
+}
+
+function getFavouriteItems() {    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
                 FROM stockitems
                 WHERE StockItemID = 2 OR StockItemID = 23";
-        $result = mysqli_query($this->connection, $sql);
+        $result = mysqli_query($connection, $sql);
 
         foreach ($result as $value) {
             $itemName = $value['StockItemName'];
@@ -27,10 +46,14 @@ function getFavouriteItems() {
     }
 
 function getProductsFromCategory() {
-        $this->connect();
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
-        $result = mysqli_query($this->connection, $sql);
+        $result = mysqli_query($connection, $sql);
         $count = 0;
 
         foreach ($result as $value) {
@@ -39,12 +62,9 @@ function getProductsFromCategory() {
             $itemID = $value['StockItemID'];
             $photo = $value['Photo'];
             $count++;
-
-
-
             print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                     <h3 class='product_text'>$itemName</h3>
-                    <img class='product_photo' src='". $this->getProductImage($photo) . "' alt='#' width='80%', height='200px'>
+                    <img class='product_photo' src='". getProductImage($photo) . "' alt='#' width='80%', height='200px'>
                     <p class='product_text'>PRICE: €$price</p>
                     </a></li>");
 
@@ -52,20 +72,32 @@ function getProductsFromCategory() {
     }
 
 function getProductInfo() {
-        $this->connect();
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
         $sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity
         From stockitems AS I
         JOIN stockitemholdings AS H ON I.StockitemID = H.StockitemID
         WHERE I.StockItemID=". $_GET['itemID'];
-        $result = mysqli_query($this->connection, $sql);
+        $result = mysqli_query($connection, $sql);
         return $result;
-    }
+}
 
-function getProductImage($photo) {
-        if ($photo === "" || empty($photo)) {
-            $source = "assets/images/logo.png";
-        } else {
-            $source = "data:image/jpeg;base64," . base64_encode($photo);
-        }
-        return $source;
+function getResults() {
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+
+    $sql = "SELECT * FROM stockitems WHERE StockItemName LIKE '%" . $_GET['search'] . "%'";
+    $result = mysqli_query($connection, $sql);
+    $response = [];
+
+    foreach ($result as $item) {
+        $response[] = $item;
     }
+    return $response;
+}

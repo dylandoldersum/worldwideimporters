@@ -4,8 +4,8 @@ include_once 'assets/autoloader.php';
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
-$db = new Database();
-$db->connect();
+include_once 'classes/Products.php';
+
 
  ?>
 <!DOCTYPE html>
@@ -27,14 +27,21 @@ $db->connect();
         </form>
 
 <?php
+$dbName = 'wideworldimporters';
+$user = 'root';
+$password = '';
+$connection = mysqli_connect($host, $user, $password, $dbName);
+
     $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
             (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = ".$_GET['CatID'].")";
-     $result = mysqli_query($db->connection(), $sql);
-     var_dump($result);
+     $result = mysqli_query($connection, $sql);
+     foreach ($result as $item) {
+         var_dump($item);
+     }
  ?>
 
 <?php
-$products->getProductsFromCategory();
+getProductsFromCategory();
 ?>
 
 </div>

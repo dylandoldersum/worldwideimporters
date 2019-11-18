@@ -1,22 +1,17 @@
 <?php
 
-class Database
-{
-    private $host = 'localhost';
-    private $dbName = 'wideworldimporters';
-    private $user = 'root';
-    private $password = '';
-    protected $connection;
+  $host = 'localhost';
+  $dbName = 'wideworldimporters';
+  $user = 'root';
+  $password = '';
 
-
-    public function connect()
-    {
         try {
-            $this->connection = mysqli_connect($this->host, $this->user, $this->password, $this->dbName);
+            $connection = mysqli_connect($host, $user, $password, $dbName);
             return true;
         } catch (Exception $e) {
             throw new mysqli_sql_exception($e);
             return false;
         }
-    }
-}
+  
+
+?>

@@ -25,25 +25,25 @@ include_once 'classes/Products.php';
           </select>
         </form>
 
-<?php
+
+<?php /////////////////////////Item Amount Selection Per Page///////////////////
 $dbName = 'wideworldimporters';
 $user = 'root';
 $password = '';
 $connection = mysqli_connect($host, $user, $password, $dbName);
 
-    $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
-            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = ".$_GET['CatID'].")";
-     $result = mysqli_query($connection, $sql);
-     $total;
+   $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
+            (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = 3)";
+    $result = mysqli_query($connection, $sql);
+    echo $number_of_results =+ mysqli_num_rows($result); 
 
-     foreach ($result as $item) {
-         $total = $item["COUNT(*)"];
-     }
+     //foreach ($result as $item) {
+         //$total = $item["COUNT(*)"];
+     //}
 
-     $limit = 25;
-     $pages = ceil($total / $limit);
+     $sql = "SELECT COUNT(*) FROM ";
 
- ?>
+ /////////////End/////////////////////////////////////?>
 
 <?php
 getProductsFromCategory();

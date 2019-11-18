@@ -23,12 +23,17 @@
                         <option selected value="pname">Productname</option>
                         <option value="aname">Articlenumber</option>
                         <?php
-                        } else {
+                        } else if ($_GET['type'] == "aname") {
                         ?>
                         <option value="pname">Productname</option>
                         <option selected value="aname">Articlenumber</option>
                         <?php
-                        }
+                        } else {
+                        ?>
+                        <option selected value="pname">Productname</option>
+                        <option value="aname">Articlenumber</option>
+                        <?php
+                    }
                     ?>
                 </select>
                 <div class="submit-container">

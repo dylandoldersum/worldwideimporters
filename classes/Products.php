@@ -70,5 +70,4 @@ class Products extends Database
         }
         return $source;
     }
-
 }

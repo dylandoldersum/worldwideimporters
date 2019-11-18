@@ -48,15 +48,11 @@ class Products extends Database
             $photo = $value['Photo'];
             $count++;
 
-            if($photo === "") {
-                $source = "assets/images/logo.png";
-            } else {
-                $source = "data:image/jpeg;base64,".base64_encode($photo);
-            }
+
 
             print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                     <h3 class='product_text'>$itemName</h3>
-                    <img class='product_photo' src='". $source . "' alt='#' width='80%', height='200px'>
+                    <img class='product_photo' src='". $this->getProductImage($photo) . "' alt='#' width='80%', height='200px'>
                     <p class='product_text'>PRICE: €$price</p>
                     </a></li>");
 

@@ -34,9 +34,15 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT COUNT(*) FROM stockitems WHERE StockItemID IN
             (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = ".$_GET['CatID'].")";
      $result = mysqli_query($connection, $sql);
+     $total;
+
      foreach ($result as $item) {
-         var_dump($item);
+         $total = $item["COUNT(*)"];
      }
+
+     $limit = 25;
+     $pages = ceil($total / $limit);
+
  ?>
 
 <?php

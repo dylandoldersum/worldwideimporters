@@ -17,14 +17,14 @@ include_once 'templates/navigation.php';
   <body>
 
     <div class="contactinfo">
-      <p> <span class="info">Email: </span>tyfus.aids@cholera.yeet</p>
-      <p><span>Telefoonnummer: </span>911-112-09112001</p>
-      <p><span>Adres: </span>Auschwitz-Birkenau Poland</p>
+      <p> <span class="info">Email: </span>wwi.nederland@kbs.nl</p>
+      <p><span>Telefoonnummer: </span>038-12345678</p>
+      <p><span>Adres: </span>Vechtstraat 54C</p>
     </div>
 
     <div class="mapslocation">
       <p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41003.71977410538!2d19.22323822974701!3d50.035108331447226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471694e04f384c31%3A0x1e1c6b2131976ebd!2zT8Wbd2nEmWNpbSwgUG9sZW4!5e0!3m2!1snl!2snl!4v1573738919847!5m2!1snl!2snl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.99620536824!2d6.104231615596042!3d52.51540774432237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7df3d0fe19481%3A0x37a7f5041742a91d!2sVechtstraat%2054C%2C%208021%20AX%20Zwolle!5e0!3m2!1snl!2snl!4v1574078116779!5m2!1snl!2snl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
       </p>
     </div>
 

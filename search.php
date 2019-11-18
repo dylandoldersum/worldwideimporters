@@ -18,9 +18,9 @@ include_once 'templates/navigation.php';
 <body>
     <div class="products-container">
         <?php
-        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            if (isset($_GET['search']) && !empty($_GET['search'])) {
                 if (getResults() == null || empty(getResults())) {
-                    print("There no items avaialable for keyword <b>" . $_GET['search'] . "</b>");
+                    print("There are no items avaialable for keyword <b>" . $_GET['search'] . "</b>");
                 } else {
                     foreach (getResults() as $value) {
                         $itemName = $value['StockItemName'];
@@ -30,7 +30,7 @@ include_once 'templates/navigation.php';
 
                         print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                     <h3 class='product_text'>$itemName</h3>
-                    <img class='product_photo' src='" .getProductImage($photo) . "' alt='#' width='80%', height='200px'>
+                    <img class='product_photo' src='" . getProductImage($photo) . "' alt='#' width='80%', height='200px'>
                     <p class='product_text'>PRICE: €$price</p>
                     </a></li>");
                     }

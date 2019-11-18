@@ -1,5 +1,5 @@
 * { padding: 0; margin: 0; }
-body {font-family: "Bahnschrift", Times, serif;}
+body {font-family: "Arial", Times, serif;}
 a { text-decoration: none; }
 li { list-style-type: none; }
 :focus { outline:0; }
@@ -119,6 +119,7 @@ input.search {
 
 .category-bar li a:hover {
   background: #117fce;
+  text-shadow: 1px 1px gray;
 }
 
 /*------------------------Contact---------------------*/
@@ -161,32 +162,40 @@ input.search {
 }
 
 /*------------------ product-list --------------------*/
-.showProduct {
-  background-color: #0d4b77;
-  width: 40%;
-  height: 300px;
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 5%;
+.product-list {
+    width: 350px;
+    height: 300px;
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 23px;
+    padding: 10px;
+    text-align: center;
 
 }
 
+.product-anchor {
+    background-color: #0d4b77;
+    padding: 10px;
+    display: block;
+}
+
 .product_photo {
-  margin-left: 10%;
   border: 1px solid white;
 }
 
 .product_text {
-  margin-left: 10%;
   margin-bottom: 10px;
   margin-top: 10px;
   color: white;
+    height: 35px;
 }
 
 .products-container {
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
 
 }
 
@@ -196,15 +205,24 @@ input.search {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  border-style: dotted;
 }
 
 .body-p {
-  color: blue;
-  font-size: 20;
+    color: #0b6cb3;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .favorites {
-  margin-bottom: 20px;
-  display: inline-block;
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 20px;
+    background-color: #0b6cb3;
+}
+
+.favorites a {
+  color: white;
+  text-shadow: 1px 1px gray;
 }

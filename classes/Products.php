@@ -21,14 +21,16 @@ class Products extends Database
 
     public function getFavouriteItems() {
         $this->connect();
-        $sql = "SELECT StockItemName, RecommendedRetailPrice
+        $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
                 FROM stockitems
                 WHERE StockItemID = 2 OR StockItemID = 23";
         $result = mysqli_query($this->connection, $sql);
 
         foreach ($result as $value) {
             $itemName = $value['StockItemName'];
-            print("<a href=''><div class='favorites'>" . $itemName . "</a></div>");
+            $price = $value['RecommendedRetailPrice'];
+            $itemID = $value['StockItemID'];
+            print("<a href='product-detail.php?itemID=$itemID'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg' height='300px' width='300'>" . "</a></div>");
         }
     }
 
@@ -37,6 +39,7 @@ class Products extends Database
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
         $result = mysqli_query($this->connection, $sql);
+        $count = 0;
 
         foreach ($result as $value) {
             $itemName = $value['StockItemName'];
@@ -51,11 +54,11 @@ class Products extends Database
                 $source = "data:image/jpeg;base64,".base64_encode($photo);
             }
 
-            print("<a href='product-detail.php?itemID=$itemID'><div class='showProduct'>
+            print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                     <h3 class='product_text'>$itemName</h3>
                     <img class='product_photo' src='". $source . "' alt='#' width='80%', height='200px'>
                     <p class='product_text'>PRICE: €$price</p>
-                    </div></a>");
+                    </a></li>");
 
         }
     }
@@ -68,6 +71,15 @@ class Products extends Database
         WHERE I.StockItemID=". $_GET['itemID'];
         $result = mysqli_query($this->connection, $sql);
         return $result;
+    }
+
+    public function getProductImage($photo) {
+        if ($photo === "" || empty($photo)) {
+            $source = "assets/images/logo.png";
+        } else {
+            $source = "data:image/jpeg;base64," . base64_encode($photo);
+        }
+        return $source;
     }
 
 }

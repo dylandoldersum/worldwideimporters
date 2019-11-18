@@ -13,13 +13,9 @@ include_once 'templates/navigation.php';
   </head>
   <body>
 <div class="products-container">
+
 <?php
-
-
 $products->getProductsFromCategory();
-
-
-
 ?>
 
 </div>

@@ -1,6 +1,7 @@
 .first-row, .mid-row {
     display: flex;
     background: white;
+    border-bottom: 0.5px solid black;
 }
 .mid-row{
     margin-top: 80px;
@@ -18,23 +19,27 @@
     position: relative;
 
 }
-body{
-    background: url("https://lekkergezond.nl/content/uploads/sites/2/201749.lekker-gezond.pepernoten.jpg");
 
-}
+/*body{*/
+/*    background: url("https://lekkergezond.nl/content/uploads/sites/2/201749.lekker-gezond.pepernoten.jpg");*/
+
+/*}*/
 
 .productname{
     font-family: "Impact", Times, serif;
     display: inline-block;
     text-align: left;
     max-width: 1200px;
-    background: white;
+    background: #0b6cb3;
 }
+
 
 
 .picture img {
     width: 600px;
     background: white;
+    border-bottom: 1px solid black;
+
 }
 .description {
     position: relative;
@@ -42,7 +47,7 @@ body{
     height: 400px;
     border: 1px solid black;
     padding: 5px;
-    background: white;
+    background: #0b6cb3;
 }
 
 .price{

@@ -27,7 +27,7 @@ li { list-style-type: none; }
 select.select-search {
     position: absolute;
     right: 30px;
-    top: 8px;
+    top: 6px;
     border: 0;
     background: white;
 }

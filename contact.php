@@ -71,10 +71,9 @@ include_once 'templates/navigation.php';
           }
        ?>
     </div>
-
+    <br>
+    <?php
+      include_once 'templates/footer.php';
+     ?>
   </body>
 </html>
-
-<?php
-  include_once 'templates/footer.php';
- ?>

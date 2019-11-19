@@ -98,6 +98,9 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
 <?php
 //Weergeeft het aantal links afhankelijk van het aantal pages die we nodig hebben (totaal / 25)
 for ($page = 1; $page <= $number_of_pages; $page++) {
+  if(!isset($_GET['page'])) {
+    $_GET['page'] = 1;
+  }
   if($page == $_GET['page']) {
     echo '<a value="'.$page.'" href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination selected-page">' . $page .  '</a>';
   } else {

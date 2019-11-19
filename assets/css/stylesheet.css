@@ -234,3 +234,16 @@ input.search {
   color: white;
   text-shadow: 1px 1px gray;
 }
+
+/*---------------------Contactformulier------------------*/
+.bericht {
+  text-align: center;
+  font-style: oblique;
+  color: #0d4b77;
+  text-shadow: 0.1px 0.1px gray;
+  font-weight: bold;
+}
+
+.contactformulier {
+  text-align: center;
+}

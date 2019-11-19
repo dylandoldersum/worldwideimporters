@@ -7,7 +7,6 @@
  * Time: 19:38
  */
 
-include 'classes/Database.php';
 include 'classes/Products.php';
 
 

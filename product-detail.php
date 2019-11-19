@@ -14,6 +14,8 @@ foreach (getProductInfo() as $value) {
     $itemDescription1 = $value['Tags'];
     $itemDescription2 = $value['SearchDetails'];
     $stock = $value['LastStocktakeQuantity'];
+    $photo = "";
+
 }
 $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'', $itemDescription1);
 ?>
@@ -29,7 +31,7 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
     <div class="mid-row">
         <div class="picture">
              <H1></H1>
-        <img <?php print $photo?> >
+        <img src="<?php  print getProductImage($photo) ?> ">
         </div>
         <div class="description">
             <p><?php print $itemDescription?> </p><br>

@@ -28,6 +28,40 @@ include_once 'templates/navigation.php';
       </p>
     </div>
 
+    <br>
+    <p class="bericht">Als u liever een bericht wilt achterlaten dan kunt u onderstaand formulier invullen</p>
+    <br>
+
+    <div class="contactformulier">
+      <h3>Contactformulier</h3>
+        <form action="error_handler_contactformulier.php" method="POST">
+          <input type="text" name="first" placeholder="Voornaam"> <br>
+          <input type="text" name="last" placeholder="Achternaam"> <br>
+          <input type="text" name="email" placeholder="E-mail"> <br><br>
+          <button type="submit" name="submit">Verzenden</button>
+        </form>
+
+        <?php
+          $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+          if (strpos($fullURL, "signup=empty") == true) {
+            print("<p class='error'>U heeft niet alle velden ingevuld!");
+            exit();
+          }
+          elseif (strpos($fullURL, "signup=char") == true) {
+            print("<p class='error'>U heeft invalide tekens gebruikt!");
+            exit();
+          }
+          elseif (strpos($fullURL, "signup=email") == true) {
+            print("<p class='error'>U heeft geen valide email ingevuld!");
+            exit();
+          }
+          elseif (strpos($fullURL, "signup=success") == true) {
+            print("<p class='error'>Bedankt. We zullen spoedig contact met u opnemen");
+            exit();
+          }
+       ?>
+    </div>
 
   </body>
 </html>

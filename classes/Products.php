@@ -139,3 +139,21 @@ function getResults() {
     }
     return $response;
 }
+
+function getTemperature($id) {
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $Chilled = 0;
+        $sql = "SELECT IsChillerStock FROM stockitems WHERE StockItemID =". $id;
+        $result = mysqli_query($connection, $sql);
+        foreach ($result as $value){
+            $Chilled = $value["IsChillerStock"];
+        }
+        return $Chilled;
+
+
+
+}

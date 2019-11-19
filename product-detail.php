@@ -18,6 +18,8 @@ foreach (getProductInfo() as $value) {
 
 }
 $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'', $itemDescription1);
+
+
 ?>
 
 <body>
@@ -41,6 +43,12 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
             <p><?php print $itemDelivery ?> dagen </p><br>
             <H4>Voorraad:</H4>
             <p><?php print $stock ?> stuks</p><br>
+            <?php getTemperature($_GET["itemID"]);
+            if (getTemperature($_GET["itemID"])== 1){
+                print "<H4>Temperatuur:</H4>
+            <p>  4 graden celsius</p><br>";
+            }
+            ?>
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>

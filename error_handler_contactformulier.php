@@ -7,26 +7,26 @@
 
     //Kijkt of de velden leeg zijn
     if (empty($first) || empty($last) || empty($email)) {
-      header("Location: contactformulier.php?signup=empty");
+      header("Location: contact.php?signup=empty");
       exit();
     } else {
       //Kijkt of de namen wel valide karakters bevatten
-      if (!preg_match("/^[a-zA-Z]*$/", $first)) {
-        header("Location: contactformulier.php?signup=char");
+      if (!preg_match("/^[a-zA-Z]*$/", $first) AND !preg_match(" ", $last)) {
+        header("Location: contact.php?signup=char");
         exit();
       } else {
         //Kijkt of de invoer voor de email wel goed is
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          header("Location: contactformulier.php?signup=email");
+          header("Location: contact.php?signup=email");
           exit();
         } else {
-          header("Location: contactformulier.php?signup=success");
+          header("Location: contact.php?signup=success");
           exit();
         }
       }
     }
   } else {
-    header("Location: contactformulier.php");
+    header("Location: contact.php");
     exit();
   }
 

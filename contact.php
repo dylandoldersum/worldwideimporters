@@ -11,6 +11,7 @@ include_once 'templates/navigation.php';
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -45,19 +46,27 @@ include_once 'templates/navigation.php';
           $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
           if (strpos($fullURL, "signup=empty") == true) {
-            print("<p class='error'>U heeft niet alle velden ingevuld!");
+            print('<script>
+                alert("U moet wel alle velden invullen!");
+            </script>');
             exit();
           }
           elseif (strpos($fullURL, "signup=char") == true) {
-            print("<p class='error'>U heeft invalide tekens gebruikt!");
+            print('<script>
+                alert("U moet wel legitieme tekens voor uw naam invullen!");
+            </script>');
             exit();
           }
           elseif (strpos($fullURL, "signup=email") == true) {
-            print("<p class='error'>U heeft geen valide email ingevuld!");
+            print('<script>
+                alert("U moet wel een legitieme mail invullen!");
+            </script>');
             exit();
           }
           elseif (strpos($fullURL, "signup=success") == true) {
-            print("<p class='error'>Bedankt. We zullen spoedig contact met u opnemen");
+            print('<script>
+                alert("Bedankt. We zullen spoedig contact met u opnemen");
+            </script>');
             exit();
           }
        ?>

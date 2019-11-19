@@ -42,6 +42,11 @@ include_once 'templates/navigation.php';
           <button type="submit" name="submit">Verzenden</button>
         </form>
 
+        <br>
+        <?php
+          include_once 'templates/footer.php';
+         ?>
+
         <?php
           $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
@@ -71,9 +76,5 @@ include_once 'templates/navigation.php';
           }
        ?>
     </div>
-    <br>
-    <?php
-      include_once 'templates/footer.php';
-     ?>
   </body>
 </html>

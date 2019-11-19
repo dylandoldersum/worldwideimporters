@@ -292,9 +292,16 @@ input.search {
   margin: 6px 0;
   border: none;
   border-radius: 6px;
-  cursos: pointer;
+  cursor: pointer;
 }
 
 .contactformulier button[type=submit]:hover {
   background-color: #0349fc;
+}
+
+.contactformulier textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: inline-block;
 }

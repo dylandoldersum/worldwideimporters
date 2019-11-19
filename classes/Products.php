@@ -24,16 +24,18 @@ function getProductImage($photo) {
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
-    $sql = "SELECT StockGroupID FROM stockgroups WHERE StockItemID=$_GET[StockItemID]";
+    $sql = "SELECT StockGroupID FROM stockgroups WHERE StockItemID=$_GET[itemID]";
         $result = mysqli_query($connection, $sql);
-        foreach($result as $value)
-            $StockGroupID = $value['StockGroupID'];
-    if ($photo === "" || empty($photo)) {
-        $source = "assets/images/Cat-$StockGroupID.png";
-    } else {
-        $source = "data:image/jpeg;base64," . base64_encode($photo);
+        foreach($result as $value);
+    {
+        $StockGroupID = $value['StockGroupID'];
+        if ($photo === "" || empty($photo)) {
+            $source = "assets/images/Cat-$StockGroupID.png";
+        } else {
+            $source = "data:image/jpeg;base64," . base64_encode($photo);
+        }
+        return $source;
     }
-    return $source;
 }
 
 function getFavouriteItems() {

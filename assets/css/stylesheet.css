@@ -315,6 +315,8 @@ a.selected-page {
 }
 
 .contactformulier textarea {
+  width: 380px;
+  height: 100px;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;

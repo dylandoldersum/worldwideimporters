@@ -39,7 +39,7 @@ include_once 'templates/navigation.php';
           <input type="text" name="first" placeholder="Voornaam"> <br>
           <input type="text" name="last" placeholder="Achternaam"> <br>
           <input type="text" name="email" placeholder="E-mail"> <br>
-          <textarea name="textarea" rows="8" cols="25" placeholder="Bericht"></textarea> <br><br>
+          <textarea name="textarea" placeholder="Bericht"></textarea> <br><br>
           <button type="submit" name="submit">Verzenden</button>
         </form>
 

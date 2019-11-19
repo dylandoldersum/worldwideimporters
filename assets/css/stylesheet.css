@@ -27,7 +27,7 @@ li { list-style-type: none; }
 select.select-search {
     position: absolute;
     right: 30px;
-    top: 8px;
+    top: 6px;
     border: 0;
     background: white;
 }
@@ -166,13 +166,13 @@ input.search {
 }
 .footer a{
     font-weight: bold;
+    color: white;
+    text-decoration: underline;
 }
 
-.footer a {
-  color: white;
 }
 .footerlogo{
-    margin-right: 80%;
+
 
 }
 .location{
@@ -249,12 +249,17 @@ a.selected-page {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .body-p {
-    color: #0b6cb3;
+    color: white;
     font-weight: bold;
     font-size: 24px;
+    border-style: solid;
+    border-radius: 6px;
+    background-color: #3a98fc;
 }
 
 .favorites {

@@ -35,7 +35,7 @@ function getFavouriteItems() {
 
         $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
                 FROM stockitems
-                WHERE StockItemID = 2 OR StockItemID = 23";
+                WHERE StockItemID = 2 OR StockItemID = 23 OR StockItemID = 1 OR StockItemID = 17 OR StockItemID = 10 OR  StockItemID = 69";
         $result = mysqli_query($connection, $sql);
 
         foreach ($result as $value) {

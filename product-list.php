@@ -18,11 +18,13 @@ include_once 'classes/Products.php';
 
 
 <?php
-
-if(isset($_POST["submit"])){
-  $counter = $_POST["counter"];
-  echo $counter;
-}
+// session_start();
+// $_SESSION["CatID"] = $_GET['CatID'];
+//
+// if(isset($_GET["submit"])){
+//   $counter = $_GET["counter"];
+//   echo $_SESSION["CatID"];
+// }
 
 
  ?>
@@ -41,21 +43,17 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
 
     //Deze loop haalt de individuele items uit de categorie en telt ze op (hieruit weten we vanuit hoeveel items we moeten rekenen etc)
      foreach ($result as $item) {
-         echo $total_items = $item["COUNT(*)"];
+          $total_items = $item["COUNT(*)"];
          //$item_array[] = $item;
      }
 
      //Eerste variabele vertelt hoeveel max per pagina weergeven, en 2e variabele rekent uit hoeveel pagina's we daarvoor nodig hebben en rondt het naar boven af
-     if(empty($_GET["counter"])){
-       $_GET["counter"] = 25;
+     if(!isset($_GET["counter"])){
+       $results_per_page = 25;
+     } else {
+       $results_per_page = $_GET["counter"];
      }
-     $results_per_page = $_GET["counter"];
      $number_of_pages = ceil($total_items / $results_per_page);
-
-     //Weergeeft het aantal links afhankelijk van het aantal pages die we nodig hebben (totaal / 25)
-     for ($page = 1; $page <= $number_of_pages; $page++) {
-       echo '<a href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination">' . $page .  '</a>';
-     }
 
      //Kijkt op welke huidige pagina we zitten
      if (!isset($_GET['page'])) {
@@ -66,14 +64,14 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
 
      //Bepaalt het eerste resultaat (als getal) wat wordt weergegeven per page
      $this_page_first_result = ($page-1) * $results_per_page;
+     $maxLimit = $this_page_first_result + $results_per_page;
 
      //Nu moeten we nog via een SQL statement de juiste hoeveelheid items per pagina opvragen
      //Hier gaat volgens mij nu nog iets fout.
      //Op de een of andere manier wordt er nog niet per page gelimiteerd naar 25 per
      $sql2 = "SELECT SI.StockItemID FROM stockitems SI JOIN stockitemstockgroups SG
-              ON SI.StockItemID = SG.StockItemID WHERE SG.StockGroupID = " . $_GET['CatID'] . " LIMIT " . $this_page_first_result . "," . $results_per_page;
+              ON SI.StockItemID = SG.StockItemID WHERE SG.StockGroupID = " . $_GET['CatID'] . " LIMIT " . $this_page_first_result . "," . $maxLimit;
      $result2 = mysqli_query($connection, $sql2);
-     echo $sql2;
 
 
      //Print de items uit op de page
@@ -84,21 +82,33 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
 
  /////////////End/////////////////////////////////////?>
 
-<?php
-//getProductsFromCategory();
-?>
-
-<form action="<?php print("product-list.php?CatID=" . $_GET['CatID']. "&page=" . $page);  ?>" method="post">
+<!-- <form action="" method="get">
   <select name="counter">
     <option value="25">25</option>
     <option value="50">50</option>
     <option value="100">100</option>
   </select>
   <input type="submit" value="GO" name="submit">
-</form>
+</form> -->
 
 </div>
 
+
+<li class="pagination-li">
+<?php
+//Weergeeft het aantal links afhankelijk van het aantal pages die we nodig hebben (totaal / 25)
+for ($page = 1; $page <= $number_of_pages; $page++) {
+  if(!isset($_GET['page'])) {
+    $_GET['page'] = 1;
+  }
+  if($page == $_GET['page']) {
+    echo '<a value="'.$page.'" href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination selected-page">' . $page .  '</a>';
+  } else {
+    echo '<a value="'.$page.'" href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination">' . $page .  '</a>';
+  }
+}
+?>
+</li>
 <?php
 include_once 'templates/footer.php';
 ?>

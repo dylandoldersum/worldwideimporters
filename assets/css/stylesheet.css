@@ -166,13 +166,13 @@ input.search {
 }
 .footer a{
     font-weight: bold;
+    color: white;
+    text-decoration: underline;
 }
 
-.footer a {
-  color: white;
 }
 .footerlogo{
-    
+
 
 }
 .location{

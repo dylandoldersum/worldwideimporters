@@ -18,8 +18,18 @@ function getCategoriesForNavigation() {
 }
 
 function getProductImage($photo) {
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+
+    $sql = "SELECT StockGroupID FROM stockgroups WHERE StockItemID=$_GET[StockItemID]";
+        $result = mysqli_query($connection, $sql);
+        foreach($result as $value)
+            $StockGroupID = $value['StockGroupID'];
     if ($photo === "" || empty($photo)) {
-        $source = "assets/images/logo.png";
+        $source = "assets/images/Cat-$StockGroupID.png";
     } else {
         $source = "data:image/jpeg;base64," . base64_encode($photo);
     }

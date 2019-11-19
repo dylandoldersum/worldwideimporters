@@ -40,8 +40,6 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
          $total = $item["COUNT(*)"];
      }
 
-     print($total);
-
  ?>
 
 <?php

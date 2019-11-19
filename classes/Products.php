@@ -72,6 +72,31 @@ function getProductsFromCategory() {
         }
     }
 
+    function getProductsFromID($id) {
+        $host = 'localhost';
+        $dbName = 'wideworldimporters';
+        $user = 'root';
+        $password = '';
+        $connection = mysqli_connect($host, $user, $password, $dbName);
+            $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID =". $id;
+            $result = mysqli_query($connection, $sql);
+            $count = 0;
+
+            foreach ($result as $value) {
+                $itemName = $value['StockItemName'];
+                $price = $value['RecommendedRetailPrice'];
+                $itemID = $value['StockItemID'];
+                $photo = $value['Photo'];
+                $count++;
+                print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
+                        <h3 class='product_text'>$itemName</h3>
+                        <img class='product_photo' src='". getProductImage($photo) . "' alt='#' width='80%', height='200px'>
+                        <p class='product_text'>PRICE: €$price</p>
+                        </a></li>");
+
+            }
+        }
+
 function getProductInfo() {
     $host = 'localhost';
     $dbName = 'wideworldimporters';

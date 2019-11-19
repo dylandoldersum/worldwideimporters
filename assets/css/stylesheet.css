@@ -268,3 +268,28 @@ input.search {
 .contactformulier {
   text-align: center;
 }
+
+.contactformulier input[type=text], select {
+  width: 25%;
+  padding: 2px 1px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.contactformulier button[type=submit] {
+  width: 25%;
+  background-color: #0d4b77;
+  color: white;
+  padding: 10px 7px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 6px;
+  cursos: pointer;
+}
+
+.contactformulier button[type=submit]:hover {
+  background-color: #0349fc;
+}

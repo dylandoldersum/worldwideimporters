@@ -38,7 +38,8 @@ include_once 'templates/navigation.php';
         <form action="error_handler_contactformulier.php" method="POST">
           <input type="text" name="first" placeholder="Voornaam"> <br>
           <input type="text" name="last" placeholder="Achternaam"> <br>
-          <input type="text" name="email" placeholder="E-mail"> <br><br>
+          <input type="text" name="email" placeholder="E-mail"> <br>
+          <textarea name="textarea" placeholder="Bericht"></textarea> <br><br>
           <button type="submit" name="submit">Verzenden</button>
         </form>
 

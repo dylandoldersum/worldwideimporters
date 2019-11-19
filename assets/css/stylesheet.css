@@ -164,9 +164,30 @@ input.search {
   text-align: center;
   text-decoration: none;
 }
+.footer a{
+    font-weight: bold;
+}
 
 .footer a {
   color: white;
+}
+.footerlogo{
+    margin-right: 80%;
+
+}
+.location{
+    text-align: right;
+}
+.locationlogo p{
+    color:black;
+    font-weight: bold;
+}
+.locationlogo{
+    display: inline-block;
+
+}
+.locationlogo img {
+    width: 40px;
 }
 
 /*------------------ product-list --------------------*/

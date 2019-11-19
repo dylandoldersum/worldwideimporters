@@ -20,6 +20,12 @@ foreach (getProductInfo() as $value) {
 $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'', $itemDescription1);
 ?>
 
+<script>
+function NotVideo() {
+  alert("Video niet beschikbaar... Probeer later opnieuw!");
+}
+</script>
+
 <body>
 <div class="product-container">
     <div class="first-row">
@@ -41,6 +47,7 @@ $itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'
             <p><?php print $itemDelivery ?> dagen </p><br>
             <H4>Voorraad:</H4>
             <p><?php print $stock ?> stuks</p><br>
+            <a href="#" onclick=NotVideo()>Klik hier voor de video!</a><br>
             <div class="buybutton">
                 <input type="submit" value="IN WINKELWAGEN" class="buy">
             </div>

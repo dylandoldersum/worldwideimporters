@@ -16,20 +16,19 @@ include_once 'classes/Products.php';
   <body>
 <div class="products-container">
 
-
 <?php
-// session_start();
-// $_SESSION["CatID"] = $_GET['CatID'];
-//
-// if(isset($_GET["submit"])){
-//   $counter = $_GET["counter"];
-//   echo $_SESSION["CatID"];
-// }
+//Kijkt op welke huidige pagina we zitten
+if (!isset($_GET['page'])) {
+    $page = 1;
+} else {
+    $page = $_GET['page'];
+}
 
+echo '<br><br><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=' . $page . '&counter=25">25</a>';
+echo '<br><br><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=' . $page . '&counter=50">50</a>';
+echo '<br><br><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=' . $page . '&counter=100">100</a><br>';
 
- ?>
-
-<?php /////////////////////////Item Amount Selection Per Page///////////////////
+/////////////////////////Item Amount Selection Per Page///////////////////
 $host = 'localhost';
 $dbName = 'wideworldimporters';
 $user = 'root';
@@ -48,19 +47,12 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
      }
 
      //Eerste variabele vertelt hoeveel max per pagina weergeven, en 2e variabele rekent uit hoeveel pagina's we daarvoor nodig hebben en rondt het naar boven af
-     if(!isset($_GET["counter"])){
+     if(!isset($_GET["counter"])) {
        $results_per_page = 25;
      } else {
        $results_per_page = $_GET["counter"];
      }
      $number_of_pages = ceil($total_items / $results_per_page);
-
-     //Kijkt op welke huidige pagina we zitten
-     if (!isset($_GET['page'])) {
-       $page = 1;
-     } else {
-       $page = $_GET['page'];
-     }
 
      //Bepaalt het eerste resultaat (als getal) wat wordt weergegeven per page
      $this_page_first_result = ($page-1) * $results_per_page;
@@ -81,32 +73,25 @@ $connection = mysqli_connect($host, $user, $password, $dbName);
      }
 
  /////////////End/////////////////////////////////////?>
-
-<!-- <form action="" method="get">
-  <select name="counter">
-    <option value="25">25</option>
-    <option value="50">50</option>
-    <option value="100">100</option>
-  </select>
-  <input type="submit" value="GO" name="submit">
-</form> -->
-
 </div>
+
+
 
 
 <li class="pagination-li">
 <?php
 //Weergeeft het aantal links afhankelijk van het aantal pages die we nodig hebben (totaal / 25)
 for ($page = 1; $page <= $number_of_pages; $page++) {
-  if(!isset($_GET['page'])) {
-    $_GET['page'] = 1;
-  }
-  if($page == $_GET['page']) {
-    echo '<a value="'.$page.'" href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination selected-page">' . $page .  '</a>';
-  } else {
-    echo '<a value="'.$page.'" href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination">' . $page .  '</a>';
-  }
+      if(!isset($_GET['page'])) {
+        $_GET['page'] = 1;
+      }
+      if($page == $_GET['page']) {
+        echo '<a value="'.$page.'" href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination selected-page">' . $page .  '</a>';
+      } else {
+        echo '<a value="'.$page.'" href="product-list.php?CatID=' .$_GET["CatID"]. '&page=' . $page . '" class="pagination">' . $page .  '</a>';
+      }
 }
+
 ?>
 </li>
 <?php

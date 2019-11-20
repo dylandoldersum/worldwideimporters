@@ -26,16 +26,16 @@ function getProductImage($photo) {
 
     $sql = "SELECT StockGroupID FROM stockgroups WHERE StockItemID=$_GET[itemID]";
         $result = mysqli_query($connection, $sql);
-        foreach($result as $value);
-    {
-        $StockGroupID = $value['StockGroupID'];
+        foreach($result as $value) {
+            $StockGroupID = $value['StockGroupID'];
+        }
         if ($photo === "" || empty($photo)) {
             $source = "assets/images/Cat-$StockGroupID.png";
         } else {
             $source = "data:image/jpeg;base64," . base64_encode($photo);
         }
         return $source;
-    }
+
 }
 
 function getFavouriteItems() {

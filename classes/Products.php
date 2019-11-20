@@ -58,6 +58,19 @@ function getFavouriteItems() {
         }
     }
 
+
+Function GetCategoryPhoto($photo){
+    $StockGroupID = $_GET['CatID'];
+    if ($photo === "" || empty($photo)) {
+        $source = "assets/images/Cat-$StockGroupID.png";
+    } else {
+        $source = "data:image/jpeg;base64," . base64_encode($photo);
+    }
+    return $source;
+}
+
+
+
 function getProductsFromCategory() {
     $host = 'localhost';
     $dbName = 'wideworldimporters';
@@ -77,7 +90,7 @@ function getProductsFromCategory() {
             $count++;
             print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                     <h3 class='product_text'>$itemName</h3>
-                    <img class='product_photo' src='". getProductImage($photo) . "' alt='#' width='80%', height='200px'>
+                    <img class='product_photo' src='". GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
                     <p class='product_text'>PRICE: €$price</p>
                     </a></li>");
 
@@ -102,7 +115,7 @@ function getProductsFromCategory() {
                 $count++;
                 print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                         <h3 class='product_text'>$itemName</h3>
-                        <img class='product_photo' src='". getProductImage($photo) . "' alt='#' width='80%', height='200px'>
+                        <img class='product_photo' src='". GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
                         <p class='product_text'>PRICE: €$price</p>
                         </a></li>");
 

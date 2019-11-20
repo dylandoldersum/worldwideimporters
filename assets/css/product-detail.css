@@ -29,7 +29,7 @@
 .productname{
     text-align: center;
     padding: 10px;
-    font-family: "Impact", Times, serif;
+    
     display: inline-block;
     max-width: 1200px;
     background: #0b6cb3;
@@ -52,7 +52,7 @@
     border: 1px solid black;
     padding: 25px;
     background: #0b6cb3;
-    color: lavender;
+    color: white;
 }
 
 .price{
@@ -64,7 +64,7 @@
     color: white;
     padding-right: 10px;
     padding-left: 10px;
-
+    left: 0;
  }
 
 .buybutton {

@@ -24,7 +24,7 @@ function getProductImage($photo) {
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
-    $sql = "SELECT StockGroupID FROM stockgroups WHERE StockItemID=$_GET[itemID]";
+    $sql = "SELECT StockGroupID FROM stockitemstockgroups WHERE StockItemID=$_GET[itemID]";
         $result = mysqli_query($connection, $sql);
         foreach($result as $value) {
             $StockGroupID = $value['StockGroupID'];

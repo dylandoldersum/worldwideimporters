@@ -13,11 +13,6 @@
       <a href="contact.php">Contact</a>
       <div class="footerlogo">
           <img src="assets/images/logo.png">
-
       </div>
-
-
-
-
   </div>
 </div>

@@ -24,9 +24,11 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-echo '<br><br><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=1&counter=25">25</a>';
-echo '<br><br><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=1&counter=50">50</a>';
-echo '<br><br><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=1&counter=100">100</a><br>';
+echo '<div class="sum-count">';
+echo '<li><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=1&counter=25">25</a></li>';
+echo '<li><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=1&counter=50">50</a></li>';
+echo '<li><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=1&counter=100">100</a></li>';
+echo '</div>';
 
 /////////////////////////Item Amount Selection Per Page///////////////////
 $host = 'localhost';

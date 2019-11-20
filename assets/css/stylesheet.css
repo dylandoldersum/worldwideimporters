@@ -169,8 +169,6 @@ input.search {
     color: white;
     text-decoration: underline;
 }
-
-}
 .footerlogo{
 
 
@@ -191,6 +189,23 @@ input.search {
 }
 
 /*------------------ product-list --------------------*/
+
+.sum-count li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.sum-count a {
+    background: #0a6db3;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.sum-count {
+    text-align: center;
+}
+
 .pagination-li {
   margin-top: 25px;
   margin-bottom: 25px;
@@ -224,6 +239,7 @@ a.selected-page {
 }
 
 .product_photo {
+    background: white;
   border: 1px solid white;
 }
 
@@ -322,3 +338,4 @@ a.selected-page {
   box-sizing: border-box;
   display: inline-block;
 }
+

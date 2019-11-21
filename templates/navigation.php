@@ -7,7 +7,7 @@
  * Time: 19:27
  */
 ?>
-
+<div class="main-nav">
 <div class="nav-container">
     <nav class="nav-bar">
         <div class="logo-nav">
@@ -20,18 +20,18 @@
                     <?php
                     if($_GET['type'] === "pname") {
                         ?>
-                        <option selected value="pname">Productname</option>
-                        <option value="aname">Articlenumber</option>
+                        <option selected value="pname">Productnaam</option>
+                        <option value="aname">Artikelnummer</option>
                         <?php
                         } else if ($_GET['type'] == "aname") {
                         ?>
-                        <option value="pname">Productname</option>
-                        <option selected value="aname">Articlenumber</option>
+                        <option value="pname">Productnaam</option>
+                        <option selected value="aname">Artikelnummer</option>
                         <?php
                         } else {
                         ?>
-                        <option selected value="pname">Productname</option>
-                        <option value="aname">Articlenumber</option>
+                        <option selected value="pname">Productnaam</option>
+                        <option value="aname">Artikelnummer</option>
                         <?php
                     }
                     ?>
@@ -55,4 +55,5 @@
 
 <?php
 include_once 'templates/category.php';
-
+?>
+</div>

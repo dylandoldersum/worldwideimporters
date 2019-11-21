@@ -38,6 +38,7 @@ function getProductImage($photo) {
 
 }
 
+
 function getFavouriteItems() {
     $host = 'localhost';
     $dbName = 'wideworldimporters';
@@ -61,6 +62,18 @@ function getFavouriteItems() {
 
 Function GetCategoryPhoto($photo){
     $StockGroupID = $_GET['CatID'];
+    if ($photo === "" || empty($photo)) {
+        $source = "assets/images/Cat-$StockGroupID.png";
+    } else {
+        $source = "data:image/jpeg;base64," . base64_encode($photo);
+    }
+    return $source;
+}
+
+
+Function getSearchPhoto($photo, $catID){
+    $value="";
+    $StockGroupID = $catID;
     if ($photo === "" || empty($photo)) {
         $source = "assets/images/Cat-$StockGroupID.png";
     } else {
@@ -138,10 +151,15 @@ function getProductInfo() {
 
 function checkSearchType() {
     if ($_GET['type'] == "pname") {
-        $sql = "SELECT * FROM stockitems WHERE StockItemName LIKE '%" . $_GET['search'] . "%'";
+        $sql = "SELECT * 
+                FROM stockitems AS I
+                WHERE I.StockItemName LIKE '%" . $_GET['search'] . "%'";
     }
     else {
-        $sql = "SELECT * FROM stockitems WHERE StockItemId = " . $_GET['search'];
+        $sql = "SELECT * 
+                FROM stockitems AS I
+
+                WHERE I.StockItemId = " . $_GET['search'];
     }
     return $sql;
 }
@@ -153,6 +171,7 @@ function getResults() {
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $result = mysqli_query($connection, checkSearchType());
+
 
     if($result == null || empty($result))
         return false;

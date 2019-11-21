@@ -29,10 +29,10 @@ include_once 'templates/navigation.php';
                         $photo = $value['Photo'];
 
                         print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
-                    <h3 class='product_text'>$itemName</h3>
-                    <img class='product_photo' src='" . getProductImage($photo) . "' alt='#' width='80%', height='200px'>
-                    <p class='product_text'>PRICE: €$price</p>
-                    </a></li>");
+                        <h3 class='product_text'>$itemName</h3>
+                        <img class='product_photo' src='assets/images/logo.png' alt='#' width='80%', height='200px'>
+                        <p class='product_text'>PRICE: €$price</p>
+                        </a></li>");
                     }
                 }
         }

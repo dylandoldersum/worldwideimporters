@@ -50,9 +50,10 @@ function NotVideo() {
             <H4>Voorraad:</H4>
             <p><?php print $stock ?> stuks</p><br>
             <?php
+            $graden = rand(38, 43)/10;
             if (getTemperature($_GET["itemID"])== 1){
                 print "<H4>Temperatuur:</H4>
-            <p>  4 graden celsius</p><br>";
+            <p> $graden graden celsius</p><br>";
             }
             ?>
             <a href="#" onclick=NotVideo()>Click for a video!</a><br>

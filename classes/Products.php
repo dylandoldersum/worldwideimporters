@@ -151,9 +151,10 @@ function getProductInfo() {
 
 function checkSearchType() {
     if ($_GET['type'] == "pname") {
+        $str = $_GET['search'];
         $sql = "SELECT * 
                 FROM stockitems AS I
-                WHERE I.StockItemName LIKE '%" . $_GET['search'] . "%'";
+                WHERE I.StockItemName LIKE '%" . trim($str) . "%'";
     }
     else {
         $sql = "SELECT * 

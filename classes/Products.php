@@ -215,11 +215,15 @@ function loadProductsWinkel() {
       $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
       $result = mysqli_query($connection, $sql);
       foreach ($result as $value) {
-        print($value['StockItemName'] . "<br>");
+        $stockItemID = $value['StockItemID'];
+        $itemName = $value['StockItemName'];
+        $itemPrice = $value['RecommendedRetailPrice'];
+        $photo = $value['Photo'];
+
       }
     } session_destroy();
   } else {
-    print("Uwe heere winkelmandje is leeg");
+    print("<p class='leeg'>Uw winkelwagen is leeg</p>");
   }
 }
 

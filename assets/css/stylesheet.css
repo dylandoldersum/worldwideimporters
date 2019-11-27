@@ -376,3 +376,10 @@ a.selected-page {
   height: 60%;
   border-style: solid;
 }
+
+.leeg {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+}

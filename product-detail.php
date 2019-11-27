@@ -67,6 +67,7 @@ function NotVideo() {
               <?php
                   if (isset($_POST["submit"])) {
                     $_SESSION['itemID'][]= $_GET['itemID'];
+                    echo '<script class="pop-up"> alert("Uw product is toegevoegd aan uw winkelwagen!");</script>';
                   }
                ?>
 

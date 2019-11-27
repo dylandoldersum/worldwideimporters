@@ -152,12 +152,12 @@ function getProductInfo() {
 function checkSearchType() {
     if ($_GET['type'] == "pname") {
         $str = $_GET['search'];
-        $sql = "SELECT * 
+        $sql = "SELECT *
                 FROM stockitems AS I
                 WHERE I.StockItemName LIKE '%" . trim($str) . "%'";
     }
     else {
-        $sql = "SELECT * 
+        $sql = "SELECT *
                 FROM stockitems AS I
 
                 WHERE I.StockItemId = " . $_GET['search'];
@@ -198,7 +198,26 @@ function getTemperature($id) {
             $Chilled = $value["IsChillerStock"];
         }
         return $Chilled;
+}
 
 
+function loadProductsWinkel() {
+  $host = 'localhost';
+  $dbName = 'wideworldimporters';
+  $user = 'root';
+  $password = '';
+  $connection = mysqli_connect($host, $user, $password, $dbName);
 
+  if (isset($_SESSION['itemID'])) {
+
+    foreach ($_SESSION['itemID'] as $item) {
+      $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
+      $result = mysqli_query($connection, $sql);
+      foreach ($result as $value) {
+        print($value['StockItemName'] . "<br>");
+      }
+    } session_destroy();
+  } else {
+    print("Uwe heere winkelmandje is leeg");
+  }
 }

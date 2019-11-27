@@ -20,7 +20,9 @@ include_once 'templates/navigation.php';
         <p>Winkelwagen</p>
       </div>
       <div class="product_winkelwagen">
-        
+        <?php
+            getProductsFromID(2);
+         ?>
       </div>
     </div>
 

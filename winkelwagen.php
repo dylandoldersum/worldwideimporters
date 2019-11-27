@@ -2,6 +2,8 @@
 /** Automatisch laden van header */
 include_once 'assets/autoloader.php';
 
+session_start();
+
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
  ?>
@@ -20,7 +22,9 @@ include_once 'templates/navigation.php';
         <p>Winkelwagen</p>
       </div>
       <div class="product_winkelwagen">
-        
+        <?php
+            loadProductsWinkel();
+         ?>
       </div>
     </div>
 

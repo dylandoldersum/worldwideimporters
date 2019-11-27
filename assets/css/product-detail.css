@@ -74,6 +74,14 @@
     background: white;
 }
 
+.buybutton input:hover[type=submit] {
+  font-weight: bold;
+  border: 5px;
+  background-color: #1b2f94;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .buy {
     color: white;
     width: 200px;

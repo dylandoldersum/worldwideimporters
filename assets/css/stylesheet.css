@@ -356,7 +356,7 @@ a.selected-page {
 }
 
 .header_winkelwagen p {
-  margin: 10px;
+  margin: 20px;
   padding: 5px;
   width: 33%;
   border-style: solid;
@@ -372,7 +372,27 @@ a.selected-page {
 
 .product_winkelwagen {
   margin: 20px;
-  width: 40%;
-  height: 90%;
+  width: 95%;
+  height: 60%;
+}
+
+.leeg {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+}
+
+.item-in-cart {
+  background-color: #0d4b77;
+  padding: 10px;
+  display: inline-block;
+  border: 4px;
   border-style: solid;
+  border-color: #0d4b77;
+  border-radius: 8px;
+}
+
+.item-in-cart h3 {
+  color: white;
 }

@@ -5,6 +5,8 @@ include_once 'assets/autoloader.php';
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 
+session_start();
+
 
 foreach (getProductInfo() as $value) {
     $itemName = $value['StockItemName'];
@@ -58,7 +60,17 @@ function NotVideo() {
             ?>
             <a href="#" onclick=NotVideo()>Click for a video!</a><br>
             <div class="buybutton">
-                <input type="submit" value="IN WINKELWAGEN" class="buy">
+              <form method="POST">
+                <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
+              </form>
+
+              <?php
+                  if (isset($_POST["submit"])) {
+                    $_SESSION['itemID'][]= $_GET['itemID'];
+                    echo '<script class="pop-up"> alert("Uw product is toegevoegd aan uw winkelwagen!");</script>';
+                  }
+               ?>
+
             </div>
             <div class="price">
                 <H1> € <?php print $itemPrice ?></H1>

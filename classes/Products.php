@@ -198,7 +198,15 @@ function getTemperature($id) {
             $Chilled = $value["IsChillerStock"];
         }
         return $Chilled;
-
-
-
 }
+/*
+function Countcart(){
+    $CartTotal = 0;
+    foreach() {
+        $CartTotal++;
+    }
+    return $CartTotal;
+}
+*/
+
+

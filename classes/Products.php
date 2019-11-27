@@ -201,6 +201,7 @@ function getTemperature($id) {
 }
 
 
+
 function loadProductsWinkel() {
   $host = 'localhost';
   $dbName = 'wideworldimporters';
@@ -221,3 +222,13 @@ function loadProductsWinkel() {
     print("Uwe heere winkelmandje is leeg");
   }
 }
+
+/*
+function Countcart(){
+    $CartTotal = 0;
+    foreach() {
+        $CartTotal++;
+    }
+    return $CartTotal;
+}
+*/

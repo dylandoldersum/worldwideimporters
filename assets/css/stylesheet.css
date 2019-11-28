@@ -384,8 +384,10 @@ a.selected-page {
 }
 
 .item-in-cart {
+  max-width: 300px;
   background-color: #0d4b77;
   padding: 10px;
+  margin: 10px;
   display: inline-block;
   border: 4px;
   border-style: solid;

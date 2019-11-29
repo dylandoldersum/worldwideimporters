@@ -253,7 +253,6 @@ function Countcart(){
 }
 
 
-
   function subTotaal () {
     $host = 'localhost';
     $dbName = 'wideworldimporters';

@@ -27,11 +27,12 @@ $json = generateMollie("Bestelling #1");
         <?php
             loadProductsWinkel();
          ?>
+          <hr class="price-divider">
          <div class="subtotal">
-           <?php subTotaal(); ?>
+             <span class="subtotaal-price">Subtotaalprijs: &euro;<?php subTotaal(); ?></span>
          </div>
           <div class="betaal-btn-container">
-              <a class="betaal-btn" href="betalen.php">Betalen</a>
+              <a class="betaal-btn" href="betalen.php">Afrekenen</a>
           </div>
       </div>
     </div>

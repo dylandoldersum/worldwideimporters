@@ -350,16 +350,19 @@ hr.price-divider {
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: 30px;
+    border: 5px solid #0d4b77;
+    border-radius: 8px;
     width: 1200px;
     background-color: #0b6cb3;
 }
 
 .header_winkelwagen p {
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     color: white;
+    background: #0c4b77;
 }
 
 .product_winkelwagen {
@@ -375,6 +378,8 @@ hr.price-divider {
 }
 
 .item-in-cart {
+    border: 5px solid #0d4b77;
+
     position: relative;
     background-color: #0d4b77;
   padding: 10px;

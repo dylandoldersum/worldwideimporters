@@ -261,8 +261,8 @@ function Countcart(){
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
+    $totalPrice = 0;
     if (isset($_SESSION['itemID'])) {
-      $totalPrice = 0;
       foreach ($_SESSION['itemID'] as $item) {
         $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item ;
         $result = mysqli_query($connection, $sql_price_of_product);
@@ -270,5 +270,5 @@ function Countcart(){
           $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
         }
       }
-    } print($totalPrice);
+    }  if ($totalPrice > 0) { print("Subtotaal: " . $totalPrice); }
   }

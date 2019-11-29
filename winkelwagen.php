@@ -6,8 +6,6 @@ session_start();
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
-
-$_SESSION['totalprice'] = subTotaal();
  ?>
 
 <!DOCTYPE html>

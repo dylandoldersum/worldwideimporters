@@ -57,5 +57,3 @@
 include_once 'templates/category.php';
 ?>
 </div>
-
-print()

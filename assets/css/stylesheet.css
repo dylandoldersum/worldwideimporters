@@ -406,6 +406,15 @@ a.selected-page {
   color: white;
 }
 
+.item-in-cart a {
+  color: white;
+}
+
+.item-in-cart a:hover {
+  cursor: pointer;
+  color: #4287f5;
+}
+
 .betaal-btn {
     background: #0d4b77;
     padding: 15px;
@@ -417,4 +426,8 @@ a.selected-page {
 .betaal-btn-container {
     margin-top: 25px;
     text-align: right;
+}
+
+.subtotal {
+
 }

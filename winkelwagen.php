@@ -27,6 +27,9 @@ $json = generateMollie("Bestelling #1");
         <?php
             loadProductsWinkel();
          ?>
+         <div class="subtotal">
+           <?php subTotaal(); ?>
+         </div>
           <div class="betaal-btn-container">
               <a class="betaal-btn" href="betalen.php">Betalen</a>
           </div>

@@ -221,7 +221,7 @@ function loadProductsWinkel() {
         $photo = $value['Photo'];
         print("<div class='item-in-cart'>
                   <li><img src=assets/images/SB.png width='150' height='150'></li>
-                  <li><h3> <br>" . $itemName . "</h3></li>
+                  <li><h3> <br> <a href='product-detail.php?itemID=" . $stockItemID . "'>" . $itemName . "</a></h3></li>
                   <li><h3> €" . $itemPrice . "</h3></li>
                 </div>");
       }
@@ -240,3 +240,23 @@ function Countcart(){
     return $CartTotal;
 }
 */
+
+
+  function subTotaal () {
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+
+    if (isset($_SESSION['itemID'])) {
+      $totalPrice = 0;
+      foreach ($_SESSION['itemID'] as $item) {
+        $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item ;
+        $result = mysqli_query($connection, $sql_price_of_product);
+        foreach ($result as $value) {
+          $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
+        }
+      }
+    } print($totalPrice);
+  }

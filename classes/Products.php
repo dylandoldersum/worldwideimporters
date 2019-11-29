@@ -270,5 +270,5 @@ function Countcart(){
           $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
         }
       }
-    }  if ($totalPrice > 0) { print("Subtotaal: " . $totalPrice); }
+    }  if ($totalPrice > 0) { print ($totalPrice); }
   }

@@ -258,8 +258,8 @@ function Countcart(){
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
+    $totalPrice = 0.00;
 
-    $totalPrice = 0;
     if (isset($_SESSION['itemID'])) {
       foreach ($_SESSION['itemID'] as $item) {
         $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item ;

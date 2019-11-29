@@ -11,9 +11,7 @@ session_start();
 require_once 'assets/autoloader.php';
 
 
-$json = generateMollie("Bestelling", intval(subTotaal()).".00");
-
-
+$json = generateMollie("Bestelling", doubleval(subTotaal()));
 Header('location:'.$json['_links']['checkout']['href']);
 
 

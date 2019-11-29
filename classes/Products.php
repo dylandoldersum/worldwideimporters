@@ -270,5 +270,6 @@ function Countcart(){
           $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
         }
       }
-    }  if ($totalPrice > 0) { print ($totalPrice); }
+    }
+    if ($totalPrice > 0) { return ($totalPrice); }
   }

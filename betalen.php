@@ -7,8 +7,11 @@
  * Time: 11:47
  */
 
+session_start();
 require_once 'assets/autoloader.php';
-$json = generateMollie("Bestelling");
+
+
+$json = generateMollie("Bestelling", subTotaal());
 
 Header('location:'.$json['_links']['checkout']['href']);
 

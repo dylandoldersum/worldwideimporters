@@ -6,8 +6,8 @@ session_start();
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
-/** Mollie init $json */
-$json = generateMollie("Bestelling #1");
+
+$_SESSION['totalprice'] = subTotaal();
  ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $json = generateMollie("Bestelling #1");
          ?>
           <hr class="price-divider">
          <div class="subtotal">
-             <span class="subtotaal-price">Subtotaalprijs: &euro;<?php subTotaal(); ?></span>
+             <span class="subtotaal-price">Subtotaalprijs: &euro;<?php print subTotaal(); ?></span>
          </div>
           <div class="betaal-btn-container">
               <a class="betaal-btn" href="betalen.php">Afrekenen</a>

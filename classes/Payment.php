@@ -7,9 +7,9 @@
  * Time: 09:58
  */
 
-function generateMollie($name) {
+function generateMollie($name, $price) {
     $body = '{
-        "amount": {"currency":"EUR", "value":"10.00"},
+        "amount": {"currency":"EUR", "value":"'.$price.'"},
         "description": "'.$name.'",
         "redirectUrl": "https://www.example.org/payment/completed/"
     }';

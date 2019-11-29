@@ -46,7 +46,7 @@
             <a href="#"><img class="profile" src="assets/images/profile-ico.png"/></a>
             <div class="cart-container">
                 <a href="winkelwagen.php"><img class="cart" src="assets/images/cart-ico.png"/></a>
-                <span class="cart-count">1</span>
+                <span class="cart-count"><?php Countcart() ?></span>
             </div>
         </div>
     </nav>

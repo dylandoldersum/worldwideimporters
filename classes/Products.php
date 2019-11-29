@@ -231,15 +231,27 @@ function loadProductsWinkel() {
   }
 }
 
-/*
+
 function Countcart(){
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+
     $CartTotal = 0;
-    foreach() {
-        $CartTotal++;
+    if (isset($_SESSION['itemID'])) {
+        foreach($_SESSION['itemID'] as $item) {
+            $sql = "SELECT StockItemID FROM stockitems WHERE StockItemID = " . $item ;
+            $result = mysqli_query($connection, $sql);
+            foreach ($result as $value) {
+                $CartTotal++;
+            }
+        }
     }
     return $CartTotal;
 }
-*/
+
 
 
   function subTotaal () {

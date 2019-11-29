@@ -219,13 +219,13 @@ function loadProductsWinkel() {
         $itemName = $value['StockItemName'];
         $itemPrice = $value['RecommendedRetailPrice'];
         $photo = $value['Photo'];
-        print("<div class='item-in-cart'>
+        print("<li class='item-in-cart'>
                   <h3> <br>" . $itemName . "</h3>
                   <img src=assets/images/SB.png width='300' height='300'>
                   <h3> €" . $itemPrice . "</h3>
-                </div>");
+                </li>");
       }
-    } session_destroy();
+    }
   } else {
     print("<p class='leeg'>Uw winkelwagen is leeg</p>");
   }

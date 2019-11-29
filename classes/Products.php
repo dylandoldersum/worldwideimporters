@@ -219,11 +219,11 @@ function loadProductsWinkel() {
         $itemName = $value['StockItemName'];
         $itemPrice = $value['RecommendedRetailPrice'];
         $photo = $value['Photo'];
-        print("<li class='item-in-cart'>
-                  <h3> <br>" . $itemName . "</h3>
-                  <img src=assets/images/SB.png width='300' height='300'>
-                  <h3> €" . $itemPrice . "</h3>
-                </li>");
+        print("<div class='item-in-cart'>
+                  <li><img src=assets/images/SB.png width='150' height='150'></li>
+                  <li><h3> <br>" . $itemName . "</h3></li>
+                  <li><h3> €" . $itemPrice . "</h3></li>
+                </div>");
       }
     }
   } else {

@@ -347,7 +347,6 @@ a.selected-page {
   margin-top: 30px;
   margin-bottom: 30px;
   width: 1200px;
-  height: 600px;
   border-style: solid;
   border-color: #0d4b77;
   border-radius: 8px;
@@ -373,7 +372,6 @@ a.selected-page {
 .product_winkelwagen {
   margin: 20px;
   width: 95%;
-  height: 60%;
 }
 
 .leeg {
@@ -384,17 +382,39 @@ a.selected-page {
 }
 
 .item-in-cart {
-  max-width: 300px;
-  background-color: #0d4b77;
+    position: relative;
+    background-color: #0d4b77;
   padding: 10px;
   margin: 10px;
-  display: inline-block;
-  border: 4px;
-  border-style: solid;
-  border-color: #0d4b77;
-  border-radius: 8px;
+}
+
+.item-in-cart li {
+    display: inline-block;
+}
+
+.item-in-cart li:last-child {
+    position: absolute;
+    margin-left: 25px;
+    background: #0b6cb3;
+    padding: 10px;
+    border-radius: 20px;
+    left: 150px;
+    top: 60px;
 }
 
 .item-in-cart h3 {
   color: white;
+}
+
+.betaal-btn {
+    background: #0d4b77;
+    padding: 15px;
+    color: white;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+
+.betaal-btn-container {
+    margin-top: 25px;
+    text-align: right;
 }

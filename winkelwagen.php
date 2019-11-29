@@ -6,6 +6,8 @@ session_start();
 
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
+/** Mollie init $json */
+$json = generateMollie("Bestelling #1");
  ?>
 
 <!DOCTYPE html>
@@ -25,6 +27,9 @@ include_once 'templates/navigation.php';
         <?php
             loadProductsWinkel();
          ?>
+          <div class="betaal-btn-container">
+              <a class="betaal-btn" href="betalen.php">Betalen</a>
+          </div>
       </div>
     </div>
 

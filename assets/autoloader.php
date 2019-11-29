@@ -8,9 +8,7 @@
  */
 
 include 'classes/Products.php';
-
-
-
+include 'classes/Payment.php';
 ?>
 
 <head>

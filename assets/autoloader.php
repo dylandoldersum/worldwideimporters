@@ -9,6 +9,8 @@
 
 include 'classes/Products.php';
 include 'classes/Payment.php';
+
+session_start();
 ?>
 
 <head>

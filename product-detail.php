@@ -5,8 +5,6 @@ include_once 'assets/autoloader.php';
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 
-session_start();
-
 
 foreach (getProductInfo() as $value) {
     $itemName = $value['StockItemName'];

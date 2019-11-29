@@ -210,7 +210,6 @@ function loadProductsWinkel() {
   $connection = mysqli_connect($host, $user, $password, $dbName);
 
   if (isset($_SESSION['itemID'])) {
-
     foreach ($_SESSION['itemID'] as $item) {
       $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
       $result = mysqli_query($connection, $sql);

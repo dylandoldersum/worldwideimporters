@@ -341,32 +341,25 @@ a.selected-page {
 
 
 /*----------------------Winkelwagen------------------*/
+
+hr.price-divider {
+    margin: 10px;
+}
 .container_winkelwagen {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 1200px;
-  border-style: solid;
-  border-color: #0d4b77;
-  border-radius: 8px;
-  border-width: 5px;
-  background-color: #4287f5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 1200px;
+    background-color: #0b6cb3;
 }
 
 .header_winkelwagen p {
-  margin: 20px;
-  padding: 5px;
-  width: 33%;
-  border-style: solid;
-  border-color: #0d4b77;
-  border-radius: 5px;
-  border-width: 2px;
-  text-align: center;
-  background-color: #0d4b77;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
 }
 
 .product_winkelwagen {
@@ -426,8 +419,13 @@ a.selected-page {
 .betaal-btn-container {
     margin-top: 25px;
     text-align: right;
+    height: 50px;
 }
 
 .subtotal {
-
+    text-align: right;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
 }

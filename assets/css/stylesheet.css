@@ -432,3 +432,22 @@ hr.price-divider {
     padding: 10px;
     font-size: 18px;
 }
+
+input.input-text {
+    border: 0;
+    padding: 10px;
+    display: block;
+    width: 45%;
+    margin: 25px;
+    height: 45px;
+    border-radius: 8px;
+}
+
+.btn1 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-left: 25px;
+    padding: 10px 50px;
+    margin-bottom: 25px;
+}

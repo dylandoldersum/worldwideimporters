@@ -23,6 +23,9 @@ include_once 'templates/navigation.php';
         <?php
             loadProductsWinkel();
          ?>
+
+          </div>
+
           <hr class="price-divider">
           <div class="amount">
               <span class="aantal">Aantal artikelen: <?php print Countcart()?></span>

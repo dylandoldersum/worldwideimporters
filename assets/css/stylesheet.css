@@ -450,4 +450,44 @@ input.input-text {
     margin-left: 25px;
     padding: 10px 50px;
     margin-bottom: 25px;
+    background: #0d4b77;
+    color: white;
+    border: unset;
+    font-size: 18px;
+}
+
+.steps li {
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: inline-block;
+    margin: 0;
+    width: 33.333333%;
+}
+
+.steps li.active {
+    background: #31a6fd;
+}
+
+.steps li:last-child {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.steps li:first-child {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.steps-to-pay {
+    width: 700px;
+    margin: 20px auto;
+    background: #0c6cb3;
+    border-radius: 8px;
+}
+
+.steps {
+    display: flex;
+    width: 100%;
 }

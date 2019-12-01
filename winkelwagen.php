@@ -31,7 +31,7 @@ include_once 'templates/navigation.php';
              <span class="subtotaal-price">Subtotaalprijs: &euro;<?php print subTotaal(); ?></span>
          </div>
           <div class="betaal-btn-container">
-              <a class="betaal-btn" href="betalen.php">Afrekenen</a>
+              <a class="betaal-btn" href="gegevens.php"> Verder naar bestellen </a>
           </div>
       </div>
     </div>

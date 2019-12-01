@@ -491,3 +491,22 @@ input.input-text {
     display: flex;
     width: 100%;
 }
+
+input[type="number"] {
+    background: unset;
+    border: unset;
+    font-size: 18px;
+    color: white;
+    width: 100px;
+    text-align: center;
+}
+
+li.numbering {
+    background: #0c6cb3;
+    border-radius: 8px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}

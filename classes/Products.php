@@ -219,16 +219,9 @@ function loadProductsWinkel() {
         print("<div class='item-in-cart'>
                   <li><img src=assets/images/SB.png width='150' height='150'></li>
                   <li><h3> <br> <a href='product-detail.php?itemID=" . $stockItemID . "'>" . $itemName . "</a></h3></li>
+                  <li class='numbering'><input value='1' min='1' type='number'></li>
+                  <li class='delete-btn'><input value='X' type='submit'></li>
                   <li><h3> €" . $itemPrice . "</h3></li>
-                  <li> <div class=\"quantity\"><input type=\"number\" class=\"product-quantity\" name=\"quantity\" value=\"1\" /><li>
-                  <li><div class=\"deletebutton\">
-              <form method=\"POST\">
-                  <input type=\"button\" name=\"delete\" value=\"VERWIJDER\" class=\"delete\">
-              
-              </form>
-             
-                 
-          </div><li>
                 </div>");
       }
     }

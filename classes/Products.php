@@ -214,8 +214,6 @@ function loadProductsWinkel()
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $amount = 1;
-
 
     if (isset($_SESSION['itemID'])) {
         foreach ($_SESSION['itemID'] as $item) {
@@ -264,7 +262,7 @@ function subTotaal()
             $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item;
             $result = mysqli_query($connection, $sql_price_of_product);
             foreach ($result as $value) {
-                $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
+                $totalPrice = $totalPrice + $value['RecommendedRetailPrice'] * $_POST['amountcounter'];
             }
         }
     }

@@ -4,12 +4,13 @@
 
 
 }
-.mid-row{
+
+.mid-row {
     margin-top: 80px;
     background: white;
 }
 
-.product-container{
+.product-container {
     background: white;
     margin-top: 50px;
     margin-bottom: 100px;
@@ -26,7 +27,7 @@
 
 /*}*/
 
-.productname{
+.productname {
     text-align: center;
     padding: 10px;
 
@@ -37,15 +38,14 @@
 }
 
 
-
 .picture img {
     width: 550px;
     background: white;
     margin-right: 50px;
 
 
-
 }
+
 .description {
     position: relative;
     width: 598px;
@@ -55,17 +55,17 @@
     color: white;
 }
 
-.price{
+.price {
     position: absolute;
-     display: inline-block;
-     background: #0d4b77;
-     border-radius: 10px;
+    display: inline-block;
+    background: #0d4b77;
+    border-radius: 10px;
     bottom: -48px;
     color: white;
     padding-right: 10px;
     padding-left: 10px;
     left: 0;
- }
+}
 
 .buybutton {
     position: absolute;
@@ -75,11 +75,11 @@
 }
 
 .buybutton input:hover[type=submit] {
-  font-weight: bold;
-  border: 5px;
-  background-color: #1b2f94;
-  cursor: pointer;
-  border-radius: 5px;
+    font-weight: bold;
+    border: 5px;
+    background-color: #1b2f94;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .buy {

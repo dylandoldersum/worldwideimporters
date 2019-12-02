@@ -22,21 +22,21 @@ include_once 'templates/navigation.php';
 
 <div class="container_winkelwagen">
     <div class="header_winkelwagen">
-    <p>Contactgegevens</p>
+        <p>Contactgegevens</p>
     </div>
     <div class="product_winkelwagen">
-    <form method="post" action="betalen.php">
-        <input class="input-text" type="text" placeholder="Voornaam">
-        <input class="input-text" type="text" placeholder="Achternaam">
-        <input class="input-text" type="text" placeholder="Adres">
-        <input class="input-text" type="text" placeholder="Huisnummer">
-        <input class="input-text" type="text" value="Nederland">
-        <input class="input-text" type="text" placeholder="1234 AB">
-        <input class="input-text" type="text" placeholder="Telefoonnummer">
-        <input class="input-text" type="text" placeholder="Email@mail.com">
-        <div class="betaal-btn-container">
-            <input type="submit">
-        </div>
-    </form>
+        <form method="post" action="betalen.php">
+            <input class="input-text" type="text" placeholder="Voornaam">
+            <input class="input-text" type="text" placeholder="Achternaam">
+            <input class="input-text" type="text" placeholder="Adres">
+            <input class="input-text" type="text" placeholder="Huisnummer">
+            <input class="input-text" type="text" value="Nederland">
+            <input class="input-text" type="text" placeholder="1234 AB">
+            <input class="input-text" type="text" placeholder="Telefoonnummer">
+            <input class="input-text" type="text" placeholder="Email@mail.com">
+            <div class="betaal-btn-container">
+                <input type="submit">
+            </div>
+        </form>
     </div>
 </div>

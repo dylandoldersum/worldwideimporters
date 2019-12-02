@@ -1,12 +1,9 @@
 <div class="category-container">
-
-      <nav class="category-bar">
+    <nav class="category-bar">
         <ul>
-        <?php
-        getCategoriesForNavigation();
-         ?>
+            <?php
+            getCategoriesForNavigation();
+            ?>
         </ul>
-      </nav>
-
-
+    </nav>
 </div>

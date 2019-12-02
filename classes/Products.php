@@ -1,8 +1,8 @@
 <?php
 
 
-
-function getCategoriesForNavigation() {
+function getCategoriesForNavigation()
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
@@ -10,14 +10,15 @@ function getCategoriesForNavigation() {
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
     $sql = "SELECT StockGroupName, StockGroupID FROM stockgroups";
-        $result = mysqli_query($connection, $sql);
-        foreach ($result as $value) {
-            $catID = $value['StockGroupID'];
-            print("<li><a href='product-list.php?CatID=$catID'> ". $value['StockGroupName'] . "</a></li>");
-        }
+    $result = mysqli_query($connection, $sql);
+    foreach ($result as $value) {
+        $catID = $value['StockGroupID'];
+        print("<li><a href='product-list.php?CatID=$catID'> " . $value['StockGroupName'] . "</a></li>");
+    }
 }
 
-function getProductImage($photo) {
+function getProductImage($photo)
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
@@ -25,42 +26,44 @@ function getProductImage($photo) {
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
     $sql = "SELECT StockGroupID FROM stockitemstockgroups WHERE StockItemID=$_GET[itemID]";
-        $result = mysqli_query($connection, $sql);
-        foreach($result as $value) {
-            $StockGroupID = $value['StockGroupID'];
-        }
-        if ($photo === "" || empty($photo)) {
-            $source = "assets/images/Cat-$StockGroupID.png";
-        } else {
-            $source = "data:image/jpeg;base64," . base64_encode($photo);
-        }
-        return $source;
+    $result = mysqli_query($connection, $sql);
+    foreach ($result as $value) {
+        $StockGroupID = $value['StockGroupID'];
+    }
+    if ($photo === "" || empty($photo)) {
+        $source = "assets/images/Cat-$StockGroupID.png";
+    } else {
+        $source = "data:image/jpeg;base64," . base64_encode($photo);
+    }
+    return $source;
 
 }
 
 
-function getFavouriteItems() {
+function getFavouriteItems()
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
-        $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
+    $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID
                 FROM stockitems
                 WHERE StockItemID = 2 OR StockItemID = 23 OR StockItemID = 1 OR StockItemID = 17 OR StockItemID = 10 OR  StockItemID = 69";
-        $result = mysqli_query($connection, $sql);
+    $result = mysqli_query($connection, $sql);
 
-        foreach ($result as $value) {
-            $itemName = $value['StockItemName'];
-            $price = $value['RecommendedRetailPrice'];
-            $itemID = $value['StockItemID'];
-            print("<a href='product-detail.php?itemID=$itemID'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg' height='300px' width='300'>" . "</a></div>");
-        }
+    foreach ($result as $value) {
+        $itemName = $value['StockItemName'];
+        $price = $value['RecommendedRetailPrice'];
+        $itemID = $value['StockItemID'];
+        print("<a href='product-detail.php?itemID=$itemID'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg' height='300px' width='300'>" . "</a></div>");
     }
+}
 
 
-Function GetCategoryPhoto($photo){
+Function GetCategoryPhoto($photo)
+{
     $StockGroupID = $_GET['CatID'];
     if ($photo === "" || empty($photo)) {
         $source = "assets/images/Cat-$StockGroupID.png";
@@ -71,8 +74,9 @@ Function GetCategoryPhoto($photo){
 }
 
 
-Function getSearchPhoto($photo, $catID){
-    $value="";
+Function getSearchPhoto($photo, $catID)
+{
+    $value = "";
     $StockGroupID = $catID;
     if ($photo === "" || empty($photo)) {
         $source = "assets/images/Cat-$StockGroupID.png";
@@ -83,80 +87,82 @@ Function getSearchPhoto($photo, $catID){
 }
 
 
-
-function getProductsFromCategory() {
+function getProductsFromCategory()
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-        $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
+    $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
-        $result = mysqli_query($connection, $sql);
-        $count = 0;
+    $result = mysqli_query($connection, $sql);
+    $count = 0;
 
-        foreach ($result as $value) {
-            $itemName = $value['StockItemName'];
-            $price = $value['RecommendedRetailPrice'];
-            $itemID = $value['StockItemID'];
-            $photo = $value['Photo'];
-            $count++;
-            print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
+    foreach ($result as $value) {
+        $itemName = $value['StockItemName'];
+        $price = $value['RecommendedRetailPrice'];
+        $itemID = $value['StockItemID'];
+        $photo = $value['Photo'];
+        $count++;
+        print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
                     <h3 class='product_text'>$itemName</h3>
-                    <img class='product_photo' src='". GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
+                    <img class='product_photo' src='" . GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
                     <p class='product_text'>PRICE: €$price</p>
                     </a></li>");
 
-        }
     }
+}
 
-    function getProductsFromID($id) {
-        $host = 'localhost';
-        $dbName = 'wideworldimporters';
-        $user = 'root';
-        $password = '';
-        $connection = mysqli_connect($host, $user, $password, $dbName);
-            $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID =". $id;
-            $result = mysqli_query($connection, $sql);
-            $count = 0;
-
-            foreach ($result as $value) {
-                $itemName = $value['StockItemName'];
-                $price = $value['RecommendedRetailPrice'];
-                $itemID = $value['StockItemID'];
-                $photo = $value['Photo'];
-                $count++;
-                print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
-                        <h3 class='product_text'>$itemName</h3>
-                        <img class='product_photo' src='". GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
-                        <p class='product_text'>PRICE: €$price</p>
-                        </a></li>");
-
-            }
-        }
-
-function getProductInfo() {
+function getProductsFromID($id)
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-        $sql=  "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity
-        From stockitems AS I
-        JOIN stockitemholdings AS H ON I.StockitemID = H.StockitemID
-        WHERE I.StockItemID=". $_GET['itemID'];
-        $result = mysqli_query($connection, $sql);
-        return $result;
+    $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID =" . $id;
+    $result = mysqli_query($connection, $sql);
+    $count = 0;
+
+    foreach ($result as $value) {
+        $itemName = $value['StockItemName'];
+        $price = $value['RecommendedRetailPrice'];
+        $itemID = $value['StockItemID'];
+        $photo = $value['Photo'];
+        $count++;
+        print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
+                        <h3 class='product_text'>$itemName</h3>
+                        <img class='product_photo' src='" . GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
+                        <p class='product_text'>PRICE: €$price</p>
+                        </a></li>");
+
+    }
 }
 
-function checkSearchType() {
+function getProductInfo()
+{
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $sql = "SELECT I.StockItemName, I.RecommendedRetailPrice, I.LeadTimeDays, I.TypicalWeightPerUnit, I.Tags, I.SearchDetails, H.LastStocktakeQuantity
+        From stockitems AS I
+        JOIN stockitemholdings AS H ON I.StockitemID = H.StockitemID
+        WHERE I.StockItemID=" . $_GET['itemID'];
+    $result = mysqli_query($connection, $sql);
+    return $result;
+}
+
+function checkSearchType()
+{
     if ($_GET['type'] == "pname") {
         $str = $_GET['search'];
         $sql = "SELECT *
                 FROM stockitems AS I
                 WHERE I.StockItemName LIKE '%" . trim($str) . "%'";
-    }
-    else {
+    } else {
         $sql = "SELECT *
                 FROM stockitems AS I
 
@@ -165,14 +171,15 @@ function checkSearchType() {
     return $sql;
 }
 
-function getResults() {
+function getResults()
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $result = mysqli_query($connection, mysqli_real_escape_string($connection, checkSearchType()));
-    if($result == null || empty($result))
+    if ($result == null || empty($result))
         return false;
 
     $response = [];
@@ -183,59 +190,46 @@ function getResults() {
     return $response;
 }
 
-function getTemperature($id) {
+function getTemperature($id)
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $Chilled = 0;
-        $sql = "SELECT IsChillerStock FROM stockitems WHERE StockItemID =". $id;
-        $result = mysqli_query($connection, $sql);
-        foreach ($result as $value){
-            $Chilled = $value["IsChillerStock"];
+    $sql = "SELECT IsChillerStock FROM stockitems WHERE StockItemID =" . $id;
+    $result = mysqli_query($connection, $sql);
+    foreach ($result as $value) {
+        $Chilled = $value["IsChillerStock"];
+    }
+    return $Chilled;
+}
+
+
+function loadProductsWinkel()
+{
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $amount = 1;
+
+
+    if (isset($_SESSION['itemID'])) {
+        foreach ($_SESSION['itemID'] as $item) {
+            $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
+            $result = mysqli_query($connection, $sql);
+            $response[] = $result;
         }
-        return $Chilled;
+        return $response;
+    }
 }
 
 
-
-function loadProductsWinkel() {
-  $host = 'localhost';
-  $dbName = 'wideworldimporters';
-  $user = 'root';
-  $password = '';
-  $connection = mysqli_connect($host, $user, $password, $dbName);
-  $amount = 1;
-
-
-  if (isset($_SESSION['itemID'])) {
-    foreach ($_SESSION['itemID'] as $item) {
-      $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
-      $result = mysqli_query($connection, $sql);
-      foreach ($result as $value) {
-        $stockItemID = $value['StockItemID'];
-        $itemName = $value['StockItemName'];
-        $itemPrice = $value['RecommendedRetailPrice'];
-        $photo = $value['Photo'];
-        print("<div class='item-in-cart'>
-                  <li><img src=assets/images/SB.png width='150' height='150'></li>
-                  <li><h3> <br> <a href='product-detail.php?itemID=" . $stockItemID . "'>" . $itemName . "</a></h3></li>
-                  <li class='numbering'><form action='winkelwagen.php' method='post'><input value='1' min='1' type='number'><input type='submit' name='amountUpDown'></form></li>
-                  <li class='delete-btn'><input class='taf' value='x' type='submit'></li>
-                  <li><h3> Subtotaal: €" . $amount * $itemPrice . "</h3></li>
-                  <li><h3> €" . $itemPrice . "</h3></li>
-                </div>");
-
-          }}}
-  else {
-    print("<p class='leeg'>Uw winkelwagen is leeg</p>");
-
-  }
-}
-
-
-function Countcart(){
+function Countcart()
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
@@ -244,8 +238,8 @@ function Countcart(){
 
     $CartTotal = 0;
     if (isset($_SESSION['itemID'])) {
-        foreach($_SESSION['itemID'] as $item) {
-            $sql = "SELECT StockItemID FROM stockitems WHERE StockItemID = " . $item ;
+        foreach ($_SESSION['itemID'] as $item) {
+            $sql = "SELECT StockItemID FROM stockitems WHERE StockItemID = " . $item;
             $result = mysqli_query($connection, $sql);
             foreach ($result as $value) {
                 $CartTotal++;
@@ -256,7 +250,8 @@ function Countcart(){
 }
 
 
-  function subTotaal () {
+function subTotaal()
+{
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
@@ -265,13 +260,15 @@ function Countcart(){
     $totalPrice = 0.00;
 
     if (isset($_SESSION['itemID'])) {
-        foreach($_SESSION['itemID'] as $item) {
-        $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item ;
-        $result = mysqli_query($connection, $sql_price_of_product);
-        foreach ($result as $value) {
-          $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
+        foreach ($_SESSION['itemID'] as $item) {
+            $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item;
+            $result = mysqli_query($connection, $sql_price_of_product);
+            foreach ($result as $value) {
+                $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
+            }
         }
-      }
     }
-    if ($totalPrice > 0) { return ($totalPrice); }
-  }
+    if ($totalPrice > 0) {
+        return ($totalPrice);
+    }
+}

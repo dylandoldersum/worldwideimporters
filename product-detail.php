@@ -17,15 +17,15 @@ foreach (getProductInfo() as $value) {
     $photo = "";
 
 }
-$itemDescription = "$itemDescription2"."<br><br>".str_replace(str_split('"[]'),'', $itemDescription1);
+$itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]'), '', $itemDescription1);
 
 
 ?>
 
 <script>
-function NotVideo() {
-  alert("No video... Try again later!");
-}
+    function NotVideo() {
+        alert("No video... Try again later!");
+    }
 </script>
 
 <body>
@@ -38,11 +38,11 @@ function NotVideo() {
     </div>
     <div class="mid-row">
         <div class="picture">
-             <H1></H1>
-        <img src="<?php  print getProductImage($photo) ?> ">
+            <H1></H1>
+            <img src="<?php print getProductImage($photo) ?> ">
         </div>
         <div class="description">
-            <p><?php print $itemDescription?> </p><br>
+            <p><?php print $itemDescription ?> </p><br>
             <H4>Gewicht:</H4>
             <p><?php print $itemWeight ?> KG</p><br>
             <H4>Verzendtijd:</H4>
@@ -50,27 +50,27 @@ function NotVideo() {
             <H4>Voorraad:</H4>
             <p><?php print $stock ?> stuks</p><br>
             <?php
-            $graden = rand(38, 43)/10;
-            if (getTemperature($_GET["itemID"])== 1){
+            $graden = rand(38, 43) / 10;
+            if (getTemperature($_GET["itemID"]) == 1) {
                 print "<H4>Temperatuur:</H4>
             <p> $graden graden celsius</p><br>";
             }
             ?>
             <a href="#" onclick=NotVideo()>Click for a video!</a><br>
             <div class="buybutton">
-              <form method="POST">
-                <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
-              </form>
+                <form method="POST">
+                    <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
+                </form>
 
 
-              <?php
-                  if (isset($_POST["submit"])) {
-                    $_SESSION['itemID'][]= $_GET['itemID'];
+                <?php
+                if (isset($_POST["submit"])) {
+                    $_SESSION['itemID'][] = $_GET['itemID'];
 
                     echo '<script class="pop-up"> alert("Uw product is toegevoegd aan uw winkelwagen!");</script>';
-                    header("Location:product-detail.php?itemID=".$_GET['itemID']);
-                  }
-               ?>
+                    header("Location:product-detail.php?itemID=" . $_GET['itemID']);
+                }
+                ?>
 
             </div>
             <div class="price">

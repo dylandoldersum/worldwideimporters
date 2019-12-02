@@ -36,9 +36,26 @@ include_once 'templates/navigation.php';
     <div class="contactformulier">
       <h3>Contactformulier</h3>
         <form action="error_handler_contactformulier.php" method="POST">
-          <input type="text" name="first" placeholder="Voornaam"> <br>
-          <input type="text" name="last" placeholder="Achternaam"> <br>
-          <input type="text" name="email" placeholder="E-mail"> <br>
+          <?php
+              if (isset($_GET['first'])) {
+                $first = $_GET['first'];
+                echo '<input type="text" name="first" placeholder="Voornaam" value="'.$first.'"> <br>';
+              } else {
+                echo '<input type="text" name="first" placeholder="Voornaam"> <br>';
+              }
+              if (isset($_GET['last'])) {
+                $last = $_GET['last'];
+                echo '<input type="text" name="last" placeholder="Achternaam" value="'.$last.'"> <br>';
+              } else {
+                echo '<input type="text" name="last" placeholder="Achternaam"> <br>';
+              }
+              if (isset($_GET['email'])) {
+                $email = $_GET['email'];
+                echo '<input type="text" name="email" placeholder="Email" value="'.$email.'"> <br>';
+              } else {
+                echo '<input type="text" name="email" placeholder="Email"> <br>';
+              }
+           ?>
           <textarea name="textarea" placeholder="Bericht"></textarea> <br><br>
           <button type="submit" name="submit">Verzenden</button>
         </form>

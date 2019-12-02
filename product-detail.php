@@ -62,9 +62,11 @@ function NotVideo() {
                 <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
               </form>
 
+
               <?php
                   if (isset($_POST["submit"])) {
                     $_SESSION['itemID'][]= $_GET['itemID'];
+
                     echo '<script class="pop-up"> alert("Uw product is toegevoegd aan uw winkelwagen!");</script>';
                     header("Location:product-detail.php?itemID=".$_GET['itemID']);
                   }
@@ -72,7 +74,8 @@ function NotVideo() {
 
             </div>
             <div class="price">
-                <H1> € <?php print $itemPrice ?></H1>
+                <H1> € <?php print $itemPrice; ?></H1>
+
             </div>
         </div>
 

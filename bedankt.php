@@ -16,3 +16,5 @@ include "assets/autoloader.php";
         <li class="active"><span>3.Bevestiging</span></li>
     </div>
 </div>
+
+BEDANKT VOOR BETALEN PIKKIE!

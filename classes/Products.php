@@ -221,8 +221,9 @@ function loadProductsWinkel() {
         print("<div class='item-in-cart'>
                   <li><img src=assets/images/SB.png width='150' height='150'></li>
                   <li><h3> <br> <a href='product-detail.php?itemID=" . $stockItemID . "'>" . $itemName . "</a></h3></li>
-                  <li class='numbering'><input value='1' min='1' type='number'></li>
+                  <li class='numbering'><form action='winkelwagen.php' method='post'><input value='1' min='1' type='number'><input type='submit' name='amountUpDown'></form></li>
                   <li class='delete-btn'><input class='taf' value='x' type='submit'></li>
+                  <li><h3> Subtotaal: €" . $amount * $itemPrice . "</h3></li>
                   <li><h3> €" . $itemPrice . "</h3></li>
                 </div>");
 

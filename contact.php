@@ -94,5 +94,8 @@ include_once 'templates/navigation.php';
           }
        ?>
     </div>
+    <main>
+
+    </main>
   </body>
 </html>

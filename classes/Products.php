@@ -215,14 +215,12 @@ function loadProductsWinkel()
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
-    if (isset($_SESSION['itemID'])) {
-        foreach ($_SESSION['itemID'] as $item) {
-            $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
-            $result = mysqli_query($connection, $sql);
-            $response[] = $result;
-        }
-        return $response;
+    foreach ($_SESSION['itemID'] as $item) {
+        $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
+        $result = mysqli_query($connection, $sql);
+        $response[] = $result;
     }
+    return $response;
 }
 
 
@@ -247,6 +245,14 @@ function Countcart()
     return $CartTotal;
 }
 
+function removeItemFromCart()
+{
+    if (($key = array_search($_GET['itemId'], $_SESSION['itemID'])) !== false) {
+        unset($_SESSION['itemID'][$key]);
+        header('location: winkelwagen.php');
+    }
+}
+
 
 function subTotaal()
 {
@@ -262,7 +268,7 @@ function subTotaal()
             $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item;
             $result = mysqli_query($connection, $sql_price_of_product);
             foreach ($result as $value) {
-                $totalPrice = $totalPrice + $value['RecommendedRetailPrice'] * $_POST['amountcounter'];
+                $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];
             }
         }
     }

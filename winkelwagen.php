@@ -15,18 +15,27 @@ include_once 'templates/navigation.php';
     <div class="product_winkelwagen">
         <?php
         print_r($_SESSION['itemID']);
-        foreach (loadProductsWinkel() as $loop) {
-            foreach ($loop as $product) {
-                ?>
-                <div class="item-in-cart">
-                    <li><img src=assets/images/SB.png width='150' height='150'></li>
-                    <li><h3><a href="product-detail.php?itemID=<?php echo $product['StockItemID'] ?>"><?php echo $product['StockItemName'] ?></a></h3></li>
-                    <li class="numbering"><input type="number" min="1" value="1"></li>
-                    <li class="delete-btn"><input class="taf" name="deletebtn" value="" type="submit"></li>
-                    <li><h3> € <? echo $product['RecommendedRetailPrice'] ?> </h3></li>
-                </div>
-                <?php
+        if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
+            foreach (loadProductsWinkel() as $loop) {
+                foreach ($loop as $product => $item) {
+                    if (isset($_GET['itemId'])) {
+                        removeItemFromCart();
+                    }
+                    ?>
+                    <div class="item-in-cart">
+                        <li><img src=assets/images/SB.png width='150' height='150'></li>
+                        <li><h3>
+                                <a href="product-detail.php?itemID=<?php echo $item['StockItemID'] ?>"><?php echo $item['StockItemName'] ?></a>
+                            </h3></li>
+                        <li class="numbering"><input type="number" min="1" value="1"></li>
+                        <li class="delete-btn"><a href="?itemId=<? echo $item['StockItemID'] ?>">X</a></li>
+                        <li><h3> € <? echo $item['RecommendedRetailPrice'] ?> </h3></li>
+                    </div>
+                    <?php
+                }
             }
+        } else {
+            echo '<h3>Winkelwagen is leeg</h3>';
         }
         ?>
     </div>

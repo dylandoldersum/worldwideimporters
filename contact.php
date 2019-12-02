@@ -55,14 +55,20 @@ include_once 'templates/navigation.php';
               } else {
                 echo '<input type="text" name="email" placeholder="Email"> <br>';
               }
+              if (isset($_GET['bericht'])) {
+                $bericht = $_GET['bericht'];
+                echo '<textarea name="bericht" placeholder="Bericht"> '.$_GET["bericht"].' </textarea> <br><br>';
+              } else {
+                echo '<textarea name="bericht" placeholder="Bericht"></textarea> <br><br>';
+              }
            ?>
-          <textarea name="textarea" placeholder="Bericht"></textarea> <br><br>
           <button type="submit" name="submit">Verzenden</button>
         </form>
 
         <br>
         <?php
           include_once 'templates/footer.php';
+          print($_GET['bericht']);
          ?>
 
         <?php

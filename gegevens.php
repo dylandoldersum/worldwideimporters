@@ -8,8 +8,6 @@
  */
 
 include_once 'assets/autoloader.php';
-
-
 include_once 'templates/navigation.php';
 ?>
 
@@ -27,7 +25,7 @@ include_once 'templates/navigation.php';
     <p>Contactgegevens</p>
     </div>
     <div class="product_winkelwagen">
-    <form method="post">
+    <form method="post" action="betalen.php">
         <input class="input-text" type="text" placeholder="Voornaam">
         <input class="input-text" type="text" placeholder="Achternaam">
         <input class="input-text" type="text" placeholder="Adres">
@@ -37,7 +35,7 @@ include_once 'templates/navigation.php';
         <input class="input-text" type="text" placeholder="Telefoonnummer">
         <input class="input-text" type="text" placeholder="Email@mail.com">
         <div class="betaal-btn-container">
-            <input type="submit" class="btn1" value="Verzenden" name="verzend-details">
+            <input type="submit">
         </div>
     </form>
     </div>

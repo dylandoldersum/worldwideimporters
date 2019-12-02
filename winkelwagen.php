@@ -27,8 +27,8 @@ include_once 'templates/navigation.php';
           </div>
 
           <hr class="price-divider">
-          <div class="amount">
-              <span class="aantal">Aantal artikelen: <?php print Countcart()?></span>
+          <div class="AmountInCart">
+              <span class="InCart">Aantal artikelen: <?php print Countcart()?></span>
           </div>
          <div class="subtotal">
              <span class="subtotaal-price">Subtotaalprijs: &euro;<?php print subTotaal(); ?></span>

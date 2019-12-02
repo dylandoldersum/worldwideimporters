@@ -11,7 +11,7 @@ function generateMollie($name, $price) {
     $body = '{
         "amount": {"currency":"EUR", "value":"'.$price.'"},
         "description": "'.$name.'",
-        "redirectUrl": "https://www.example.org/payment/completed/"
+        "redirectUrl": "http://localhost:8080/KBS/worldwideimporters/bedankt.php"
     }';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(

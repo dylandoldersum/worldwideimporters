@@ -206,6 +206,8 @@ function loadProductsWinkel() {
   $user = 'root';
   $password = '';
   $connection = mysqli_connect($host, $user, $password, $dbName);
+  $amount = 1;
+
 
   if (isset($_SESSION['itemID'])) {
     foreach ($_SESSION['itemID'] as $item) {
@@ -220,13 +222,14 @@ function loadProductsWinkel() {
                   <li><img src=assets/images/SB.png width='150' height='150'></li>
                   <li><h3> <br> <a href='product-detail.php?itemID=" . $stockItemID . "'>" . $itemName . "</a></h3></li>
                   <li class='numbering'><input value='1' min='1' type='number'></li>
-                  <li class='delete-btn'><input value='' type='submit'></li>
+                  <li class='delete-btn'><input class='taf' value='x' type='submit'></li>
                   <li><h3> €" . $itemPrice . "</h3></li>
                 </div>");
-      }
-    }
-  } else {
+
+          }}}
+  else {
     print("<p class='leeg'>Uw winkelwagen is leeg</p>");
+
   }
 }
 
@@ -261,7 +264,7 @@ function Countcart(){
     $totalPrice = 0.00;
 
     if (isset($_SESSION['itemID'])) {
-      foreach ($_SESSION['itemID'] as $item) {
+        foreach($_SESSION['itemID'] as $item) {
         $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item ;
         $result = mysqli_query($connection, $sql_price_of_product);
         foreach ($result as $value) {
@@ -271,5 +274,3 @@ function Countcart(){
     }
     if ($totalPrice > 0) { return ($totalPrice); }
   }
-
-

@@ -411,6 +411,14 @@ hr.price-divider {
   color: #4287f5;
 }
 
+.AmountInCart{
+    text-align: right;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
 .betaal-btn {
     background: #0d4b77;
     padding: 15px;
@@ -511,8 +519,13 @@ input[type=number]::-webkit-outer-spin-button {
     opacity: 1;
 }
 
-li.delete-btn{
-     background-image: url("/assets/images/trash-can.jpg");
-    background-size: cover;
 
- }
+li.delete-btn .taf{
+    background-image: url("../images/trash-can.png");
+
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    border:unset;
+
+}

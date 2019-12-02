@@ -68,7 +68,6 @@ include_once 'templates/navigation.php';
         <br>
         <?php
           include_once 'templates/footer.php';
-          print($_GET['bericht']);
          ?>
 
         <?php
@@ -100,5 +99,8 @@ include_once 'templates/navigation.php';
           }
        ?>
     </div>
+    <main>
+
+    </main>
   </body>
 </html>

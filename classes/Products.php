@@ -220,7 +220,7 @@ function loadProductsWinkel() {
                   <li><img src=assets/images/SB.png width='150' height='150'></li>
                   <li><h3> <br> <a href='product-detail.php?itemID=" . $stockItemID . "'>" . $itemName . "</a></h3></li>
                   <li class='numbering'><input value='1' min='1' type='number'></li>
-                  <li class='delete-btn'><input value='X' type='submit'></li>
+                  <li class='delete-btn'><input class='taf' value='x' type='submit'></li>
                   <li><h3> €" . $itemPrice . "</h3></li>
                 </div>");
       }

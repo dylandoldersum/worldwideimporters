@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $textarea = $_POST['textarea'];
 
-    $MailTo = "WWIgroep3@yahoo.com ";
+    $MailTo = "wwigroep3@google.com ";
     $headers = "From:" . $email;
     $txt = "You have received an e-mail from " . $first . $last . "." . "\n \n" . $textarea;
 

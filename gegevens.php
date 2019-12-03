@@ -53,6 +53,7 @@ include_once 'templates/navigation.php';
       $email = $_POST['email'];
 
       $array_info = array("Voornaam" => $voornaam, "Achternaam" => $achternaam, "Adres" => $adres, "Huisnummer" => $huis, "Landnaam" => $land, "Postcode" => $postcode, "Telefoonnummer" => $telefoon, "Emailadres" => $email);
-      $_SESSION['contactinfo'][] = $array_info;
+      $_SESSION['contactinfo'] = $array_info;
+      echo $_SESSION['contactinfo']['Achternaam'];
     }
  ?>

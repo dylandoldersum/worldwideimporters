@@ -71,7 +71,17 @@ include_once 'classes/Products.php';
     //Print de items uit op de page
     foreach ($result2 as $item) {
         $ID = $item["StockItemID"];
-        getProductsFromID($ID);
+        foreach (getProductsFromID($ID) as $value) {
+            ?>
+            <li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID'>
+                    <h3 class='product_text'><?php echo $value["StockItemName"] ?></h3>
+                    <img class='product_photo' src=' <?php echo GetCategoryPhoto($value['Photo']) ?>' alt='#' width='80%' ,
+                         height='200px'>
+                    <p class='product_text'>PRICE: €<?php echo $value["RecommendedRetailPrice"] ?></p>
+                </a>
+            </li>
+            <?php
+        }
     }
 
     /////////////End/////////////////////////////////////?>

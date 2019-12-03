@@ -17,4 +17,16 @@ include "assets/autoloader.php";
     </div>
 </div>
 
-BEDANKT VOOR BETALEN PIKKIE!
+<div class="thank-you-for-buying">
+  <h1>Bedankt voor uw aankoop!</h1><br>
+  <p>Hieronder vindt u informatie over uw bestelling</p>
+  <div class="contact-info-array">
+    <?php
+      foreach ($_SESSION['contactinfo'] as $index => $value) {
+        print($index . ": " . $value . "<br>");
+      }
+     ?>
+  </div>
+  <br><br>
+  <p>Uw bestelling wordt geleverd op: </p>
+</div>

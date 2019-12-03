@@ -43,7 +43,7 @@ if (isset($_POST["submit"])) {
         }
     }
 } else {
-    header("Location: contact.php");
+    header("Location: gegevens.php");
     exit();
 }
 

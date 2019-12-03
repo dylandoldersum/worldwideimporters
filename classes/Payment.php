@@ -12,7 +12,7 @@ function generateMollie($name, $price)
     $body = '{
         "amount": {"currency":"EUR", "value":"' . $price . '"},
         "description": "' . $name . '",
-        "redirectUrl": "http://localhost:8080/KBS/worldwideimporters/bedankt.php"
+        "redirectUrl": "http://localhost/worldwideimporters/bedankt.php"
     }';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(

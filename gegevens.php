@@ -40,20 +40,3 @@ include_once 'templates/navigation.php';
         </form>
     </div>
 </div>
-
-<?php
-    if (isset($_POST['submit_info'])) {
-      $voornaam = $_POST['voornaam'];
-      $achternaam = $_POST['achternaam'];
-      $adres = $_POST['adres'];
-      $huis = $_POST['huisnummer'];
-      $land = $_POST['land'];
-      $postcode = $_POST['postcode'];
-      $telefoon = $_POST['telefoon'];
-      $email = $_POST['email'];
-
-      $array_info = array("Voornaam" => $voornaam, "Achternaam" => $achternaam, "Adres" => $adres, "Huisnummer" => $huis, "Landnaam" => $land, "Postcode" => $postcode, "Telefoonnummer" => $telefoon, "Emailadres" => $email);
-      $_SESSION['contactinfo'] = $array_info;
-      echo $_SESSION['contactinfo']['Achternaam']; //voorbeeld
-    }
- ?>

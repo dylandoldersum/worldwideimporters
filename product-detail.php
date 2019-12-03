@@ -5,11 +5,8 @@ include_once 'assets/autoloader.php';
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 
- // session_unset();
- // session_destroy();
-
-
-
+// session_unset();
+// session_destroy();
 
 
 foreach (getProductInfo() as $value) {
@@ -67,9 +64,16 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                 <?php
 
 
-
                 if (isset($_POST["submit"])) {
-                    $itemArray = array("code" => $_GET['itemID'], "quantity" => 1);
+                    $itemArray = array(
+                        "code" => $_GET['itemID'],
+                        "quantity" => 1,
+                        "pname" => $itemName,
+                        "desc" => $itemDescription,
+                        "weight" => $itemWeight,
+                        "delivertime" => $itemDelivery,
+                        "stock" => $stock,
+                        "price" => $itemPrice);
 
                     $_SESSION["itemID"][] = $itemArray;
 

@@ -14,24 +14,24 @@ include_once 'templates/navigation.php';
     </div>
     <div class="product_winkelwagen">
         <?php
+
         if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
-            foreach (loadProductsWinkel() as $loop) {
-                foreach ($loop as $product => $item) {
-                    if (isset($_GET['itemId'])) {
-                        //removeItemFromCart();
-                    }
-                    ?>
-                    <div class="item-in-cart">
-                        <li><img src=assets/images/SB.png width='150' height='150'></li>
-                        <li><h3>
-                                <a href="product-detail.php?itemID=<?php echo $item['StockItemID'] ?>"><?php echo $item['StockItemName'] ?></a>
-                            </h3></li>
-                        <li class="numbering"><input type="number" min="1" value="1"></li>
-                        <li class="delete-btn"><a href="?itemId=<?php echo $item['StockItemID'] ?>">X</a></li>
-                        <li><h3> € <?php echo $item['RecommendedRetailPrice'] ?> </h3></li>
+            foreach ($_SESSION['itemID'] as $arrayitem) {
+                ?>
+                <div class="item-in-cart">
+                    <li><img src=assets/images/SB.png width='150' height='150'></li>
+                    <li><h3>
+                            <a href="product-detail.php?itemID=<?php echo $arrayitem['code'] ?>"><?php echo $arrayitem['pname'] ?></a>
+                        </h3></li>
+                    <div class="quantity-items">
+                        <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&quantity=<?php echo $arrayitem['quantity'] = $arrayitem['quantity'] + 1 ?>">+</a></li>
+                        <li class="quantity"><?php echo $arrayitem['quantity'] ?></li>
+                        <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&quantity=<?php echo $arrayitem['quantity'] = $arrayitem['quantity'] - 1 ?>">-</a></li>
                     </div>
-                    <?php
-                }
+                    <li class="delete-btn"><a class="delete-item" href="?itemId=<?php echo $arrayitem['code'] ?>">X</a></li>
+                    <li class="price-tag"><h3> € <?php echo $arrayitem['price'] ?></h3></li>
+                </div>
+                <?php
             }
         } else {
             echo '<h3>Winkelwagen is leeg</h3>';

@@ -14,6 +14,8 @@ include_once 'templates/navigation.php';
     </div>
     <div class="product_winkelwagen">
         <?php
+        $TOTprice = 0;
+        
         if (isset($_SESSION['itemID']) && isset($_GET['amountchange'])) {
             changeAmount();
         }
@@ -33,6 +35,11 @@ include_once 'templates/navigation.php';
                         <li class="quantity"><?php echo $arrayitem['quantity'] ?></li>
                         <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&amountchange=min">-</a></li>
                     </div>
+                    <li class="btw"><h3> btw: € <?php echo CalculateBTW($arrayitem['quantity']*$arrayitem['price']); ?></h3></li>
+                    <li class="subtotaal"><h3> € <?php
+                    $price = $arrayitem['quantity']*$arrayitem['price'];
+                    $TOTprice += $price;
+                    echo $price ?></h3></li>
                     <li class="delete-btn"><a class="delete-item"
                                               href="?itemId=<?php echo $arrayitem['code'] ?>&delete=true">X</a></li>
                     <li class="price-tag"><h3> € <?php echo $arrayitem['price'] ?></h3></li>
@@ -50,7 +57,8 @@ include_once 'templates/navigation.php';
         <span class="InCart">Aantal artikelen: <?php print Countcart() ?></span>
     </div>
     <div class="subtotal">
-        <span class="subtotaal-price">Subtotaalprijs: &euro;<?php print subTotaal(); ?></span>
+        <span class="Subtotaal-price">btw: &euro;<?php print CalculateBTW($TOTprice); ?></span>
+        <span class="Subtotaal-price">Totaalprijs: &euro;<?php print $TOTprice; ?></span>
     </div>
     <div class="betaal-btn-container">
         <a class="betaal-btn" href="gegevens.php"> Verder naar bestellen </a>

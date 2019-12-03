@@ -14,16 +14,12 @@ include_once 'templates/navigation.php';
     </div>
     <div class="product_winkelwagen">
         <?php
-
-
         if (isset($_SESSION['itemID']) && isset($_GET['amountchange'])) {
             changeAmount();
         }
-
         if (isset($_GET['delete'])) {
             removeItemFromCart();
         }
-
         if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
             foreach ($_SESSION['itemID'] as $arrayitem) {
                 ?>

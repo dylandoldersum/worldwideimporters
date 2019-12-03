@@ -42,6 +42,10 @@ if (isset($_POST["submit"])) {
             }
         }
     }
+} else {
+    header("Location: contact.php");
+    exit();
 }
 
+?>
 

@@ -5,6 +5,12 @@ include_once 'assets/autoloader.php';
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 
+ // session_unset();
+ // session_destroy();
+
+
+
+
 
 foreach (getProductInfo() as $value) {
     $itemName = $value['StockItemName'];
@@ -59,11 +65,18 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                     <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
                 </form>
                 <?php
-                if (isset($_POST["submit"])) {
-                    $_SESSION['itemID'][] = $_GET['itemID'];
 
+
+
+                if (isset($_POST["submit"])) {
+                    $itemArray = array("code" => $_GET['itemID'], "quantity" => 1);
+
+                    $_SESSION["itemID"][] = $itemArray;
+
+                    var_dump($_SESSION['itemID']);
+                    exit;
                     echo '<script class="pop-up"> alert("Uw product is toegevoegd aan uw winkelwagen!");</script>';
-                    header("Location:product-detail.php?itemID=" . $_GET['itemID']);
+                    header("Location: ?itemID=" . $_GET['itemID']);
                 }
                 ?>
             </div>

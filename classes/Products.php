@@ -237,8 +237,17 @@ function Countcart()
     return $CartTotal;
 }
 
-function removeItemFromCart() {
-
+function changeAmount() {
+    foreach ($_SESSION['itemID'] as $key => $product) {
+        if ($product['code'] === $_GET['itemId']) {
+            if($_GET['amountchange'] == 'plus') {
+                $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] + 1;
+            } else if ($_GET['amountchange'] == 'min') {
+                $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] - 1;
+            }
+        }
+        header('location: winkelwagen.php');
+    }
 }
 
 function subTotaal()

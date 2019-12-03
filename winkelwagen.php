@@ -16,8 +16,12 @@ include_once 'templates/navigation.php';
         <?php
 
 
-        if(isset($_SESSION['itemID']) && isset($_GET['amountchange'])) {
+        if (isset($_SESSION['itemID']) && isset($_GET['amountchange'])) {
             changeAmount();
+        }
+
+        if (isset($_GET['delete'])) {
+            removeItemFromCart();
         }
 
         if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
@@ -33,7 +37,8 @@ include_once 'templates/navigation.php';
                         <li class="quantity"><?php echo $arrayitem['quantity'] ?></li>
                         <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&amountchange=min">-</a></li>
                     </div>
-                    <li class="delete-btn"><a class="delete-item" href="?itemId=<?php echo $arrayitem['code'] ?>">X</a></li>
+                    <li class="delete-btn"><a class="delete-item"
+                                              href="?itemId=<?php echo $arrayitem['code'] ?>&delete=true">X</a></li>
                     <li class="price-tag"><h3> € <?php echo $arrayitem['price'] ?></h3></li>
                 </div>
                 <?php

@@ -241,14 +241,28 @@ function changeAmount() {
     foreach ($_SESSION['itemID'] as $key => $product) {
         if ($product['code'] === $_GET['itemId']) {
             if($_GET['amountchange'] == 'plus') {
-                $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] + 1;
+                    $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] + 1;
             } else if ($_GET['amountchange'] == 'min') {
-                $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] - 1;
+                if ($_SESSION['itemID'][$key]['quantity'] <= 1) {
+                    unset($_SESSION['itemID'][$key]);
+                } else {
+                    $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] - 1;
+                }
             }
         }
         header('location: winkelwagen.php');
     }
 }
+
+function removeItemFromCart() {
+    foreach ($_SESSION['itemID'] as $key => $product) {
+        if ($product['code'] === $_GET['itemId']) {
+            unset($_SESSION['itemID'][$key]);
+        }
+        header('location: winkelwagen.php');
+    }
+}
+
 
 function subTotaal()
 {

@@ -15,7 +15,7 @@ include_once 'templates/navigation.php';
     <div class="product_winkelwagen">
         <?php
         $TOTprice = 0;
-        
+
         if (isset($_SESSION['itemID']) && isset($_GET['amountchange'])) {
             changeAmount();
         }

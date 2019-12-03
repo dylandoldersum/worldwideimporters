@@ -237,11 +237,12 @@ function Countcart()
     return $CartTotal;
 }
 
-function changeAmount() {
+function changeAmount()
+{
     foreach ($_SESSION['itemID'] as $key => $product) {
         if ($product['code'] === $_GET['itemId']) {
-            if($_GET['amountchange'] == 'plus') {
-                    $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] + 1;
+            if ($_GET['amountchange'] == 'plus') {
+                $_SESSION['itemID'][$key]['quantity'] = $_SESSION['itemID'][$key]['quantity'] + 1;
             } else if ($_GET['amountchange'] == 'min') {
                 if ($_SESSION['itemID'][$key]['quantity'] <= 1) {
                     unset($_SESSION['itemID'][$key]);
@@ -254,7 +255,8 @@ function changeAmount() {
     }
 }
 
-function removeItemFromCart() {
+function removeItemFromCart()
+{
     foreach ($_SESSION['itemID'] as $key => $product) {
         if ($product['code'] === $_GET['itemId']) {
             unset($_SESSION['itemID'][$key]);
@@ -287,8 +289,9 @@ function subTotaal()
     }
 }
 
-function CalculateBTW($price){
-  $btw = ($price/121)*21;
-  return round($btw, 2);
+function CalculateBTW($price)
+{
+    $btw = ($price / 121) * 21;
+    return round($btw, 2);
 
 }

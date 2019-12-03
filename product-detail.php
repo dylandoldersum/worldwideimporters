@@ -63,22 +63,40 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                 </form>
                 <?php
 
-
                 if (isset($_POST["submit"])) {
-                    $itemArray = array(
-                        "code" => $_GET['itemID'],
-                        "quantity" => 1,
-                        "pname" => $itemName,
-                        "desc" => $itemDescription,
-                        "weight" => $itemWeight,
-                        "delivertime" => $itemDelivery,
-                        "stock" => $stock,
-                        "price" => $itemPrice);
+                    $bool = false;
+                    $temp = $_GET['itemID'];
 
-                    $_SESSION["itemID"][] = $itemArray;
+                    /**
+                     * $bool = checked of een product die je wilt toevoegen in de array zit (cart)
+                     * $i = index waarmee door de array loopen (cart)
+                     */
 
-                    echo '<script class="pop-up"> alert("Uw product is toegevoegd aan uw winkelwagen!");</script>';
-                    header("Location: ?itemID=" . $_GET['itemID']);
+                    for ($i = 0; $i < sizeof($_SESSION['itemID']); $i++) {
+                        /** Als temp (productid uit de URL) al in de array aanwezig is dan... */
+                        if ($temp == $_SESSION['itemID'][$i]['code']) {
+                            $_SESSION['itemID'][$i]['quantity'] += 1;
+                            $bool = true;
+                        }
+                        /** Als temp(productid uit de URL) NIET aanwezig is en de FOR loop afgelopen is dan... */
+                        if (!$temp == $_SESSION['itemID'][$i]['code'] && $i == sizeof($_SESSION['itemID'] - 1)) {
+                            $bool = false;
+                        }
+                    }
+                    /** Als product niet in de array (cart) aanwezig is dan... */
+                    if ($bool == false) {
+                        $itemArray = array(
+                            "code" => $_GET['itemID'],
+                            "quantity" => 1,
+                            "pname" => $itemName,
+                            "desc" => $itemDescription,
+                            "weight" => $itemWeight,
+                            "delivertime" => $itemDelivery,
+                            "stock" => $stock,
+                            "price" => $itemPrice);
+                        $_SESSION["itemID"][] = $itemArray;
+                    }
+                    header('location: ?itemID=' . $_GET["itemID"]);
                 }
                 ?>
             </div>

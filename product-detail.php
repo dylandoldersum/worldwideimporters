@@ -21,20 +21,17 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
 
 
 ?>
-
 <script>
     function NotVideo() {
         alert("No video... Try again later!");
     }
 </script>
-
 <body>
 <div class="product-container">
     <div class="first-row">
         <div class="productname">
             <H1><?php print $itemName ?></H1>
         </div>
-
     </div>
     <div class="mid-row">
         <div class="picture">
@@ -61,8 +58,6 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                 <form method="POST">
                     <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
                 </form>
-
-
                 <?php
                 if (isset($_POST["submit"])) {
                     $_SESSION['itemID'][] = $_GET['itemID'];
@@ -71,18 +66,15 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                     header("Location:product-detail.php?itemID=" . $_GET['itemID']);
                 }
                 ?>
-
             </div>
             <div class="price">
                 <H1> € <?php print $itemPrice; ?></H1>
-
             </div>
         </div>
 
     </div>
 </div>
 </body>
-
 <?php
 include_once 'templates/footer.php';
 ?>

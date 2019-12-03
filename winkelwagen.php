@@ -15,6 +15,11 @@ include_once 'templates/navigation.php';
     <div class="product_winkelwagen">
         <?php
 
+
+        if(isset($_SESSION['itemID']) && isset($_GET['amountchange'])) {
+            changeAmount();
+        }
+
         if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
             foreach ($_SESSION['itemID'] as $arrayitem) {
                 ?>
@@ -24,9 +29,9 @@ include_once 'templates/navigation.php';
                             <a href="product-detail.php?itemID=<?php echo $arrayitem['code'] ?>"><?php echo $arrayitem['pname'] ?></a>
                         </h3></li>
                     <div class="quantity-items">
-                        <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&quantity=<?php echo $arrayitem['quantity'] = $arrayitem['quantity'] + 1 ?>">+</a></li>
+                        <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&amountchange=plus">+</a></li>
                         <li class="quantity"><?php echo $arrayitem['quantity'] ?></li>
-                        <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&quantity=<?php echo $arrayitem['quantity'] = $arrayitem['quantity'] - 1 ?>">-</a></li>
+                        <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&amountchange=min">-</a></li>
                     </div>
                     <li class="delete-btn"><a class="delete-item" href="?itemId=<?php echo $arrayitem['code'] ?>">X</a></li>
                     <li class="price-tag"><h3> € <?php echo $arrayitem['price'] ?></h3></li>

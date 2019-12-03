@@ -21,10 +21,11 @@ if (isset($_POST["submit"])) {
                 header("Location: contact.php?signup=email&first=$first&last=$last&bericht=$bericht");
                 exit();
             } else {
+              mail("wwigroep3@gmail.com", $email, $bericht);
                 header("Location: contact.php?signup=success");
-                ?>
-                <form>action="send_email.php" method="POST"</form>
-                <?php
+                /*  ?>
+                 <form>action="send_email.php" method="POST"</form>
+                <?php */
                 exit();
             }
         }
@@ -36,4 +37,3 @@ if (isset($_POST["submit"])) {
 
 
 ?>
-

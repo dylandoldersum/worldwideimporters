@@ -286,3 +286,9 @@ function subTotaal()
         return ($totalPrice);
     }
 }
+
+function CalculateBTW($price){
+  $btw = ($price/121)*21;
+  return round($btw, 2);
+
+}

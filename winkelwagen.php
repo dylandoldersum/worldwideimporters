@@ -15,11 +15,10 @@ include_once 'templates/navigation.php';
     <div class="product_winkelwagen">
         <?php
         if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
-            print_r($_SESSION['itemID']);
             foreach (loadProductsWinkel() as $loop) {
                 foreach ($loop as $product => $item) {
                     if (isset($_GET['itemId'])) {
-                        removeItemFromCart();
+                        //removeItemFromCart();
                     }
                     ?>
                     <div class="item-in-cart">

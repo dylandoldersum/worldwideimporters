@@ -237,14 +237,12 @@ function Countcart()
     return $CartTotal;
 }
 
-function removeItemFromCart()
-{
-    if (($key = array_search($_GET['itemId'], $_SESSION['itemID'])) !== false) {
+function removeItemFromCart(){
+    if (($key = array_search($_GET['itemId'], $_SESSION['itemID'][0])) !== false) {
         unset($_SESSION['itemID'][$key]);
         header('location: winkelwagen.php');
     }
 }
-
 
 function subTotaal()
 {

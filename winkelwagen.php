@@ -18,6 +18,7 @@ include_once 'templates/navigation.php';
         if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
             foreach (loadProductsWinkel() as $loop) {
                 foreach ($loop as $product => $item) {
+                    var_dump($item);
                     if (isset($_GET['itemId'])) {
                         removeItemFromCart();
                     }
@@ -29,7 +30,7 @@ include_once 'templates/navigation.php';
                             </h3></li>
                         <li class="numbering"><input type="number" min="1" value="1"></li>
                         <li class="delete-btn"><a href="?itemId=<?php echo $item['StockItemID'] ?>">X</a></li>
-                        <li><h3> € <? echo $item['RecommendedRetailPrice'] ?> </h3></li>
+                        <li><h3> € <?php echo $item['RecommendedRetailPrice']?> </h3></li>
                     </div>
                     <?php
                 }

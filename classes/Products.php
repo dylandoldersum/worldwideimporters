@@ -208,7 +208,7 @@ function loadProductsWinkel()
     $connection = mysqli_connect($host, $user, $password, $dbName);
 
     foreach ($_SESSION['itemID'] as $item) {
-        $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID = $item";
+        $sql = "SELECT StockItemName, StockItemID, Photo, RecommendedRetailPrice FROM stockitems WHERE StockItemID =" . $item['code'];
         $result = mysqli_query($connection, $sql);
         $response[] = $result;
     }
@@ -226,8 +226,8 @@ function Countcart()
 
     $CartTotal = 0;
     if (isset($_SESSION['itemID'])) {
-        foreach ($_SESSION['itemID'] as $item) {
-            $sql = "SELECT StockItemID FROM stockitems WHERE StockItemID = " . $item;
+        foreach ($_SESSION['itemID'] as $loop) {
+            $sql = "SELECT StockItemID FROM stockitems WHERE StockItemID = " . $loop['code'];
             $result = mysqli_query($connection, $sql);
             foreach ($result as $value) {
                 $CartTotal++;
@@ -257,7 +257,7 @@ function subTotaal()
 
     if (isset($_SESSION['itemID'])) {
         foreach ($_SESSION['itemID'] as $item) {
-            $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item;
+            $sql_price_of_product = "SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = " . $item['code'];
             $result = mysqli_query($connection, $sql_price_of_product);
             foreach ($result as $value) {
                 $totalPrice = $totalPrice + $value['RecommendedRetailPrice'];

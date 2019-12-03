@@ -73,8 +73,6 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
 
                     $_SESSION["itemID"][] = $itemArray;
 
-                    var_dump($_SESSION['itemID']);
-                    exit;
                     echo '<script class="pop-up"> alert("Uw product is toegevoegd aan uw winkelwagen!");</script>';
                     header("Location: ?itemID=" . $_GET['itemID']);
                 }

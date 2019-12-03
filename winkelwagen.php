@@ -14,11 +14,6 @@ include_once 'templates/navigation.php';
     </div>
     <div class="product_winkelwagen">
         <?php
-echo '<pre>';
-        var_dump($_SESSION["itemID"]);
-
-        exit;
-        print_r($_SESSION['itemID']);
         if (isset($_SESSION['itemID']) && !empty($_SESSION['itemID'])) {
             print_r($_SESSION['itemID']);
             foreach (loadProductsWinkel() as $loop) {

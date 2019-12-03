@@ -28,7 +28,7 @@ include_once 'templates/navigation.php';
                                 <a href="product-detail.php?itemID=<?php echo $item['StockItemID'] ?>"><?php echo $item['StockItemName'] ?></a>
                             </h3></li>
                         <li class="numbering"><input type="number" min="1" value="1"></li>
-                        <li class="delete-btn"><a href="?itemId=<? echo $item['StockItemID'] ?>">X</a></li>
+                        <li class="delete-btn"><a href="?itemId=<?php echo $item['StockItemID'] ?>">X</a></li>
                         <li><h3> € <? echo $item['RecommendedRetailPrice'] ?> </h3></li>
                     </div>
                     <?php

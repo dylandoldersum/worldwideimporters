@@ -10,6 +10,11 @@
 /** Automatisch laden van header */
 include_once 'assets/autoloader.php';
 
+if(isset($_GET['betaald'])) {
+    unset($_SESSION['itemID']);
+    header('location: index.php');
+}
+
 /** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
 include_once 'templates/indexbody.php';

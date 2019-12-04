@@ -9,7 +9,7 @@
 include "assets/autoloader.php";
 include "templates/navigation.php";
 
-if(empty($_SESSION['itemID'])) {
+if(empty($_SESSION['itemID']) || empty($_SESSION['contactinfo'])) {
     header('location: index.php');
 } else {
     ?>
@@ -42,10 +42,12 @@ Het pakket wordt zo snel mogelijk geleverd op het volgende adres: " . $_SESSION[
         mail("wwigroep3@gmail.com", "UW BESTELLING", $msg);
         ?>
         <div class="contact-info-array">
-
         </div>
+
+        <a class="back-to-home" href="index.php?betaald=success">Terug naar de homepagina</a>
     </div>
 
     <?php
+    include_once 'templates/footer.php';
 }
 ?>

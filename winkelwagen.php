@@ -35,14 +35,17 @@ include_once 'templates/navigation.php';
                         <li class="quantity"><?php echo $arrayitem['quantity'] ?></li>
                         <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&amountchange=min">-</a></li>
                     </div>
-                    <li class="btw"><h3> btw: € <?php echo CalculateBTW($arrayitem['quantity']*$arrayitem['price']); ?></h3></li>
-                    <li class="subtotaal"><h3> € <?php
-                    $price = $arrayitem['quantity']*$arrayitem['price'];
-                    $TOTprice += $price;
-                    echo $price ?></h3></li>
+                    <div class="btw-price">
+                        <li class="btw"><h3> btw:
+                                € <?php echo CalculateBTW($arrayitem['quantity'] * $arrayitem['price']); ?></h3></li>
+                        <li class="subtotaal"><h3>Subtotaal: € <?php
+                                $price = $arrayitem['quantity'] * $arrayitem['price'];
+                                $TOTprice += $price;
+                                echo $price ?></h3></li>
+                    </div>
                     <li class="delete-btn"><a class="delete-item"
                                               href="?itemId=<?php echo $arrayitem['code'] ?>&delete=true">X</a></li>
-                    <li class="price-tag"><h3> € <?php echo $arrayitem['price'] ?></h3></li>
+                    <li class="price-tag"><h3> € <?php echo $arrayitem['price'] ?> per stuk</h3></li>
                 </div>
                 <?php
             }

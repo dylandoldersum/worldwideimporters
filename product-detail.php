@@ -66,12 +66,10 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                 if (isset($_POST["submit"])) {
                     $bool = false;
                     $temp = $_GET['itemID'];
-
                     /**
                      * $bool = checked of een product die je wilt toevoegen in de array zit (cart)
                      * $i = index waarmee door de array loopen (cart)
                      */
-
                     for ($i = 0; $i < sizeof($_SESSION['itemID']); $i++) {
                         /** Als temp (productid uit de URL) al in de array aanwezig is dan... */
                         if ($temp == $_SESSION['itemID'][$i]['code']) {

@@ -170,7 +170,7 @@ function getResults()
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $result = mysqli_query($connection, mysqli_real_escape_string($connection, checkSearchType()));
+    $result = mysqli_query($connection, checkSearchType());
     if ($result == null || empty($result))
         return false;
 

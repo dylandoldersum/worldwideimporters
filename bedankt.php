@@ -20,6 +20,7 @@ include "assets/autoloader.php";
 <div class="thank-you-for-buying">
   <h1>Bedankt voor uw aankoop, <?php echo $_SESSION['contactinfo']['Voornaam']. " " . $_SESSION['contactinfo']['Achternaam']; ?>!</h1><br>
   <p>Informatie over de bestelling wordt gestuurd via de mail.</p>
+  <p>Bestelling wordt geleverd op: <?php echo  $_SESSION['contactinfo']['Adres'] . " " . $_SESSION['contactinfo']['Huisnummer'] . " " . $_SESSION['contactinfo']['Postcode'] . " " . $_SESSION['contactinfo']['Landnaam'] ?></p>
   <?php
 
   $msg = "Bedankt voor uw bestelling van €" . subTotaal() . ".

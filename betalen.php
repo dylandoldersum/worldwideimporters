@@ -21,6 +21,5 @@ $array_info = array("Voornaam" => $first, "Achternaam" => $last, "Adres" => $add
 $_SESSION['contactinfo'] = $array_info;
 
 $json = generateMollie("Bestelling", doubleval(subTotaal()));
-var_dump($json);
 
 Header('location:' . $json['_links']['checkout']['href']);

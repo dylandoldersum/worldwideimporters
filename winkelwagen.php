@@ -26,7 +26,7 @@ include_once 'templates/navigation.php';
             foreach ($_SESSION['itemID'] as $arrayitem) {
                 ?>
                 <div class="item-in-cart">
-                    <li><img src=assets/images/SB.png width='150' height='150'></li>
+                    <li><img src=assets/images/logo.png width='150' height='150'></li>
                     <li><h3>
                             <a href="product-detail.php?itemID=<?php echo $arrayitem['code'] ?>"><?php echo $arrayitem['pname'] ?></a>
                         </h3></li>

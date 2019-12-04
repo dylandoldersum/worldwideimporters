@@ -8,19 +8,17 @@
  */
 
 include_once 'assets/autoloader.php';
+$first = $_POST["voornaam"];
+$last = $_POST["achternaam"];
+$address = $_POST["adres"];
+$number = $_POST["huisnummer"];
+$country = $_POST["land"];
+$postalcode = $_POST["postcode"];
+$phone = $_POST["telefoon"];
+$email = $_POST["email"];
 
-$voornaam = $_POST['voornaam'];
-$achternaam = $_POST['achternaam'];
-$adres = $_POST['adres'];
-$huis = $_POST['huisnummer'];
-$land = $_POST['land'];
-$postcode = $_POST['postcode'];
-$telefoon = $_POST['telefoon'];
-$email = $_POST['email'];
-
-$array_info = array("Voornaam" => $voornaam, "Achternaam" => $achternaam, "Adres" => $adres, "Huisnummer" => $huis, "Landnaam" => $land, "Postcode" => $postcode, "Telefoonnummer" => $telefoon, "Emailadres" => $email);
+$array_info = array("Voornaam" => $first, "Achternaam" => $last, "Adres" => $address, "Huisnummer" => $number, "Landnaam" => $country, "Postcode" => $postalcode, "Telefoonnummer" => $phone, "Emailadres" => $email);
 $_SESSION['contactinfo'] = $array_info;
-
 
 $json = generateMollie("Bestelling", doubleval(subTotaal()));
 var_dump($json);

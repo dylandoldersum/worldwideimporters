@@ -26,10 +26,7 @@ foreach ($_SESSION['itemID'] as $arrayitem) {
     $bestelline .= $arrayitem['quantity'] . " X " . $arrayitem['pname'] . " = " . $arrayitem['quantity'] * $arrayitem['price'] . "  ";
 }
 
-$desc = $_SESSION['contactinfo']['Voornaam'];
-$desc .= " ".$_SESSION['contactinfo']['Achternaam']." - ".rand(10000, 20000);
-$desc .= " - ";
-$desc .= "$bestelline";
+$desc = $_SESSION['contactinfo']['Voornaam']."-".rand(100000, 600000);
 
 $json = generateMollie($desc, doubleval($_SESSION['TOT']));
 

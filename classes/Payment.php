@@ -7,11 +7,11 @@
  * Time: 09:58
  */
 
-function generateMollie($name, $price)
+function generateMollie($desc, $price)
 {
     $body = '{
         "amount": {"currency":"EUR", "value":"' . $price . '"},
-        "description": "' . $name . '",
+        "description": "' . $desc . '",
         "redirectUrl": "http://localhost/worldwideimporters/bedankt.php"
     }';
     $ch = curl_init();

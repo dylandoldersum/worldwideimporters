@@ -35,7 +35,7 @@ include_once 'templates/navigation.php';
             <input class="input-text" name="telefoon" type="text" placeholder="Telefoonnummer">
             <input class="input-text" name="email" type="text" placeholder="Email@mail.com">
             <div class="betaal-btn-container">
-                <input type="submit" name="submit_info">
+                <input type="submit" class="verzendgegevens" name="submit_info">
             </div>
         </form>
     </div>

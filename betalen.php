@@ -20,6 +20,9 @@ $email = $_POST["email"];
 $array_info = array("Voornaam" => $first, "Achternaam" => $last, "Adres" => $address, "Huisnummer" => $number, "Landnaam" => $country, "Postcode" => $postalcode, "Telefoonnummer" => $phone, "Emailadres" => $email);
 $_SESSION['contactinfo'] = $array_info;
 
-$json = generateMollie("Bestelling", doubleval($_SESSION['TOT']));
+$desc = $_SESSION['contactinfo']['Voornaam'];
+$desc .= " ".$_SESSION['contactinfo']['Achternaam']." ".rand(10000, 20000);
+
+$json = generateMollie($desc, doubleval($_SESSION['TOT']));
 
 Header('location:' . $json['_links']['checkout']['href']);

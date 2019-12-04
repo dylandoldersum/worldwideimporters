@@ -19,13 +19,18 @@ include "assets/autoloader.php";
 
 <div class="thank-you-for-buying">
   <h1>Bedankt voor uw aankoop, <?php echo $_SESSION['contactinfo']['Voornaam']. " " . $_SESSION['contactinfo']['Achternaam']; ?>!</h1><br>
-  <p>Informatie over de bestelling wordt gestuurd via de mail.</p>
+  <p>Informatie over de bestelling wordt gestuurd via de mail.</p><br>
   <p>Bestelling wordt geleverd op: <?php echo  $_SESSION['contactinfo']['Adres'] . " " . $_SESSION['contactinfo']['Huisnummer'] . " " . $_SESSION['contactinfo']['Postcode'] . " " . $_SESSION['contactinfo']['Landnaam'] ?></p>
   <?php
+  $bestelline = "";
+  foreach ($_SESSION['itemID'] as $arrayitem) {
+    $bestelline .= $arrayitem['quantity'] . " X " . $arrayitem['pname'] . " = " . $arrayitem['quantity']*$arrayitem['price'] . "\n";
+  }
 
-  $msg = "Bedankt voor uw bestelling van €" . subTotaal() . ".
+  $msg = "Bedankt voor uw bestelling van €" . $_SESSION['TOT'] . ".
 Het pakket wordt zo snel mogelijk geleverd op het volgende adres: " . $_SESSION['contactinfo']['Adres'] . " " .
-  $_SESSION['contactinfo']['Huisnummer'] . " " . $_SESSION['contactinfo']['Postcode'] . " " . $_SESSION['contactinfo']['Landnaam'] . "Bedankt namens WWI, bij vragen kunt u terecht bij wwigroep3@gmail.com"
+  $_SESSION['contactinfo']['Huisnummer'] . " " . $_SESSION['contactinfo']['Postcode'] . " " . $_SESSION['contactinfo']['Landnaam'] . "\n\nBedankt namens WWI, bij vragen kunt u terecht bij wwigroep3@gmail.com \n\n"
+  . "De bestelling: \n\n" .  $bestelline . "Totaal: " . $_SESSION['TOT'];
 
   ;
   mail("wwigroep3@gmail.com", "UW BESTELLING", $msg);

@@ -578,3 +578,14 @@ input[type=number]::-webkit-outer-spin-button {
     top: 50%;
     left: 15%;
 }
+
+.btw-price {
+    position: absolute;
+    bottom: 5px;
+    right: 19px;
+}
+
+li.btw {
+    margin-right: 15px;
+    font-size: 13px;
+}

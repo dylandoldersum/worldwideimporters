@@ -586,3 +586,49 @@ li.btw {
     margin-right: 15px;
     font-size: 13px;
 }
+
+/*----------------Reviews op reviewsite.php------------*/
+.invitation-container {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 4px solid blue;
+  width: 500px;
+  text-align: center;
+}
+
+.current-container {
+  background-color: #6783eb;
+  border-radius: 15px;
+  padding-top: 25px;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 175px;
+  text-align: left;
+  display: block;
+}
+
+.current-ratings-and-reviews {
+  color: #e9ecf7;
+}
+
+/*------------------formulier op writereview.php-----------*/
+.form-review-container {
+  background-color: #6783eb;
+  border-radius: 15px;
+  padding-top: 25px;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 325px;
+  text-align: left;
+  display: block;
+}
+
+.form-review-content {
+  color: #e9ecf7;
+}

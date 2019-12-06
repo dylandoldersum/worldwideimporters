@@ -15,20 +15,35 @@
 
     <div class="form-review-container">
       <div class="form-review-content">
-       <form class="" action="reviewsite.php" method="post">
+       <form class="" action="error_handler_review.php" method="post">
          <span>Wat is je voornaam?</span> <br>
          <input type="text" name="naam" value=""> <br><br>
          <span>Wat geef je als beoordeling?</span> <br>
-         <input type="radio" name="zeer goed" value="zg"> <span> Zeer goed</span> <br>
-         <input type="radio" name="goed" value="g"> <span> Goed</span> <br>
-         <input type="radio" name="matig" value="m"> <span> Matig</span> <br>
-         <input type="radio" name="slecht" value="s"> <span> Slecht</span> <br>
-         <input type="radio" name="zeer slecht" value="zs"> <span> Zeer slecht</span> <br><br>
+         <select name="beoordeling">
+         <option value="Zeer goed">Zeer goed</option> <span> Zeer goed</span> <br>
+         <option value="Goed">Goed</option> <span> Goed</span> <br>
+         <option value="Matig">Matig</option> <span> Matig</span> <br>
+         <option value="Slecht">Slecht</option> <span> Slecht</span> <br>
+         <option value="Zeer slecht">Zeer slecht</option> <span> Zeer slecht</span>
          <textarea name="bericht" placeholder="Noteer hier uw toelichting" rows="6" cols="65"></textarea> <br><br>
          <input type="submit" name="sendreview" value="Verzenden">
        </form>
      </div>
     </div>
+
+    <?php
+      //  if (isset($_POST['sendreview'])) {
+        //  $voornaam = $_POST['naam'];
+      //    $beoordeling = $_POST['beoordeling'];
+      //    $bericht = $_POST['bericht'];
+      //    $arrayReview = array("voornaam" => $voornaam, "beoordeling" => $beoordeling, "bericht" => $bericht);
+      //    $_SESSION['review-report'] = $arrayReview;
+
+      //    foreach ($_SESSION['review-report'] as $index => $value) {
+      //      print("Je " . $index . " is " . $value . "<br>");
+    //      }
+      //  }
+     ?>
 
    <?php
       include_once 'templates/footer.php';

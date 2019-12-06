@@ -3,6 +3,8 @@
     include_once 'assets/autoloader.php';
     /** Templates met gebruik van includes **/
     include_once 'templates/navigation.php';
+
+    $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
  ?>
 
 
@@ -30,6 +32,14 @@
           <h4>Zeer slecht: </h4>
         </div>
       </div>
+
+  <?php
+    if (strpos($fullURL, "signup=success") == true) {
+        print('<script>
+                alert("Bedankt voor uw mening!");
+              </script>');
+    }
+   ?>
 
   <?php
      include_once 'templates/footer.php';

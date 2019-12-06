@@ -634,3 +634,10 @@ li.btw {
 .form-review-content {
   color: #e9ecf7;
 }
+
+/*--------------Revies op reviewsite.php----------------*/
+.reviews-container {
+  border-style: solid;
+  border-radius: 15px;
+  background-color: #9296fc;
+}

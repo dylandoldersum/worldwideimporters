@@ -39,6 +39,7 @@
                 alert("Bedankt voor uw mening!");
               </script>');
     }
+    loadReviews();
    ?>
 
   <?php

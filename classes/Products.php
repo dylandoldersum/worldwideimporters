@@ -293,5 +293,20 @@ function CalculateBTW($price)
 {
     $btw = ($price / 121) * 21;
     return round($btw, 2);
+}
+
+
+function loadReviews () {
+  $host = 'localhost';
+  $dbName = 'wideworldimporters';
+  $user = 'root';
+  $password = '';
+  $connection = mysqli_connect($host, $user, $password, $dbName);
+
+  if (isset($_SESSION['review-report'])) {
+    foreach ($_SESSION['review-report'] as $review) {
+      print($review . "<br>");
+    }
+  }
 
 }

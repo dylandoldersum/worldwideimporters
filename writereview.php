@@ -3,6 +3,8 @@
     include_once 'assets/autoloader.php';
     /** Templates met gebruik van includes **/
     include_once 'templates/navigation.php';
+
+    $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
  ?>
 
  <!DOCTYPE html>
@@ -30,6 +32,15 @@
        </form>
      </div>
     </div>
+
+    <?php
+    if (strpos($fullURL, "signup=empty") == true) {
+        print('<script>
+                alert("U moet wel alle velden invullen!");
+            </script>');
+        exit();
+    }
+    ?>
 
     <?php
       //  if (isset($_POST['sendreview'])) {

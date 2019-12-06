@@ -617,6 +617,8 @@ li.btw {
 
 /*------------------formulier op writereview.php-----------*/
 .form-review-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #6783eb;
   border-radius: 15px;
   padding-top: 25px;

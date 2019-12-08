@@ -296,24 +296,35 @@ function CalculateBTW($price)
 }
 
 
-function loadReviews () {
+function loadReviewsWebsite () {
   $host = 'localhost';
   $dbName = 'wideworldimporters';
   $user = 'root';
   $password = '';
   $connection = mysqli_connect($host, $user, $password, $dbName);
+  $sql_get_reviews = "SELECT reviewerID, name, rating, message FROM sitereviews";
+  $result = mysqli_query($connection, $sql_get_reviews);
 
-  if (isset($_SESSION['review-report'])) {
-    foreach ($_SESSION['review-report'] as $review) {
-      print($review . "<br>");
-    }
+  foreach ($result as $value) {
+    $id = $value['reviewerID'];
+    $name = $value['name'];
+    $rating = $value['rating'];
+    $message = $value['message'];
+    print($name . "<br>" . $rating . "<br>" . $message . "<br>");
   }
 }
 
- function makeDatabaseConnection () {
+ function reviewCounterWebsite () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT reviewerID FROM sitereviews";
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['reviewerID'];
+     print($total);
+   }
  }

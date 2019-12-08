@@ -24,7 +24,6 @@ session_start();
 
       $sql_insert = "INSERT INTO sitereviews (name, rating, message) VALUES ('$voornaam', '$beoordeling', '$bericht')";
       $result = mysqli_query($connection, $sql_insert);
-      $newrecord = "1 record added to the database";
       header("Location: reviewsite.php?signup=success&result=$newrecord");
   }
 

@@ -3,6 +3,7 @@
     include_once 'assets/autoloader.php';
     /** Templates met gebruik van includes **/
     include_once 'templates/navigation.php';
+    include_once 'classes/Products.php';
 
     $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
  ?>
@@ -24,7 +25,7 @@
 
       <div class="current-container">
         <div class="current-ratings-and-reviews">
-          <h3>Reviews: </h3> <br>
+          <h3>Reviews: <?php reviewCounterWebsite(); ?></h3> <br>
           <h4>Zeer goed: </h4>
           <h4>Goed: </h4>
           <h4>Matig: </h4>
@@ -33,12 +34,17 @@
         </div>
       </div>
 
+      <div class="reviews-on-site-container">
+        <div class="reviews-on-site-content">
+          <?php loadReviewsWebsite(); ?>
+        </div>
+      </div>
   <?php
     if (strpos($fullURL, "signup=success") == true) {
         print('<script>
                 alert("Bedankt voor uw mening!");
               </script>');
-        $newrecord = $_GET['result'];      
+        $newrecord = $_GET['result'];
         echo $newrecord;
     }
    ?>

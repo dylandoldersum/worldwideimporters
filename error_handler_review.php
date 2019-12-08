@@ -1,4 +1,5 @@
 <?php
+include_once 'classes/Products.php';
 session_start();
 
   if (isset($_POST['sendreview'])) {
@@ -6,17 +7,27 @@ session_start();
     $voornaam = $_POST['naam'];
     $beoordeling = $_POST['beoordeling'];
     $bericht = $_POST['bericht'];
-    $arrayReview = array("voornaam" => $voornaam, "beoordeling" => $beoordeling, "bericht" => $bericht);
-    $_SESSION['review-report'] = $arrayReview;
+    //$arrayReview = array("voornaam" => $voornaam, "beoordeling" => $beoordeling, "bericht" => $bericht);
+    //$_SESSION['review-report'] = $arrayReview;
 
     //Kijkt of de velden leeg zijn
     if (empty($voornaam) || empty($bericht)) {
         header("Location: writereview.php?signup=empty&naam=$voornaam&bericht=$bericht");
         exit();
     }  else {
-    header("Location: reviewsite.php?signup=success");
-    exit();
+
+      $host = 'localhost';
+      $dbName = 'wideworldimporters';
+      $user = 'root';
+      $password = '';
+      $connection = mysqli_connect($host, $user, $password, $dbName);
+
+      $sql_insert = "INSERT INTO sitereviews (name, rating, message) VALUES ('$voornaam', '$beoordeling', '$bericht')";
+      $result = mysqli_query($connection, $sql_insert);
+      $newrecord = "1 record added to the database";
+      header("Location: reviewsite.php?signup=success&result=$newrecord");
   }
+
 }
 
 ?>

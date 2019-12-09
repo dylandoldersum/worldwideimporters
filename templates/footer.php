@@ -10,7 +10,8 @@
 <div class="footer-container">
     <div class="footer">
         <p class="copyright">&copy WideWorldImporters 2019</p>
-        <a href="contact.php">Contact</a>
+        <a href="contact.php">Contact</a> <br>
+        <a href="reviewsite.php">Site reviews</a>
         <div class="footerlogo">
             <img src="assets/images/logo.png">
         </div>

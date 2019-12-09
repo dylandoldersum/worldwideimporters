@@ -96,7 +96,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                             "price" => $itemPrice);
                         $_SESSION["itemID"][] = $itemArray;
                     }
-                    header('location: ?itemID=' . $_GET["itemID"]);
+                    header('location:?itemID=' . $_GET["itemID"]);
                 }
                 ?>
             </div>

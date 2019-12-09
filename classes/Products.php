@@ -147,6 +147,18 @@ function getProductInfo()
     return $result;
 }
 
+function getCategoryProducts()
+{
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
+                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
+    $result = mysqli_query($connection, $sql);
+}
+
 function checkSearchType()
 {
     if ($_GET['type'] == "pname") {

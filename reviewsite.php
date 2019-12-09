@@ -44,8 +44,6 @@
         print('<script>
                 alert("Bedankt voor uw mening!");
               </script>');
-        $newrecord = $_GET['result'];
-        echo $newrecord;
     }
    ?>
 

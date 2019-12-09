@@ -598,6 +598,19 @@ li.btw {
   text-align: center;
 }
 
+.invitation-message {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.invitation-message a {
+  color: white;
+}
+
+.invitation-message a:hover {
+  color: blue;
+}
+
 .current-container {
   background: url(../images/kerstboom.jpg) no-repeat center fixed;
   padding: 20px;

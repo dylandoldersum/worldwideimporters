@@ -106,6 +106,9 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
         </div>
 
     </div>
+    <div class='reviews'>
+      <a href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>"><h2 id='delenMening'>Deel met uw mening over dit product!</h2></a>
+    </div>
 </div>
 </body>
 <?php

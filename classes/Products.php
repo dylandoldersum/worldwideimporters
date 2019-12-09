@@ -328,3 +328,18 @@ function loadReviewsWebsite () {
      print($total);
    }
  }
+
+ function zeergoedCounter () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Zeer goed'";
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(reviewerID)'];
+     print($total);
+  }
+ }

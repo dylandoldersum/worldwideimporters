@@ -26,7 +26,7 @@
       <div class="current-container">
         <div class="current-ratings-and-reviews">
           <h3>Reviews: <?php reviewCounterWebsite(); ?></h3> <br>
-          <h4>Zeer goed: </h4>
+          <h4>Zeer goed: <?php zeergoedCounter(); ?></h4>
           <h4>Goed: </h4>
           <h4>Matig: </h4>
           <h4>Slecht: </h4>

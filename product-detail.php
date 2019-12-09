@@ -19,8 +19,10 @@ foreach (getProductInfo() as $value) {
     $stock = $value['LastStocktakeQuantity'];
     $photo = "";
 
+
 }
 $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]'), '', $itemDescription1);
+
 
 
 ?>
@@ -50,7 +52,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             <H4>Voorraad:</H4>
             <p><?php print $stock ?> stuks</p><br>
             <?php
-            $graden = rand(38, 43) / 10;
+            $graden = 3.75;
             if (getTemperature($_GET["itemID"]) == 1) {
                 print "<H4>Temperatuur:</H4>
             <p> $graden graden celsius</p><br>";

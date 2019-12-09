@@ -14,7 +14,9 @@ session_start();
     if (empty($voornaam) || empty($bericht)) {
         header("Location: writereview.php?signup=empty&naam=$voornaam&bericht=$bericht");
         exit();
-    }  else {
+    }  elseif (!preg_match("/^[a-zA-Z]*$/", $voornaam) AND !preg_match(" ", $voornaam)) {
+        header("Location: writereview.php?signup=char&bericht=$bericht");
+    } else {
 
       $host = 'localhost';
       $dbName = 'wideworldimporters';

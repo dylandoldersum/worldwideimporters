@@ -51,7 +51,13 @@
     if (strpos($fullURL, "signup=empty") == true) {
         print('<script>
                 alert("U moet wel alle velden invullen!");
-            </script>');
+              </script>');
+        exit();
+    } elseif (strpos($fullURL, "signup=char") == true) {
+        print('<script>
+                alert("U moet wel valide tekens voor uw naam gebruiken");
+              </script>');
+        exit();      
     }
     ?>
 

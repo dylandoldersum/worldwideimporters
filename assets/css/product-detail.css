@@ -89,3 +89,8 @@
     background: #0d4b77;
     border: 0.5px solid black;
 }
+
+#delenMening {
+  text-align: center;
+  margin-top: 100px;
+}

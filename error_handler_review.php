@@ -14,7 +14,7 @@ session_start();
     if (empty($voornaam) || empty($bericht)) {
         header("Location: writereview.php?signup=empty&naam=$voornaam&bericht=$bericht&beoordeling=$beoordeling");
         exit();
-    }  elseif (!preg_match("/^[a-zA-Z]*$/", $voornaam) AND !preg_match(" ", $voornaam)) {
+    }  elseif (!preg_match("/^[a-zA-Z -ZÖÏÜËÄöïüëä]*$/", $voornaam)) {
         header("Location: writereview.php?signup=char&bericht=$bericht");
     } else {
 

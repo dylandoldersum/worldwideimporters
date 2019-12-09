@@ -302,16 +302,9 @@ function loadReviewsWebsite () {
   $user = 'root';
   $password = '';
   $connection = mysqli_connect($host, $user, $password, $dbName);
-  $sql_get_reviews = "SELECT reviewerID, name, rating, message FROM sitereviews";
+  $sql_get_reviews = "SELECT reviewerID, name, rating, message, datum FROM sitereviews";
   $result = mysqli_query($connection, $sql_get_reviews);
-
-  foreach ($result as $value) {
-    $id = $value['reviewerID'];
-    $name = $value['name'];
-    $rating = $value['rating'];
-    $message = $value['message'];
-    print($name . "<br>" . $rating . "<br>" . $message . "<br>");
-  }
+  return $result;
 }
 
  function reviewCounterWebsite () {

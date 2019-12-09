@@ -6,7 +6,7 @@
     include_once 'classes/Products.php';
 
     $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
- ?>
+?>
 
 
 <!DOCTYPE html>
@@ -36,7 +36,20 @@
 
       <div class="reviews-on-site-container">
         <div class="reviews-on-site-content">
-          <?php loadReviewsWebsite(); ?>
+            <?php foreach (loadReviewsWebsite() as $value) {?>
+                <div class="review">
+                    <?php
+                    $id = $value['reviewerID'];
+                    $name = $value['name'];
+                    $rating = $value['rating'];
+                    $message = $value['message'];
+                    $date = $value['datum'];
+                    ?>
+                    <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
+                    <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
+                    <li><p class="date-review"><?php  echo $date ?></p></li>
+                </div>
+            <?php } ?>
         </div>
       </div>
   <?php

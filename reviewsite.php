@@ -27,10 +27,10 @@
         <div class="current-ratings-and-reviews">
           <h3>Reviews: <?php reviewCounterWebsite(); ?></h3> <br>
           <h4>Zeer goed: <?php zeergoedCounter(); ?></h4>
-          <h4>Goed: </h4>
-          <h4>Matig: </h4>
-          <h4>Slecht: </h4>
-          <h4>Zeer slecht: </h4>
+          <h4>Goed: <?php goedCounter(); ?></h4>
+          <h4>Matig: <?php matigCounter(); ?></h4>
+          <h4>Slecht: <?php slechtCounter(); ?></h4>
+          <h4>Zeer slecht: <?php zeerslechtCounter(); ?></h4>
         </div>
       </div>
 

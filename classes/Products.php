@@ -320,11 +320,11 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT reviewerID FROM sitereviews";
+   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews";
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
-     $total = $counter['reviewerID'];
+     $total = $counter['COUNT(reviewerID)'];
      print($total);
    }
  }

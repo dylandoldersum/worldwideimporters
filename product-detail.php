@@ -106,9 +106,41 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
         </div>
 
     </div>
-    <div class='reviews'>
+
       <a href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>"><h2 id='delenMening'>Deel met uw mening over dit product!</h2></a>
-    </div>
+
+      <div class="current-container">
+        <div class="current-ratings-and-reviews">
+          <h3>Reviews: <?php reviewCounterWebsite(); ?></h3> <br>
+          <h4>Zeer goed: <?php zeergoedCounter(); ?></h4>
+          <h4>Goed: <?php goedCounter(); ?></h4>
+          <h4>Matig: <?php matigCounter(); ?></h4>
+          <h4>Slecht: <?php slechtCounter(); ?></h4>
+          <h4>Zeer slecht: <?php zeerslechtCounter(); ?></h4>
+        </div>
+      </div>
+
+      <div class="reviews-on-site-container">
+        <div class="reviews-on-site-content">
+            <?php foreach (loadReviewsWebsite() as $value) {?>
+                <div class="review">
+                    <?php
+                    $id = $value['reviewerID'];
+                    $name = $value['name'];
+                    $rating = $value['rating'];
+                    $message = $value['message'];
+                    $date = $value['datum'];
+                    ?>
+                    <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
+                    <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
+                    <li><p class="date-review"><?php  echo $date ?></p></li>
+                </div>
+            <?php } ?>
+        </div>
+      </div>
+
+
+
 </div>
 </body>
 <?php

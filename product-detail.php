@@ -111,21 +111,20 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
 
       <div class="current-container">
         <div class="current-ratings-and-reviews">
-          <h3>Reviews: <?php reviewCounterWebsite(); ?></h3> <br>
-          <h4>Zeer goed: <?php zeergoedCounter(); ?></h4>
-          <h4>Goed: <?php goedCounter(); ?></h4>
-          <h4>Matig: <?php matigCounter(); ?></h4>
-          <h4>Slecht: <?php slechtCounter(); ?></h4>
-          <h4>Zeer slecht: <?php zeerslechtCounter(); ?></h4>
+          <h3>Reviews: <?php reviewCounterProduct(); ?></h3> <br>
+          <h4>Zeer goed: <?php zeergoedCounterP(); ?></h4>
+          <h4>Goed: <?php goedCounterP(); ?></h4>
+          <h4>Matig: <?php matigCounterP(); ?></h4>
+          <h4>Slecht: <?php slechtCounterP(); ?></h4>
+          <h4>Zeer slecht: <?php zeerslechtCounterP(); ?></h4>
         </div>
       </div>
 
       <div class="reviews-on-site-container">
         <div class="reviews-on-site-content">
-            <?php foreach (loadReviewsWebsite() as $value) {?>
+            <?php foreach (loadReviewsproducts() as $value) {?>
                 <div class="review">
                     <?php
-                    $id = $value['reviewerID'];
                     $name = $value['name'];
                     $rating = $value['rating'];
                     $message = $value['message'];

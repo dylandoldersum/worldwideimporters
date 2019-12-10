@@ -411,106 +411,104 @@ function loadReviewsWebsite () {
  }
 
  // functies voor reviews product
- /*
+
  function loadReviewsproducts () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_get_reviews = "SELECT reviewerID, name, rating, message, datum FROM sitereviews";
+   $sql_get_reviews = "SELECT name, rating, message, datum FROM productreview";
    $result = mysqli_query($connection, $sql_get_reviews);
    return $result;
  }
 
- function reviewCounterWebsite () {
+ function reviewCounterProduct () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview";
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
-     $total = $counter['COUNT(reviewerID)'];
+     $total = $counter['COUNT(productreviewID)'];
      print($total);
    }
  }
 
- function zeergoedCounter () {
+ function zeergoedCounterP () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Zeer goed'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer goed'";
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
-     $total = $counter['COUNT(reviewerID)'];
+     $total = $counter['COUNT(productreviewID)'];
      print($total);
   }
  }
 
- function goedCounter () {
+ function goedCounterP () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Goed'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Goed'";
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
-     $total = $counter['COUNT(reviewerID)'];
+     $total = $counter['COUNT(productreviewID)'];
      print($total);
   }
  }
 
- function matigCounter () {
+ function matigCounterP () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Matig'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Matig'";
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
-     $total = $counter['COUNT(reviewerID)'];
+     $total = $counter['COUNT(productreviewID)'];
      print($total);
   }
  }
 
- function slechtCounter () {
+ function slechtCounterP () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Slecht'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Slecht'";
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
-     $total = $counter['COUNT(reviewerID)'];
+     $total = $counter['COUNT(productreviewID)'];
      print($total);
   }
  }
 
- function zeerslechtCounter () {
+ function zeerslechtCounterP () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Zeer slecht'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer slecht'";
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
-     $total = $counter['COUNT(reviewerID)'];
+     $total = $counter['COUNT(productreviewID)'];
      print($total);
   }
  }
-
- */

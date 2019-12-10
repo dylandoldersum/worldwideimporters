@@ -411,6 +411,7 @@ function loadReviewsWebsite () {
  }
 
  // functies voor reviews product
+ /*
  function loadReviewsproducts () {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
@@ -511,3 +512,5 @@ function loadReviewsWebsite () {
      print($total);
   }
  }
+
+ */

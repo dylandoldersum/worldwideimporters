@@ -314,7 +314,7 @@ function loadReviewsWebsite () {
   $user = 'root';
   $password = '';
   $connection = mysqli_connect($host, $user, $password, $dbName);
-  $sql_get_reviews = "SELECT reviewerID, name, rating, message, datum FROM sitereviews";
+  $sql_get_reviews = "SELECT reviewerID, name, rating, message, date FROM sitereviews";
   $result = mysqli_query($connection, $sql_get_reviews);
   return $result;
 }

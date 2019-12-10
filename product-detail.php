@@ -19,8 +19,10 @@ foreach (getProductInfo() as $value) {
     $stock = $value['LastStocktakeQuantity'];
     $photo = "";
 
+
 }
 $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]'), '', $itemDescription1);
+
 
 
 ?>
@@ -50,7 +52,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             <H4>Voorraad:</H4>
             <p><?php print $stock ?> stuks</p><br>
             <?php
-            $graden = rand(38, 43) / 10;
+            $graden = 3.75;
             if (getTemperature($_GET["itemID"]) == 1) {
                 print "<H4>Temperatuur:</H4>
             <p> $graden graden celsius</p><br>";
@@ -104,6 +106,40 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
         </div>
 
     </div>
+
+      <a href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>"><h2 id='delenMening'>Deel met uw mening over dit product!</h2></a>
+
+      <div class="current-container">
+        <div class="current-ratings-and-reviews">
+          <h3>Reviews: <?php reviewCounterProduct(); ?></h3> <br>
+          <h4>Zeer goed: <?php zeergoedCounterP(); ?></h4>
+          <h4>Goed: <?php goedCounterP(); ?></h4>
+          <h4>Matig: <?php matigCounterP(); ?></h4>
+          <h4>Slecht: <?php slechtCounterP(); ?></h4>
+          <h4>Zeer slecht: <?php zeerslechtCounterP(); ?></h4>
+        </div>
+      </div>
+
+      <div class="reviews-on-site-container">
+        <div class="reviews-on-site-content">
+            <?php foreach (loadReviewsproducts() as $value) {?>
+                <div class="review">
+                    <?php
+                    $name = $value['name'];
+                    $rating = $value['rating'];
+                    $message = $value['message'];
+                    $date = $value['datum'];
+                    ?>
+                    <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
+                    <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
+                    <li><p class="date-review"><?php  echo $date ?></p></li>
+                </div>
+            <?php } ?>
+        </div>
+      </div>
+
+
+
 </div>
 </body>
 <?php

@@ -147,6 +147,18 @@ function getProductInfo()
     return $result;
 }
 
+function getCategoryProducts()
+{
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
+                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
+    $result = mysqli_query($connection, $sql);
+}
+
 function checkSearchType()
 {
     if ($_GET['type'] == "pname") {
@@ -296,22 +308,16 @@ function CalculateBTW($price)
 }
 
 
+// functie voor reviews site
 function loadReviewsWebsite () {
   $host = 'localhost';
   $dbName = 'wideworldimporters';
   $user = 'root';
   $password = '';
   $connection = mysqli_connect($host, $user, $password, $dbName);
-  $sql_get_reviews = "SELECT reviewerID, name, rating, message FROM sitereviews";
+  $sql_get_reviews = "SELECT reviewerID, name, rating, message, datum FROM sitereviews";
   $result = mysqli_query($connection, $sql_get_reviews);
-
-  foreach ($result as $value) {
-    $id = $value['reviewerID'];
-    $name = $value['name'];
-    $rating = $value['rating'];
-    $message = $value['message'];
-    print($name . "<br>" . $rating . "<br>" . $message . "<br>");
-  }
+  return $result;
 }
 
  function reviewCounterWebsite () {
@@ -329,10 +335,191 @@ function loadReviewsWebsite () {
    }
  }
 
- function ConfirmPassword(){
-    $password1=$_POST["password1"];
-    $password2=$_POST["password2"];
-    if ($password1!=$password2){
-        location: register.php;
-    }
+
+ function ConfirmPassword()
+ {
+     $password1 = $_POST["password1"];
+     $password2 = $_POST["password2"];
+     if ($password1 != $password2) {
+         location:
+         register . php;
+     }
+ }
+
+ function zeergoedCounter () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Zeer goed'";
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(reviewerID)'];
+     print($total);
+  }
+ }
+
+ function goedCounter () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Goed'";
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(reviewerID)'];
+     print($total);
+  }
+ }
+
+ function matigCounter () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Matig'";
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(reviewerID)'];
+     print($total);
+  }
+ }
+
+ function slechtCounter () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Slecht'";
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(reviewerID)'];
+     print($total);
+  }
+ }
+
+ function zeerslechtCounter () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(reviewerID) FROM sitereviews WHERE rating = 'Zeer slecht'";
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(reviewerID)'];
+     print($total);
+  }
+ }
+
+ // functies voor reviews product
+
+ function loadReviewsproducts () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_get_reviews = "SELECT name, rating, message, datum FROM productreview WHERE productID = " . $_GET['itemID'];
+   $result = mysqli_query($connection, $sql_get_reviews);
+   return $result;
+ }
+
+ function reviewCounterProduct () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE productID =" . $_GET['itemID'];
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(productreviewID)'];
+     print($total);
+   }
+ }
+
+ function zeergoedCounterP () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer goed' AND productID =" . $_GET['itemID'];
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(productreviewID)'];
+     print($total);
+  }
+ }
+
+ function goedCounterP () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Goed' AND productID =" . $_GET['itemID'];
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(productreviewID)'];
+     print($total);
+  }
+ }
+
+ function matigCounterP () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Matig' AND productID =" . $_GET['itemID'];
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(productreviewID)'];
+     print($total);
+  }
+ }
+
+ function slechtCounterP () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Slecht' AND productID =" . $_GET['itemID'];
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(productreviewID)'];
+     print($total);
+  }
+ }
+
+ function zeerslechtCounterP () {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer slecht' AND productID =" . $_GET['itemID'];
+   $result = mysqli_query($connection, $sql_review_counter);
+
+   foreach ($result as $counter) {
+     $total = $counter['COUNT(productreviewID)'];
+     print($total);
+  }
  }

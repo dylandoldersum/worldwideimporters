@@ -598,7 +598,26 @@ li.btw {
   text-align: center;
 }
 
+.invitation-message {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.invitation-message a {
+  color: white;
+}
+
+.invitation-message a:hover {
+  color: blue;
+}
+
 .current-container {
+  background: url(../images/kerstboom.jpg) no-repeat center fixed;
+  padding: 20px;
+}
+
+.current-ratings-and-reviews {
+  color: #e9ecf7;
   background-color: #6783eb;
   border-radius: 15px;
   padding-top: 25px;
@@ -609,10 +628,6 @@ li.btw {
   height: 175px;
   text-align: left;
   display: block;
-}
-
-.current-ratings-and-reviews {
-  color: #e9ecf7;
 }
 
 /*------------------formulier op writereview.php-----------*/
@@ -636,3 +651,33 @@ li.btw {
 }
 
 /*--------------Revies op reviewsite.php----------------*/
+.reviews-on-site-container {
+    padding: 25px;
+    background-color: #0d4b77;
+}
+
+.reviews-on-site-content {
+    max-width: 1200px;
+    text-align: center;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+p.review-omschrijving {
+    font-size: 24px;
+}
+
+.review {
+    max-width: 60%;
+    background: #0a6db3;
+    padding: 20px;
+    color: white;
+    margin-top: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.date-review {
+    margin-top: 10px;
+}

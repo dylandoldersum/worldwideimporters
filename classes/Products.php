@@ -328,3 +328,11 @@ function loadReviewsWebsite () {
      print($total);
    }
  }
+
+ function ConfirmPassword(){
+    $password1=$_POST["password1"];
+    $password2=$_POST["password2"];
+    if ($password1!=$password2){
+        location: register.php;
+    }
+ }

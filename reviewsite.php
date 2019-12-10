@@ -16,14 +16,11 @@
     <title></title>
   </head>
   <body>
-
-      <div class="invitation-container">
-        <div class="invitation-message">
-          <a href="writereview.php"><h2>Schrijf ook een review over onze website!</h2></a>
-        </div>
-      </div>
-
       <div class="current-container">
+        <div class="invitation-message">
+          <a href="writereview.php">
+            <h2>Schrijf ook een review over onze website!</h2></a>
+        </div>
         <div class="current-ratings-and-reviews">
           <h3>Reviews: <?php reviewCounterWebsite(); ?></h3> <br>
           <h4>Zeer goed: <?php zeergoedCounter(); ?></h4>

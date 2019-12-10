@@ -418,7 +418,7 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_get_reviews = "SELECT name, rating, message, datum FROM productreview";
+   $sql_get_reviews = "SELECT name, rating, message, datum FROM productreview WHERE productID = " . $_GET['itemID'];
    $result = mysqli_query($connection, $sql_get_reviews);
    return $result;
  }
@@ -429,7 +429,7 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE productID =" . $_GET['itemID'];
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
@@ -444,7 +444,7 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer goed'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer goed' AND productID =" . $_GET['itemID'];
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
@@ -459,7 +459,7 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Goed'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Goed' AND productID =" . $_GET['itemID'];
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
@@ -474,7 +474,7 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Matig'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Matig' AND productID =" . $_GET['itemID'];
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
@@ -489,7 +489,7 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Slecht'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Slecht' AND productID =" . $_GET['itemID'];
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {
@@ -504,7 +504,7 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer slecht'";
+   $sql_review_counter = "SELECT COUNT(productreviewID) FROM productreview WHERE rating = 'Zeer slecht' AND productID =" . $_GET['itemID'];
    $result = mysqli_query($connection, $sql_review_counter);
 
    foreach ($result as $counter) {

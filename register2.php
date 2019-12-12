@@ -3,7 +3,7 @@ include "assets/autoloader.php";
 include "templates/navigation.php";
 
 
-$firstname = a
+$firstname = $_POST['voornaam'];
 $lastname = $_POST['achternaam'];
 $password1 = $_POST['password1'];
 $password2 = $_POST['password2'];

@@ -57,7 +57,7 @@
         print('<script>
                 alert("U moet wel valide tekens voor uw naam gebruiken");
               </script>');
-        exit();      
+        exit();
     }
     ?>
 

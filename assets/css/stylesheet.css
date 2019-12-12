@@ -632,8 +632,11 @@ li.btw {
 
 /*------------------formulier op writereview.php-----------*/
 .form-review-container {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background: url(../images/kerstboom.jpg) no-repeat center fixed;
+}
+
+.form-review-content {
+  color: #e9ecf7;
   background-color: #6783eb;
   border-radius: 15px;
   padding-top: 25px;
@@ -644,10 +647,6 @@ li.btw {
   height: 325px;
   text-align: left;
   display: block;
-}
-
-.form-review-content {
-  color: #e9ecf7;
 }
 
 /*--------------Revies op reviewsite.php----------------*/

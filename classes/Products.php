@@ -165,8 +165,9 @@ function getCategoryProducts()
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
-                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
+                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID =  1) LIMIT 3";
     $result = mysqli_query($connection, $sql);
+    return $result;
 }
 
 function checkSearchType()
@@ -325,7 +326,7 @@ function loadReviewsWebsite () {
   $user = 'root';
   $password = '';
   $connection = mysqli_connect($host, $user, $password, $dbName);
-  $sql_get_reviews = "SELECT reviewerID, name, rating, message, datum FROM sitereviews";
+  $sql_get_reviews = "SELECT reviewerID, name, rating, message, date FROM sitereviews";
   $result = mysqli_query($connection, $sql_get_reviews);
   return $result;
 }

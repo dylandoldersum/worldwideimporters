@@ -40,7 +40,7 @@
                     $name = $value['name'];
                     $rating = $value['rating'];
                     $message = $value['message'];
-                    $date = $value['datum'];
+                    $date = $value['date'];
                     ?>
                     <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
                     <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>

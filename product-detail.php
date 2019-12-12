@@ -107,7 +107,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
 
     </div>
 
-      <a href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>"><h2 id='delenMening'>Deel met uw mening over dit product!</h2></a>
+      <a id='delenMeningA' href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>"><h2 id='delenMening'>Deel uw mening over dit product!</h2></a>
 
       <div class="current-container">
         <div class="current-ratings-and-reviews">
@@ -137,7 +137,20 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             <?php } ?>
         </div>
       </div>
-
+    <div class="products-from-category-detailpage">
+        <?php foreach (getCategoryProducts()as $value){ ?>
+        <div class="relatedproducts">
+            <?php
+            $productname = $value['StockItemName'];
+            $productphoto = $value['Photo'];
+            $retailprice = $value['RecommendedRetailPrice'];
+            $stockitemid = $value['StockItemID'];
+            ?>
+            <li><p><?php  echo $productname ?> € <?php echo $retailprice?> </p></li>
+            <img class='product_photo' src='" . GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
+        </div>
+        <?php } ?>
+    </div>
 
 
 </div>

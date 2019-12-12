@@ -43,7 +43,7 @@
             </div>
             <div class="profile-nav">
                 <span class="welkom">Welkom <br> <b>Dylan</b></span>
-                <a href="#"><img class="profile" src="assets/images/profile-ico.png"/></a>
+                <a href="login.php"><img class="profile" src="assets/images/profile-ico.png"/></a>
                 <div class="cart-container">
                     <a href="winkelwagen.php"><img class="cart" src="assets/images/cart-ico.png"/></a>
                     <span class="cart-count"><?php print Countcart() ?></span>

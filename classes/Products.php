@@ -1,5 +1,15 @@
 <?php
+function AccountInDB()
+{
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $sql = "INSERT INTO accounts(first_name, last_name, password, email) VALUES ($firstname, $lastname, $password, $email)";
+    mysqli_query($connection, $sql);
 
+}
 
 function getCategoriesForNavigation()
 {
@@ -333,17 +343,6 @@ function loadReviewsWebsite () {
      $total = $counter['COUNT(reviewerID)'];
      print($total);
    }
- }
-
-
- function ConfirmPassword()
- {
-     $password1 = $_POST["password1"];
-     $password2 = $_POST["password2"];
-     if ($password1 != $password2) {
-         location:
-         register . php;
-     }
  }
 
  function zeergoedCounter () {

@@ -1,11 +1,24 @@
 <?php
 include "assets/autoloader.php";
 include "templates/navigation.php";
-$password1=$_GET["password1"];
-$password2=$_GET["password2"];
-if ($password1!=$password2){
-    header("location: register.php");
 
+
+$firstname = a
+$lastname = $_POST['achternaam'];
+$password1 = $_POST['password1'];
+$password2 = $_POST['password2'];
+$email = $_POST['email'];
+
+if ($password1 != $password2) {
+    header('Location: register.php');
+}else{
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $sql = "INSERT INTO accounts(first_name, last_name, password, email) VALUES ($firstname, $lastname, $password1, $email)";
+    mysqli_query($connection, $sql);
 }
 ?>
 <!doctype html>
@@ -18,7 +31,7 @@ if ($password1!=$password2){
     <title>Document</title>
 </head>
 <body>
-<form action="login.php"
+<form action="login.php" method="post">
     <div class=" ">
         <h1>Bezorggegevens</h1>
         <button type="submit" class="registreerbutton">Doorgaan zonder bezorggegevens</button><br><br>

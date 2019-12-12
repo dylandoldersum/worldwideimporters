@@ -155,8 +155,9 @@ function getCategoryProducts()
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
-                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = " . $_GET['CatID'] . ")";
+                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = 1)";
     $result = mysqli_query($connection, $sql);
+    return $result;
 }
 
 function checkSearchType()

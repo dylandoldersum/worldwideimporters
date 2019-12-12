@@ -58,7 +58,7 @@
               $sql2 = "SELECT reviewerID, name, rating, message, date FROM sitereviews LIMIT " . $this_page_first_result . ',' . $results_per_page;
               $result2 = mysqli_query($connection, $sql2);
 
-              
+              //en nu nog die kankerzooi printen..............
 
               for ($page = 1; $page <= $number_of_pages; $page++) {
                 echo '<a href="reviewsite.php?page=' . $page . '">[' . $page . ']</a> ';

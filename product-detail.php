@@ -146,7 +146,8 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             $retailprice = $value['RecommendedRetailPrice'];
             $stockitemid = $value['StockItemID'];
             ?>
-            <li><p><?php  echo $productname ?> <?php echo $retailprice?> <?php echo $productphoto ?></p></li>
+            <li><p><?php  echo $productname ?> € <?php echo $retailprice?></p></li>
+            <img class='product_photo' src='" . GetCategoryPhoto($photo) . "' alt='#' width='80%', height='200px'>
         </div>
         <?php } ?>
     </div>

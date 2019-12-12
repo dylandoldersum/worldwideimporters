@@ -13,7 +13,7 @@ include "templates/navigation.php";
     <title>Document</title>
 </head>
 <body>
-<form action="register2.php">
+<form action="register2.php" method="POST">
       <div class=" ">
           <h1>Registreer</h1>
           <input type="text" placeholder="Voornaam" name="voornaam" required><br>

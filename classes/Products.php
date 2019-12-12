@@ -155,7 +155,7 @@ function getCategoryProducts()
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
-                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID = 1) LIMIT 3";
+                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID =  1) LIMIT 3";
     $result = mysqli_query($connection, $sql);
     return $result;
 }

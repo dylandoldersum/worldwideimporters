@@ -33,7 +33,39 @@
 
       <div class="reviews-on-site-container">
         <div class="reviews-on-site-content">
-            <?php foreach (loadReviewsWebsite() as $value) {?>
+
+          <?php
+              $host = 'localhost';
+              $dbName = 'wideworldimporters';
+              $user = 'root';
+              $password = '';
+              $connection = mysqli_connect($host, $user, $password, $dbName);
+
+              $results_per_page = 10;
+              $sql = "SELECT reviewerID, name, rating, message, date FROM sitereviews";
+              $result = mysqli_query($connection, $sql);
+              $number_of_results = mysqli_num_rows($result);
+
+              $number_of_pages = ceil($number_of_results / $results_per_page);
+
+              if (!isset($_GET['page'])) {
+                $page = 1;
+              } else {
+                $page = $_GET['page'];
+              }
+
+              $this_page_first_result = ($page-1) * $results_per_page;
+              $sql2 = "SELECT reviewerID, name, rating, message, date FROM sitereviews LIMIT " . $this_page_first_result . ',' . $results_per_page;
+              $result2 = mysqli_query($connection, $sql2);
+
+              
+
+              for ($page = 1; $page <= $number_of_pages; $page++) {
+                echo '<a href="reviewsite.php?page=' . $page . '">[' . $page . ']</a> ';
+              }
+           ?>
+
+           <?php foreach (loadReviewsWebsite() as $value) {?>
                 <div class="review">
                     <?php
                     $id = $value['reviewerID'];

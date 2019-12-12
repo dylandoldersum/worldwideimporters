@@ -630,6 +630,15 @@ li.btw {
   display: block;
 }
 
+.reviews-on-site-content a {
+  color: white;
+}
+
+.reviews-on-site-content a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
 /*------------------formulier op writereview.php-----------*/
 .form-review-container {
   background: url(../images/kerstboom.jpg) no-repeat center fixed;

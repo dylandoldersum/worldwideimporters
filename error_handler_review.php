@@ -23,7 +23,7 @@ session_start();
       $password = '';
       $connection = mysqli_connect($host, $user, $password, $dbName);
 
-      $sql_insert = "INSERT INTO sitereviews (name, rating, message, datum) VALUES ('$voornaam', '$beoordeling', '$bericht', '$date')";
+      $sql_insert = "INSERT INTO sitereviews (name, rating, message, date) VALUES ('$voornaam', '$beoordeling', '$bericht', '$date')";
       $result = mysqli_query($connection, $sql_insert);
       header("Location: reviewsite.php?signup=success&result=$newrecord");
   }

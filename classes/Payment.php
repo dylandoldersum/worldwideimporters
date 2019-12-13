@@ -29,3 +29,13 @@ function generateMollie($desc, $price)
 
     return $json;
 }
+
+function updateStock($quantity, $id) {
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $sql = "UPDATE stockitemholdings SET LastStocktakeQuantity = LastStocktakeQuantity - $quantity WHERE StockItemId=$id";
+    mysqli_query($connection, $sql);
+}

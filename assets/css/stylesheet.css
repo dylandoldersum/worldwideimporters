@@ -630,6 +630,14 @@ li.btw {
   display: block;
 }
 
+.current-ratings-and-reviews a {
+  color: white;
+}
+
+.current-ratings-and-reviews a:hover {
+  color: blue;
+}
+
 .reviews-on-site-content a {
   color: white;
 }

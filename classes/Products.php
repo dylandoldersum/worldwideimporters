@@ -164,8 +164,24 @@ function getCategoryProducts()
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "SELECT StockItemName, RecommendedRetailPrice, StockItemID, Photo FROM stockitems WHERE StockItemID IN
-                (SELECT StockItemID FROM stockitemstockgroups WHERE StockGroupID =  1) LIMIT 3";
+    $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitems.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitems.StockitemID =" . $_GET['itemID'];
+
+    echo $sql;
+
+    $result = mysqli_query($connection, $sql);
+    return $result;
+}
+
+function getCategoryFromProduct(){
+    $host = 'localhost';
+    $dbName = 'wideworldimporters';
+    $user = 'root';
+    $password = '';
+    $connection = mysqli_connect($host, $user, $password, $dbName);
+    $sql = "SELECT StockGroupID FROM stockitemstockgroups WHERE StockItemID IN 
+                (SELECT StockItemID FROM stockitems WHERE StockItemID=". $_GET['itemID']. ")";
+
+
     $result = mysqli_query($connection, $sql);
     return $result;
 }

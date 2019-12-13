@@ -12,8 +12,8 @@ include "templates/navigation.php";
 if(empty($_SESSION['itemID']) || empty($_SESSION['contactinfo'])) {
     header('location: index.php');
 } else {
-    ?>
 
+    ?>
     <div class="steps-to-pay">
         <div class="steps">
             <li class="active"><span>1.Bestelling</span></li>
@@ -32,8 +32,12 @@ if(empty($_SESSION['itemID']) || empty($_SESSION['contactinfo'])) {
         <?php
         $bestelline = "";
         foreach ($_SESSION['itemID'] as $arrayitem) {
+            $quantity = $arrayitem['quantity'];
+            $itemId = $arrayitem['code'];
             $bestelline .= $arrayitem['quantity'] . " X " . $arrayitem['pname'] . " = " . $arrayitem['quantity'] * $arrayitem['price'] . "\n";
         }
+        updateStock($quantity, $itemId);
+
 
         $msg = "Bedankt voor uw bestelling van €" . $_SESSION['TOT'] . ".
 Het pakket wordt zo snel mogelijk geleverd op het volgende adres: " . $_SESSION['contactinfo']['Adres'] . " " .

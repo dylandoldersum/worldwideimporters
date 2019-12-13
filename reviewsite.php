@@ -35,6 +35,7 @@
 
   <?php
   include_once 'templates/snowfalling.php';
+  
   if (isset($_GET['rating'])) {
         foreach (ratingFilter() as $value) {?>
           <div class="review">

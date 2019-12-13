@@ -17,9 +17,11 @@ if ($password1 != $password2) {
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "INSERT INTO accounts(first_name, last_name, password, email) VALUES ($firstname, $lastname, $password1, $email)";
+    $sql = "INSERT INTO accounts(first_name, last_name, password, email) VALUES ('.$firstname.', '.$lastname.', '.$password1.', '.$email.')";
     mysqli_query($connection, $sql);
+
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +33,7 @@ if ($password1 != $password2) {
     <title>Document</title>
 </head>
 <body>
-<form action="login.php" method="post">
+<form action="register2errorhandler.php" method="post">
     <div class=" ">
         <h1>Bezorggegevens</h1>
         <button type="submit" class="registreerbutton">Doorgaan zonder bezorggegevens</button><br><br>

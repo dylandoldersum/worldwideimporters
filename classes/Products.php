@@ -165,8 +165,7 @@ function getCategoryProducts()
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitems.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitems.StockitemID =" . $_GET['itemID'];
-
-    echo $sql;
+    
 
     $result = mysqli_query($connection, $sql);
     return $result;

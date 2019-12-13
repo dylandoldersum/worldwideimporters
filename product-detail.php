@@ -151,7 +151,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             ?>
             <li><p><?php  echo $productname ?> € <?php echo $retailprice?> <?php echo $productphoto?> <?php  echo $catid?> </p></li>
             <img class="product_photo" src=" <?php GetCategoryPhoto($photo) ?>"' alt='#' width='80%', height='200px'>
-        </div> 
+        </div>
         <?php } ?>
     </div>
 

@@ -4,7 +4,6 @@
     /** Templates met gebruik van includes **/
     include_once 'templates/navigation.php';
     include_once 'classes/Products.php';
-
     $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 

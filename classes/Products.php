@@ -84,6 +84,8 @@ Function GetCategoryPhoto($photo)
 }
 
 
+
+
 Function getSearchPhoto($photo, $catID)
 {
     $value = "";
@@ -164,8 +166,10 @@ function getCategoryProducts()
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitems.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitems.StockitemID =" . $_GET['itemID'];
-    
+    $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitems.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID 
+            FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitemstockgroups.StockGroupID =" . $_GET['CatID'];
+
+    echo $sql;
 
     $result = mysqli_query($connection, $sql);
     return $result;
@@ -178,7 +182,11 @@ function getCategoryFromProduct(){
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT StockGroupID FROM stockitemstockgroups WHERE StockItemID IN 
-                (SELECT StockItemID FROM stockitems WHERE StockItemID=". $_GET['itemID']. ")";
+                (SELECT StockItemID FROM stockitems WHERE StockGroupID=". $_GET['CatID']. ")";
+
+
+
+
 
 
     $result = mysqli_query($connection, $sql);

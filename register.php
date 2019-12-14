@@ -1,6 +1,10 @@
 <?php
 include "assets/autoloader.php";
 include "templates/navigation.php";
+if  ($_SERVER["HTTP_REFERER"]){
+    echo "Uw wachtwoorden komen niet overeen";
+}
+
 
 ?>
 <!doctype html>

@@ -97,6 +97,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                         $_SESSION["itemID"][] = $itemArray;
                     }
                     header('location:?itemID=' . $_GET["itemID"]);
+
                 }
                 ?>
             </div>
@@ -150,7 +151,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             var_dump($value);
             ?>
             <li><p><?php  echo $productname ?> € <?php echo $retailprice?> <?php echo $productphoto?> <?php echo $_GET['CatID']; ?> </p></li>
-            <img class="product_photo" src=" <?php echo GetCategoryPhoto($photo) ?>"' alt='#' width='80%', height='200px'>
+            <img class="product_photo" src=" <?php echo GetCategoryPhoto($photo) ?>" alt='#' width='80%' height='200px'>
         </div>
         <?php } ?>
     </div>

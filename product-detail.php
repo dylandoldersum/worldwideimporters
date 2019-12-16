@@ -139,16 +139,14 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
         </div>
       </div>
     <div class="products-from-category-detailpage">
-        <?php foreach (getCategoryProducts()as $value){ ?>
+        <?php foreach (getCategoryProducts() as $value){ ?>
         <div class="relatedproducts">
             <?php
-            $productname = $value['stockitems.StockItemName'];
-            $productphoto = $value['stockitems.Photo'];
-            $retailprice = $value['stockitems.RecommendedRetailPrice'];
-            $stockitemid = $value['stockitemstockgroups.StockItemID'];
-            $_GET['CatID'] = $value['stockitemstockgroups.StockGroupID'];
+            $productname = $value['StockItemName'];
+            $productphoto = $value['Photo'];
+            $retailprice = $value['RecommendedRetailPrice'];
+            $stockitemid = $value['StockItemID'];
 
-            var_dump($value);
             ?>
             <li><p><?php  echo $productname ?> € <?php echo $retailprice?> <?php echo $productphoto?> <?php echo $_GET['CatID']; ?> </p></li>
             <img class="product_photo" src=" <?php echo GetCategoryPhoto($photo) ?>" alt='#' width='80%' height='200px'>

@@ -11,8 +11,9 @@ $dbName = 'wideworldimporters';
 $user = 'root';
 $password = '';
 $connection = mysqli_connect($host, $user, $password, $dbName);
-$sql = "INSERT INTO accounts(street, streetnumber, city, country, postalcode, phone) VALUES ('$street', $streetnumber, '$city', '$country', '$postalcode', '$phone')";
+$sql = "UPDATE accounts SET street = '.$street.', streetnumber = '.$streetnumber.', city = '.city.', country = '.$country.', postalcode = '.$postalcode.', phone = '.$phone.' WHERE email = bruggemanluuk@gmail.com";
 mysqli_query($connection, $sql);
 
-header("location: login.php");
+echo $sql
+//header("location: login.php");
 ?>

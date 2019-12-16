@@ -33,10 +33,14 @@ if ($password1 != $password2) {
     <title>Document</title>
 </head>
 <body>
+<form action="login.php" method="post">
+    <div class=" ">
+        <button type="submit" class="registreerbutton">Doorgaan zonder bezorggegevens</button><br><br>
+    </div>
+</form>
 <form action="register2errorhandler.php" method="post">
     <div class=" ">
         <h1>Bezorggegevens</h1>
-        <button type="submit" class="registreerbutton">Doorgaan zonder bezorggegevens</button><br><br>
         <input type="text" placeholder="bezorgadres" name="adres"><br>
         <input type="text" placeholder="huisnummer" name="huisnummer"><br>
         <input type="text" placeholder="woonplaats" name="woonplaats"><br>

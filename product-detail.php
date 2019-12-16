@@ -147,9 +147,19 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             $retailprice = $value['RecommendedRetailPrice'];
             $stockitemid = $value['StockItemID'];
 
+                    ?>
+                    <li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=<?php echo $value["StockItemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>'>
+                            <h3 class='product_text'><?php echo $value["StockItemName"] ?></h3>
+                            <img class='product_photo' src=' <?php echo GetCategoryPhoto($value['Photo']) ?>' alt='#' width='80%' ,
+                                 height='200px'>
+                            <p class='product_text'>PRICE: €<?php echo $value["RecommendedRetailPrice"] ?></p>
+                        </a>
+                    </li>
+                    <?php
+
+
             ?>
-            <li><p><?php  echo $productname ?> € <?php echo $retailprice?> <?php echo $productphoto?> </p></li>
-            <img class="product_photo" src=" <?php echo GetCategoryPhoto($photo) ?>" alt='#' width='80%' height='200px'>
+
 
         </div>
         <?php } ?>

@@ -154,8 +154,8 @@ function getCategoryProducts()
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitemstockgroups.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID
-            FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemStockGroupID WHERE stockitemstockgroups.StockGroupID =". $_GET['CatID'] . " LIMIT 3";
+    $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitems.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID
+            FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitemstockgroups.StockGroupID =". $_GET['CatID'] . " LIMIT 3";
     $result = mysqli_query($connection, $sql);
     return $result;
 }

@@ -24,7 +24,6 @@ foreach (getProductInfo() as $value) {
 $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]'), '', $itemDescription1);
 
 
-
 ?>
 <script>
     function NotVideo() {
@@ -108,22 +107,23 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
 
     </div>
 
-      <a id='delenMeningA' href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>"><h2 id='delenMening'>Deel uw mening over dit product!</h2></a>
+    <a id='delenMeningA' href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>"><h2 id='delenMening'>Deel uw
+            mening over dit product!</h2></a>
 
-      <div class="current-container">
+    <div class="current-container">
         <div class="current-ratings-and-reviews">
-          <h3>Reviews: <?php reviewCounterProduct(); ?></h3> <br>
-          <h4>Zeer goed: <?php zeergoedCounterP(); ?></h4>
-          <h4>Goed: <?php goedCounterP(); ?></h4>
-          <h4>Matig: <?php matigCounterP(); ?></h4>
-          <h4>Slecht: <?php slechtCounterP(); ?></h4>
-          <h4>Zeer slecht: <?php zeerslechtCounterP(); ?></h4>
+            <h3>Reviews: <?php reviewCounterProduct(); ?></h3> <br>
+            <h4>Zeer goed: <?php zeergoedCounterP(); ?></h4>
+            <h4>Goed: <?php goedCounterP(); ?></h4>
+            <h4>Matig: <?php matigCounterP(); ?></h4>
+            <h4>Slecht: <?php slechtCounterP(); ?></h4>
+            <h4>Zeer slecht: <?php zeerslechtCounterP(); ?></h4>
         </div>
-      </div>
+    </div>
 
-      <div class="reviews-on-site-container">
+    <div class="reviews-on-site-container">
         <div class="reviews-on-site-content">
-            <?php foreach (loadReviewsproducts() as $value) {?>
+            <?php foreach (loadReviewsproducts() as $value) { ?>
                 <div class="review">
                     <?php
                     $name = $value['name'];
@@ -131,37 +131,40 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                     $message = $value['message'];
                     $date = $value['datum'];
                     ?>
-                    <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
-                    <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
-                    <li><p class="date-review"><?php  echo $date ?></p></li>
+                    <li><p><?php echo $name ?> - <?php echo $rating ?></p></li>
+                    <li><p class="review-omschrijving">&#8220;<?php echo $message ?>&#8221;</p></li>
+                    <li><p class="date-review"><?php echo $date ?></p></li>
                 </div>
             <?php } ?>
         </div>
-      </div>
-    <div class="products-from-category-detailpage">
-        <?php foreach (getCategoryProducts() as $value){ ?>
-        <div class="relatedproducts">
+    </div>
+    <div class="products-from-category-detailpage"><h3>GERELATEERDE PRODUCTEN</h3>
+        <?php foreach (getCategoryProducts() as $value) { ?>
+
             <?php
             $productname = $value['StockItemName'];
             $productphoto = $value['Photo'];
             $retailprice = $value['RecommendedRetailPrice'];
             $stockitemid = $value['StockItemID'];
 
-                    ?>
-                    <li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=<?php echo $value["StockItemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>'>
-                            <h3 class='product_text'><?php echo $value["StockItemName"] ?></h3>
-                            <img class='product_photo' src=' <?php echo GetCategoryPhoto($value['Photo']) ?>' alt='#' width='80%' ,
-                                 height='200px'>
-                            <p class='product_text'>PRICE: €<?php echo $value["RecommendedRetailPrice"] ?></p>
-                        </a>
-                    </li>
-                    <?php
+            ?>
+
+            <li class='product-list'><a class='product-anchor'
+                                        href='product-detail.php?itemID=<?php echo $stockitemid ?>&CatID=<?php echo $_GET['CatID'] ?>'>
+
+                    <h3 class='product_text'><?php echo $productname ?></h3>
+                    <img class='product_photo' src=' <?php echo GetCategoryPhoto($value['Photo']) ?>' alt='#'
+                         width='80%' ,
+                         height='200px'>
+                    <p class='product_text'>PRICE: €<?php echo $retailprice ?></p>
+                </a>
+            </li>
+            <?php
 
 
             ?>
 
 
-        </div>
         <?php } ?>
     </div>
 

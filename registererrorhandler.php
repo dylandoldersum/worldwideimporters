@@ -22,7 +22,7 @@ header('Location: register.php');
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "INSERT INTO accounts(first_name, last_name, password, email, street, streetnumber, city, country, postalcode, phone) VAlUES ('$firstname', '$lastname', '$password', '$email', '$street', '$streetnumber', '$city', '$country', '$postalcode', '$phone');";
+    $sql = "INSERT INTO accounts(first_name, last_name, password, email, street, streetnumber, city, country, postalcode, phone) VAlUES ('$firstname', '$lastname', '$password1', '$email', '$street', '$streetnumber', '$city', '$country', '$postalcode', '$phone');";
     mysqli_query($connection, $sql);
 
     header("location: login.php");

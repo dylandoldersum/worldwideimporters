@@ -73,7 +73,7 @@ include_once 'classes/Products.php';
         $ID = $item["StockItemID"];
         foreach (getProductsFromID($ID) as $value) {
             ?>
-            <li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=<?php echo $value["StockItemID"] ?>'>
+            <li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=<?php echo $value["StockItemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>'>
                     <h3 class='product_text'><?php echo $value["StockItemName"] ?></h3>
                     <img class='product_photo' src=' <?php echo GetCategoryPhoto($value['Photo']) ?>' alt='#' width='80%' ,
                          height='200px'>

@@ -55,7 +55,7 @@ function getFavouriteItems()
         $itemName = $value['StockItemName'];
         $price = $value['RecommendedRetailPrice'];
         $itemID = $value['StockItemID'];
-        print("<a href='product-detail.php?itemID=$itemID'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg' height='300px' width='300'>" . "</a></div>");
+        print("<a href='product-detail.php?itemID=$itemID&CatID=3'><div class='favorites'>" . $itemName . "<br>€" . $price . "<br><img src='assets/images/USBrocket.jpg' height='300px' width='300'>" . "</a></div>");
     }
 }
 
@@ -155,10 +155,7 @@ function getCategoryProducts()
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitemstockgroups.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID
-            FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemStockGroupID WHERE stockitemstockgroups.StockGroupID =". $_GET['CatID'];
-
-    echo $sql;
-
+            FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemStockGroupID WHERE stockitemstockgroups.StockGroupID =". $_GET['CatID'] . " LIMIT 3";
     $result = mysqli_query($connection, $sql);
     return $result;
 }
@@ -169,7 +166,7 @@ function getCategoryFromProduct(){
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "SELECT StockGroupID FROM stockitemstockgroups WHERE StockItemID IN 
+    $sql = "SELECT StockGroupID FROM stockitemstockgroups WHERE StockItemID IN
                 (SELECT StockItemID FROM stockitems WHERE StockGroupID=". $_GET['CatID']. ")";
 
 

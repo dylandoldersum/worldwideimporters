@@ -148,8 +148,9 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             $stockitemid = $value['StockItemID'];
 
             ?>
-            <li><p><?php  echo $productname ?> € <?php echo $retailprice?> <?php echo $productphoto?> <?php echo $_GET['CatID']; ?> </p></li>
+            <li><p><?php  echo $productname ?> € <?php echo $retailprice?> <?php echo $productphoto?> </p></li>
             <img class="product_photo" src=" <?php echo GetCategoryPhoto($photo) ?>" alt='#' width='80%' height='200px'>
+
         </div>
         <?php } ?>
     </div>

@@ -23,8 +23,6 @@ header('Location: register.php');
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "INSERT INTO accounts (first_name, last_name, password, email, street, streetnumber, city, country, postalcode, phone) VALUES ('.$firstname.', '.$lastname.', '.$password1.', '.$email.', '.$street.', '.$streetnumber', '.$postalcode', '.$phone.')";
-    var_dump($sql);
-    exit;
     mysqli_query($connection, $sql);
 
     header("location: login.php");

@@ -112,30 +112,52 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
 
     <div class="current-container">
         <div class="current-ratings-and-reviews">
-            <h3>Reviews: <?php reviewCounterProduct(); ?></h3> <br>
-            <h4>Zeer goed: <?php zeergoedCounterP(); ?></h4>
-            <h4>Goed: <?php goedCounterP(); ?></h4>
-            <h4>Matig: <?php matigCounterP(); ?></h4>
-            <h4>Slecht: <?php slechtCounterP(); ?></h4>
-            <h4>Zeer slecht: <?php zeerslechtCounterP(); ?></h4>
+          <h3><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>'>Reviews:</a> <?php reviewCounterWebsite(); ?></h3> <br>
+          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=zeer goed'>Zeer goed:</a> <?php zeergoedCounter(); ?></h4>
+          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=goed'>Goed:</a> <?php goedCounter(); ?></h4>
+          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=matig'>Matig:</a> <?php matigCounter(); ?></h4>
+          <h4><a href='product-detail.php?itemID=<?php echo$_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=slecht'>Slecht:</a> <?php slechtCounter(); ?></h4>
+          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=zeer slecht'>Zeer slecht:</a> <?php zeerslechtCounter(); ?></h4>
         </div>
     </div>
 
     <div class="reviews-on-site-container">
         <div class="reviews-on-site-content">
-            <?php foreach (loadReviewsproducts() as $value) { ?>
-                <div class="review">
-                    <?php
-                    $name = $value['name'];
-                    $rating = $value['rating'];
-                    $message = $value['message'];
-                    $date = $value['datum'];
-                    ?>
-                    <li><p><?php echo $name ?> - <?php echo $rating ?></p></li>
-                    <li><p class="review-omschrijving">&#8220;<?php echo $message ?>&#8221;</p></li>
-                    <li><p class="date-review"><?php echo $date ?></p></li>
-                </div>
-            <?php } ?>
+          <?php
+          if (isset($_GET['rating'])) {
+                foreach (ratingFilterProducts() as $value) {?>
+                  <div class="review">
+                      <?php
+                      $name = $value['name'];
+                      $rating = $value['rating'];
+                      $message = $value['message'];
+                      $date = $value['date'];
+                      ?>
+                      <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
+                      <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
+                      <li><p class="date-review"><?php  echo $date ?></p></li>
+                  </div>
+                  <?php
+                }
+              } else {
+                    foreach (loadReviewsproducts() as $value) {?>
+                           <div class="review">
+                               <?php
+                               $name = $value['name'];
+                               $rating = $value['rating'];
+                               $message = $value['message'];
+                               $date = $value['date'];
+                               ?>
+                               <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
+                               <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
+                               <li><p class="date-review"><?php  echo $date ?></p></li>
+                           </div>
+                       <?php
+                    }
+              }
+           ?>
+
+
         </div>
     </div>
     <div class="products-from-category-detailpage"><h3>GERELATEERDE PRODUCTEN</h3>

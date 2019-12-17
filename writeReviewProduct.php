@@ -16,7 +16,7 @@
 
     <div class="form-review-container">
       <div class="form-review-content">
-       <form class="" action="error_handler_productreview.php?itemID=<?php echo $_GET['itemID'] ?>" method="post">
+       <form class="" action="error_handler_productreview.php?itemID=<?php echo $_GET['itemID'] ?>&CatID=<?php echo $_GET['CatID'] ?>" method="post">
          <span>Wat is je voornaam?</span> <br>
          <input type="text" name="naam" value="" required><br>
 

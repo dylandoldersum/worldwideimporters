@@ -14,7 +14,7 @@ include "templates/navigation.php";
 </head>
 <body>
 <form action="registererrorhandler.php" method="POST">
-      <div class=" ">
+      <div class="register">
           <h1>Registreer</h1>
           <input type="text" placeholder="Voornaam" name="voornaam" required><br>
           <input type="text" placeholder="Achternaam" name="achternaam" required><br>

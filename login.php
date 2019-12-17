@@ -25,3 +25,7 @@ include "templates/navigation.php";
     </div>
 </body>
 </html>
+
+<?php
+    include_once 'templates/footer.php';
+ ?>

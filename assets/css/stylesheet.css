@@ -650,6 +650,7 @@ li.btw {
 /*------------------formulier op writereview.php-----------*/
 .form-review-container {
   background: url(../images/kerstboom.jpg) no-repeat center fixed;
+  padding: 75px;
 }
 
 .form-review-content {

@@ -583,8 +583,8 @@ function loadReviewsWebsite () {
    $user = 'root';
    $password = '';
    $connection = mysqli_connect($host, $user, $password, $dbName);
-
-   $sql = "SELECT * FROM productreview WHERE rating = ".$_GET['rating']." AND productID =" . $_GET['itemID'];
+   
+   $sql = "SELECT name, rating, message, datum FROM productreview WHERE rating = '".$_GET["rating"]."' AND productID =" . $_GET['itemID'];
    $result_rating = mysqli_query($connection, $sql);
    return $result_rating;
  }

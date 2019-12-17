@@ -42,8 +42,24 @@
                 </form>
             </div>
             <div class="profile-nav">
-                <span class="welkom">Welkom <br> <b>Dylan</b></span>
-                <a href="login.php"><img class="profile" src="assets/images/profile-ico.png"/></a>
+                <?php
+                if (isset($_SESSION['loggedin'])) {
+                    ?>
+                    <span class="welkom">Welkom <br> <b><?php echo $_SESSION['logindata']['first_name'] ?></b></span>
+                    <a class="tooltip" href="logout.php"><img class="profile" src="assets/images/logout-ico.png"/>
+                        <span class="tooltiptext tooltip-bottom">Logout</span>
+                    </a>
+
+                    <?php
+                } else {
+                    ?>
+                    <span class="welkom">Welkom <br> Gebruiker </span>
+                    <a class="tooltip" href="login.php"><img class="profile" src="assets/images/login-ico.png"/>
+                        <span class="tooltiptext tooltip-bottom">Login</span>
+                    </a>
+                    <?php
+                }
+                ?>
                 <div class="cart-container">
                     <a href="winkelwagen.php"><img class="cart" src="assets/images/cart-ico.png"/></a>
                     <span class="cart-count"><?php print Countcart() ?></span>

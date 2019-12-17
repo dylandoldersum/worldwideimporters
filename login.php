@@ -21,7 +21,6 @@ include "templates/navigation.php";
             <input type="text" placeholder="email" name="email" required><br>
             <input type="password" placeholder="wachtwoord" name="wachtwoord" required><br>
             <button type="submit" class="loginbutton">Login</button>
-
         </form>
     </div>
 </body>

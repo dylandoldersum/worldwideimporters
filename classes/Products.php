@@ -155,7 +155,7 @@ function getCategoryProducts()
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
     $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice, stockitems.StockItemID, stockitems.Photo, stockitemstockgroups.StockGroupID
-            FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitemstockgroups.StockGroupID =". $_GET['CatID'] . " LIMIT 3";
+            FROM stockitems  JOIN stockitemstockgroups ON stockitems.StockItemID = stockitemstockgroups.StockItemID WHERE stockitemstockgroups.StockGroupID =". $_GET['CatID'] . " AND NOT stockitems.StockItemID=". $_GET['itemID'] . "  LIMIT 3";
     $result = mysqli_query($connection, $sql);
     return $result;
 }
@@ -183,7 +183,7 @@ function checkSearchType()
     if ($_GET['type'] == "pname") {
         $str = $_GET['search'];
         $sql = "SELECT *
-                FROM stockitems AS I
+                FROM stockitems AS I JOIN stockitemstockgroups AS S ON I.StockItemID = S.StockItemID
                 WHERE I.StockItemName LIKE '%" . trim($str) . "%'";
     } else {
         $sql = "SELECT *

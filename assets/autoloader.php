@@ -9,6 +9,7 @@
 
 include 'classes/Products.php';
 include 'classes/Payment.php';
+include_once 'templates/snowfalling.php';
 
 session_start();
 ?>

@@ -777,3 +777,64 @@ p.review-omschrijving {
     left: 50%;
     margin-left: -60px;
 }
+
+/*------------------Accounts------------------*/
+.login {
+  border-style: solid;
+  border-color: gray;
+  background: url(../images/kerstboom.jpg) no-repeat center fixed;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  text-align: center;
+  height: 300px;
+}
+
+.login button {
+  background-color: blue;
+  border-style: solid;
+  border-color: #0d4b77;
+  border-radius: 10px;
+  padding: 7.5px;
+  color: white;
+  width: 168px;
+}
+
+.login input {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.register {
+  border-style: solid;
+  border-color: gray;
+  background: url(../images/kerstboom.jpg) no-repeat center fixed;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  text-align: center;
+  height: 600px;
+}
+
+.register button {
+  background-color: blue;
+  border-style: solid;
+  border-color: #0d4b77;
+  border-radius: 10px;
+  padding: 7.5px;
+  color: white;
+  width: 168px;
+}
+
+.register input {
+  padding: 5px;
+  border-radius: 10px;
+  color: blue;
+}
+
+.register h1 {
+  color: blue;
+  font-weight: bold;
+}

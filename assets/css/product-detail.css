@@ -60,7 +60,7 @@
     display: inline-block;
     background: #0d4b77;
     border-radius: 10px;
-    bottom: -48px;
+    bottom: -44px;
     color: white;
     padding-right: 10px;
     padding-left: 10px;
@@ -72,22 +72,30 @@
     bottom: -48px;
     right: 0px;
     background: white;
+    cursor: pointer;
 }
 
-.buybutton input:hover[type=submit] {
+/*.buybutton input:hover[type=submit] {
     font-weight: bold;
     border: 5px;
     background-color: #1b2f94;
     cursor: pointer;
     border-radius: 5px;
+
+}
+*/
+.buy {
+    border-radius: 10px;
+    color: white;
+    width: 250px;
+    height: 40px;
+    background: #0d4b77;
+    border: 1px solid black;
+    cursor: pointer;
 }
 
-.buy {
-    color: white;
-    width: 200px;
-    height: 30px;
-    background: #0d4b77;
-    border: 0.5px solid black;
+.buybutton button[type=submit]:hover {
+    background-color: #0349fc;
 }
 
 #delenMening {
@@ -104,3 +112,6 @@ img.product_photo {
     max-width: 100px;
 }
 
+.products-from-category-detailpage{
+    margin-top: 20px;
+}

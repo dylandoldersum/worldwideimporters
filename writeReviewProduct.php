@@ -17,6 +17,9 @@
     <div class="form-review-container">
       <div class="form-review-content">
        <form class="" action="error_handler_productreview.php?itemID=<?php echo $_GET['itemID'] ?>&CatID=<?php echo $_GET['CatID'] ?>" method="post">
+           <?php foreach (getProductInfo() as $value) {
+               $itemName = $value['StockItemName'];
+           } ?> <h2><?php echo $itemName?></h2>
          <span>Wat is je voornaam?</span> <br>
          <input type="text" name="naam" value="" required><br>
 
@@ -28,7 +31,7 @@
          <option value="Slecht">Slecht</option> <span> Slecht</span> <br>
          <option value="Zeer slecht">Zeer slecht</option> <span> Zeer slecht</span>
 
-         <textarea name="bericht" placeholder="Noteer hier uw toelichting" rows="6" cols="65" required></textarea> <br><br>
+         <textarea name="bericht" placeholder="Noteer hier uw toelichting" rows="8" cols="65" required></textarea> <br><br>
          <input type="submit" name="sendreview" value="Verzenden">
        </form>
      </div>

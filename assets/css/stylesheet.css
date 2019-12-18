@@ -380,6 +380,10 @@ hr.price-divider {
     border-radius: 8px;
     width: 1200px;
     background-color: #0b6cb3;
+
+}
+.betaal-btn:hover{
+    background-color: #0349fc;
 }
 
 .header_winkelwagen p {
@@ -453,6 +457,7 @@ hr.price-divider {
     color: white;
     margin-right: 10px;
     margin-top: 25px;
+    cursor: pointer;
 }
 
 .betaal-btn-container {
@@ -819,6 +824,10 @@ p.review-omschrijving {
   padding: 7.5px;
   color: white;
   width: 168px;
+    cursor: pointer;
+}
+.login button[type=submit]:hover {
+    background-color: #0349fc;
 }
 
 .login input {
@@ -846,6 +855,10 @@ p.review-omschrijving {
   padding: 7.5px;
   color: white;
   width: 168px;
+    cursor: pointer;
+}
+.register button[type=submit]:hover {
+    background-color: #0349fc;
 }
 
 .register input {

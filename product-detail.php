@@ -60,7 +60,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             <a href="#" onclick=NotVideo()>Click for a video!</a><br>
             <div class="buybutton">
                 <form method="POST">
-                    <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
+                    <button type="submit" name="submit" value="IN WINKELWAGEN" class="buy">IN WINKELWAGEN</button>>
                 </form>
                 <?php
 
@@ -92,6 +92,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                             "weight" => $itemWeight,
                             "delivertime" => $itemDelivery,
                             "stock" => $stock,
+                            "catid" => $_GET['CatID'],
                             "price" => $itemPrice);
                         $_SESSION["itemID"][] = $itemArray;
                     }

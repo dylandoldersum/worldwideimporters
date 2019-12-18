@@ -28,7 +28,7 @@ include_once 'templates/navigation.php';
                 <div class="item-in-cart">
                     <li><img src=assets/images/logo.png width='150' height='150'></li>
                     <li><h3>
-                            <a href="product-detail.php?itemID=<?php echo $arrayitem['code'] ?>"><?php echo $arrayitem['pname'] ?></a>
+                            <a href="product-detail.php?itemID=<?php echo $arrayitem['code'] ?>&CatID=<?php echo $arrayitem['catid'] ?>"><?php echo $arrayitem['pname'] ?></a>
                         </h3></li>
                     <div class="quantity-items">
                         <li><a href="?itemId=<?php echo $arrayitem['code'] ?>&amountchange=plus">+</a></li>

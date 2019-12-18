@@ -60,7 +60,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             <a href="#" onclick=NotVideo()>Click for a video!</a><br>
             <div class="buybutton">
                 <form method="POST">
-                    <input type="submit" name="submit" value="IN WINKELWAGEN" class="buy">
+                    <button type="submit" name="submit" value="IN WINKELWAGEN" class="buy">IN WINKELWAGEN</button>>
                 </form>
                 <?php
 

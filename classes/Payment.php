@@ -39,3 +39,18 @@ function updateStock($quantity, $id) {
     $sql = "UPDATE stockitemholdings SET LastStocktakeQuantity = LastStocktakeQuantity - $quantity WHERE StockItemId=$id";
     mysqli_query($connection, $sql);
 }
+
+ function createCustomerifnoAccount() {
+   $host = 'localhost';
+   $dbName = 'wideworldimporters';
+   $user = 'root';
+   $password = '';
+   $connection = mysqli_connect($host, $user, $password, $dbName);
+   // var_dump($_SESSION['contactinfo']);
+   // echo $_SESSION['contactinfo']['Voornaam'];
+   // exit;
+   $sql = "INSERT INTO accounts (first_name , last_name, email, street, streetnumber, country, postalcode, phone)
+   VALUES ($_SESSION['contactinfo']['Voornaam'], $_SESSION['contactinfo']['Achternaam'], $_SESSION['contactinfo']['Emailadres'], $_SESSION['contactinfo']['Adres'], $_SESSION['contactinfo']['Huisnummer'], $_SESSION['contactinfo']['Landnaam'], $_SESSION['contactinfo']['Postcode'])";
+   echo $sql;
+   //mysqli_query($connection, $sql);
+ }

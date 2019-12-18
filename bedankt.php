@@ -52,6 +52,9 @@ Het pakket wordt zo snel mogelijk geleverd op het volgende adres: " . $_SESSION[
     </div>
 
     <?php
+    if (!isset($_SESSION['loggedin'])) {
+      createCustomerifnoAccount();
+    }
     include_once 'templates/footer.php';
 }
 ?>

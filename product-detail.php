@@ -92,6 +92,7 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                             "weight" => $itemWeight,
                             "delivertime" => $itemDelivery,
                             "stock" => $stock,
+                            "catid" => $_GET['CatID'],
                             "price" => $itemPrice);
                         $_SESSION["itemID"][] = $itemArray;
                     }

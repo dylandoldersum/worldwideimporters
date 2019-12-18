@@ -824,6 +824,10 @@ p.review-omschrijving {
   padding: 7.5px;
   color: white;
   width: 168px;
+    cursor: pointer;
+}
+.login button[type=submit]:hover {
+    background-color: #0349fc;
 }
 
 .login input {
@@ -851,6 +855,10 @@ p.review-omschrijving {
   padding: 7.5px;
   color: white;
   width: 168px;
+    cursor: pointer;
+}
+.register button[type=submit]:hover {
+    background-color: #0349fc;
 }
 
 .register input {

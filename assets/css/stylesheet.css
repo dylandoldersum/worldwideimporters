@@ -446,6 +446,8 @@ hr.price-divider {
 }
 
 .betaal-btn {
+    border-radius: 10px;
+    border: 1px solid black;
     background: #0d4b77;
     padding: 15px;
     color: white;
@@ -659,12 +661,29 @@ li.btw {
   border-radius: 15px;
   padding-top: 25px;
   padding-left: 20px;
+    padding-right: 22px;
   margin-left: auto;
   margin-right: auto;
   width: 500px;
   height: 325px;
   text-align: left;
   display: block;
+}
+
+.form-review-content h2 {
+    text-align: center;
+}
+.form-review-content input[type=submit]{
+
+    background-color: #0d4b77;
+    border-style: solid;
+    border-color: #0d4b77;
+    border-radius: 10px;
+    padding: 7.5px;
+    color: white;
+    width: 168px;
+    margin-left: 65%;
+    margin-top: 5%;
 }
 
 /*--------------Revies op reviewsite.php----------------*/
@@ -793,7 +812,7 @@ p.review-omschrijving {
 }
 
 .login button {
-  background-color: blue;
+  background-color: #0d4b77;
   border-style: solid;
   border-color: #0d4b77;
   border-radius: 10px;
@@ -820,7 +839,7 @@ p.review-omschrijving {
 }
 
 .register button {
-  background-color: blue;
+  background-color: #0d4b77;
   border-style: solid;
   border-color: #0d4b77;
   border-radius: 10px;
@@ -836,6 +855,6 @@ p.review-omschrijving {
 }
 
 .register h1 {
-  color: blue;
+  color: #0b6db3;
   font-weight: bold;
 }

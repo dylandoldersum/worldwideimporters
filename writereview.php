@@ -39,7 +39,7 @@
              $bericht = $_GET['bericht'];
               echo '<textarea name="bericht" rows="6" cols="65">' . $bericht . '</textarea> <br><br>';
             } else {
-              echo '<textarea name="bericht" placeholder="Noteer hier uw toelichting" rows="6" cols="65"></textarea> <br><br>';
+              echo '<textarea name="bericht" placeholder="Noteer hier uw toelichting" rows="8" cols="65"></textarea> <br><br>';
             }
          ?>
          <input type="submit" name="sendreview" value="Verzenden">

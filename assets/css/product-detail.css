@@ -72,16 +72,18 @@
     bottom: -48px;
     right: 0px;
     background: white;
+    cursor: pointer;
 }
 
-.buybutton input:hover[type=submit] {
+/*.buybutton input:hover[type=submit] {
     font-weight: bold;
     border: 5px;
     background-color: #1b2f94;
     cursor: pointer;
     border-radius: 5px;
-}
 
+}
+*/
 .buy {
     border-radius: 10px;
     color: white;
@@ -89,6 +91,11 @@
     height: 40px;
     background: #0d4b77;
     border: 1px solid black;
+    cursor: pointer;
+}
+
+.buybutton button[type=submit]:hover {
+    background-color: #0349fc;
 }
 
 #delenMening {

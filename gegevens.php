@@ -9,10 +9,6 @@
 
 include_once 'assets/autoloader.php';
 include_once 'templates/navigation.php';
-print_r($_SESSION);
-if (!isset($_SESSION['itemID']) || empty($_SESSION['itemID'])) {
-  header("Location: winkelwagen.php");
-}
 ?>
 
 

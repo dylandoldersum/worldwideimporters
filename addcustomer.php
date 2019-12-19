@@ -6,6 +6,7 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 addOrder();
+addOrderLine();
 header('location: bedankt.php');
 
  ?>

@@ -712,6 +712,7 @@ p.review-omschrijving {
 }
 
 .review {
+    position: relative;
     max-width: 60%;
     background: #0a6db3;
     padding: 20px;
@@ -720,6 +721,21 @@ p.review-omschrijving {
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
+}
+
+a.remove-review {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: red;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+a.remove-review:hover {
+    text-decoration: none;
+    color:red;
+    background: white;
 }
 
 .date-review {

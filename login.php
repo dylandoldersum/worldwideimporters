@@ -3,29 +3,21 @@ include "assets/autoloader.php";
 include "templates/navigation.php";
 ?>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div class="login">
-        <form action="register.php" method="post">
-            <button type="submit" class="registerbutton">Registreer</button><br>
-        </form>
-        <form action="afterlogin.php" method="post">
-            <input type="text" placeholder="email" name="email" required><br>
-            <input type="password" placeholder="wachtwoord" name="wachtwoord" required><br>
-            <button type="submit" class="loginbutton">Login</button>
-        </form>
+<div class="login-bg">
+    <div class="login-container">
+        <div class="login-box">
+            <form action="afterlogin.php" method="post">
+                <h3>Login met uw account</h3>
+                <input type="text" placeholder="Login@voorbeeld.nl" name="email" class="email-login" required>
+                <input type="password" placeholder="Wachtwoord" name="wachtwoord" class="password-login" required>
+                <button type="submit" class="loginbutton">Login</button>
+                <a class="registerbutton" href="register.php">Geen account? Registreer nu gratis!
+                </a>
+            </form>
+        </div>
     </div>
-</body>
-</html>
+</div>
 
 <?php
-    include_once 'templates/footer.php';
- ?>
+include_once 'templates/footer.php';
+?>

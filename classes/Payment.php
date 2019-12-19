@@ -40,6 +40,22 @@ function updateStock($quantity, $id) {
     mysqli_query($connection, $sql);
 }
 
+function addOrder(){
+  $host = 'localhost';
+  $dbName = 'wideworldimporters';
+  $user = 'root';
+  $password = '';
+  $connection = mysqli_connect($host, $user, $password, $dbName);
+  $sql = "SELECT CustomerID FROM accounts WHERE first_name = '".$_SESSION['contactinfo']['Voornaam']."' AND email = '".$_SESSION['contactinfo']['Emailadres']."' AND street = '".$_SESSION['contactinfo']['Adres']."' AND postalcode = '".$_SESSION['contactinfo']['Postcode']."'";
+  $result = mysqli_query($connection, $sql);
+  foreach ($result as $value) {
+    $id = $value['CustomerID'];
+    $sql1 = "INSERT INTO order1(CustomerID) VALUES ($id)";
+    mysqli_query($connection, $sql1);
+ }
+
+}
+
 function createCustomerifnoAccount() {
    $host = 'localhost';
    $dbName = 'wideworldimporters';

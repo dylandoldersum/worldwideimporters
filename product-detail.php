@@ -60,11 +60,16 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
             <a href="#" onclick=NotVideo()>Click for a video!</a><br>
             <div class="buybutton">
                 <form method="POST">
-                    <button type="submit" name="submit" value="IN WINKELWAGEN" class="buy">IN WINKELWAGEN</button>>
+                    <button type="submit" name="submit" value="IN WINKELWAGEN" class="buy">IN WINKELWAGEN</button>
+                    >
                 </form>
                 <?php
 
                 if (isset($_POST["submit"])) {
+                    ?>
+                    <input type="hidden" id="url" value="?itemID=<?php echo $_GET["itemID"] ?>">
+                    <?php
+
                     $bool = false;
                     $temp = $_GET['itemID'];
                     /**
@@ -96,9 +101,13 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                             "price" => $itemPrice);
                         $_SESSION["itemID"][] = $itemArray;
                     }
-                    header('location:?itemID=' . $_GET["itemID"]);
-
+                    ?>
+                    <script>
+                        window.location.href = window.location.href;
+                    </script>
+                    <?php
                 }
+
                 ?>
             </div>
             <div class="price">
@@ -108,55 +117,68 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
 
     </div>
 
-    <a id='delenMeningA' href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>&CatID=<?php echo $_GET['CatID'] ?>"><h2 id='delenMening'>Deel uw
+    <a id='delenMeningA'
+       href="writeReviewProduct.php?itemID=<?php echo $_GET['itemID'] ?>&CatID=<?php echo $_GET['CatID'] ?>"><h2
+                id='delenMening'>Deel uw
             mening over dit product!</h2></a>
 
     <div class="current-container">
         <div class="current-ratings-and-reviews">
-          <h3><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>'>Reviews:</a> <?php reviewCounterProduct(); ?></h3> <br>
-          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Zeer goed'>Zeer goed:</a> <?php zeergoedCounterP(); ?></h4>
-          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Goed'>Goed:</a> <?php goedCounterP(); ?></h4>
-          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Matig'>Matig:</a> <?php matigCounterP(); ?></h4>
-          <h4><a href='product-detail.php?itemID=<?php echo$_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Slecht'>Slecht:</a> <?php slechtCounterP(); ?></h4>
-          <h4><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Zeer slecht'>Zeer slecht:</a> <?php zeerslechtCounterP(); ?></h4>
+            <h3><a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>'>Reviews:</a> <?php reviewCounterProduct(); ?>
+            </h3> <br>
+            <h4>
+                <a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Zeer goed'>Zeer
+                    goed:</a> <?php zeergoedCounterP(); ?></h4>
+            <h4>
+                <a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Goed'>Goed:</a> <?php goedCounterP(); ?>
+            </h4>
+            <h4>
+                <a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Matig'>Matig:</a> <?php matigCounterP(); ?>
+            </h4>
+            <h4>
+                <a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Slecht'>Slecht:</a> <?php slechtCounterP(); ?>
+            </h4>
+            <h4>
+                <a href='product-detail.php?itemID=<?php echo $_GET["itemID"] ?>&CatID=<?php echo $_GET["CatID"] ?>&rating=Zeer slecht'>Zeer
+                    slecht:</a> <?php zeerslechtCounterP(); ?></h4>
         </div>
     </div>
 
     <div class="reviews-on-site-container">
         <div class="reviews-on-site-content">
-          <?php
-          if (isset($_GET['rating'])) {
-                foreach (ratingFilterProducts() as $value) {?>
-                  <div class="review">
-                      <?php
-                      $name = $value['name'];
-                      $rating = $value['rating'];
-                      $message = $value['message'];
-                      $date = $value['datum'];
-                      ?>
-                      <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
-                      <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
-                      <li><p class="date-review"><?php  echo $date ?></p></li>
-                  </div>
-                  <?php
+            <?php
+            if (isset($_GET['rating'])) {
+                foreach (ratingFilterProducts() as $value) { ?>
+                    <div class="review">
+                        <?php
+                        $name = $value['name'];
+                        $rating = $value['rating'];
+                        $message = $value['message'];
+                        $date = $value['datum'];
+                        ?>
+                        <li><p><?php echo $name ?> - <?php echo $rating ?></p></li>
+                        <li><p class="review-omschrijving">&#8220;<?php echo $message ?>&#8221;</p></li>
+                        <li><p class="date-review"><?php echo $date ?></p></li>
+                    </div>
+                    <?php
                 }
-              } else {
-                    foreach (loadReviewsproducts() as $value) {?>
-                           <div class="review">
-                               <?php
-                               $name = $value['name'];
-                               $rating = $value['rating'];
-                               $message = $value['message'];
-                               $date = $value['datum'];
-                               ?>
-                               <li><p><?php  echo $name  ?> - <?php  echo $rating  ?></p></li>
-                               <li><p class="review-omschrijving">&#8220;<?php  echo $message  ?>&#8221;</p></li>
-                               <li><p class="date-review"><?php  echo $date ?></p></li>
-                           </div>
-                       <?php
-                    }
-              }
-           ?>
+            } else {
+                foreach (loadReviewsproducts() as $value) { ?>
+                    <div class="review">
+                        <?php
+                        $name = $value['name'];
+                        $rating = $value['rating'];
+                        $message = $value['message'];
+                        $date = $value['datum'];
+                        ?>
+                        <li><p><?php echo $name ?> - <?php echo $rating ?></p></li>
+                        <li><p class="review-omschrijving">&#8220;<?php echo $message ?>&#8221;</p></li>
+                        <li><p class="date-review"><?php echo $date ?></p></li>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
 
 
         </div>

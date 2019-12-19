@@ -12,7 +12,7 @@ function generateMollie($desc, $price)
     $body = '{
         "amount": {"currency":"EUR", "value":"' . $price . '"},
         "description": "' . $desc . '",
-        "redirectUrl": "http://localhost/worldwideimporters/maakorder.php"
+        "redirectUrl": "http://localhost/worldwideimporters/bedankt.php"
     }';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -40,7 +40,7 @@ function updateStock($quantity, $id) {
     mysqli_query($connection, $sql);
 }
 
- function createCustomerifnoAccount() {
+function createCustomerifnoAccount() {
    $host = 'localhost';
    $dbName = 'wideworldimporters';
    $user = 'root';

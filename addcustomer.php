@@ -2,9 +2,8 @@
 include "assets/autoloader.php";
 
 if (!isset($_SESSION['loggedin'])) {
-  createCustomerifnoAccount();
+    createCustomerinfoAccount();
 }
-
 addOrder();
 addOrderLine();
 header('location: bedankt.php');

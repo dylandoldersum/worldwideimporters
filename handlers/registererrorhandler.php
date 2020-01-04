@@ -14,7 +14,7 @@ $phone = $_POST['telefoon'];
 
 
 if ($password1 != $password2) {
-header('Location: register.php');
+header('Location: ../register.php');
 
 }else {
     $host = 'localhost';
@@ -25,7 +25,7 @@ header('Location: register.php');
     $sql = "INSERT INTO accounts(first_name, last_name, password, email, street, streetnumber, city, country, postalcode, phone) VAlUES ('$firstname', '$lastname', '$password1', '$email', '$street', '$streetnumber', '$city', '$country', '$postalcode', '$phone');";
     mysqli_query($connection, $sql);
 
-    header("location: login.php");
+    header("location: ../login.php");
 }
 
 ?>

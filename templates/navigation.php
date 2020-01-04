@@ -46,7 +46,7 @@
                 if (isset($_SESSION['loggedin'])) {
                     ?>
                     <span class="welkom">Welkom <br> <b><?php echo $_SESSION['logindata']['first_name'] ?></b></span>
-                    <a class="tooltip" href="logout.php"><img class="profile" src="assets/images/logout-ico.png"/>
+                    <a class="tooltip" href="handlers/logout.php"><img class="profile" src="assets/images/logout-ico.png"/>
                         <span class="tooltiptext tooltip-bottom">Logout</span>
                     </a>
 

@@ -6,7 +6,7 @@ include "templates/navigation.php";
 <div class="login-bg">
     <div class="login-container">
         <div class="login-box">
-            <form action="registererrorhandler.php" method="POST">
+            <form action="handlers/registererrorhandler.php" method="POST">
                 <div class="register">
                     <h3>Registreer</h3>
                     <input type="text" class="form-control-register" placeholder="Voornaam" name="voornaam" required><br>

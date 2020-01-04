@@ -29,7 +29,6 @@ include_once 'templates/navigation.php';
                 $photo = $value['Photo'];
                 $catID = $value['StockGroupID'];
 
-
                 print("<li class='product-list'><a class='product-anchor' href='product-detail.php?itemID=$itemID&CatID=$catID'>
                         <h3 class='product_text'>$itemName</h3>
                         <img class='product_photo' src='assets/images/logo.png' alt='#' width='80%', height='200px'>

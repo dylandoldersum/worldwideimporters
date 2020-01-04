@@ -15,7 +15,7 @@ try {
     if (mysqli_num_rows($result) == 1) {
         $_SESSION['loggedin'] = true;
         $_SESSION['logindata'] = mysqli_fetch_assoc($result);
-        header('location: index.php');
+        header('location: ../index.php');
     } else {
         echo "Ongeldige login!";
     }

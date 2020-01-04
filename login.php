@@ -6,7 +6,7 @@ include "templates/navigation.php";
 <div class="login-bg">
     <div class="login-container">
         <div class="login-box">
-            <form action="afterlogin.php" method="post">
+            <form action="handlers/afterloginHandler.php" method="post">
                 <h3>Login met uw account</h3>
                 <input type="text" placeholder="Login@voorbeeld.nl" name="email" class="email-login" required>
                 <input type="password" placeholder="Wachtwoord" name="wachtwoord" class="password-login" required>

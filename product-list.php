@@ -30,7 +30,7 @@ include_once 'classes/Products.php';
     echo '<li><a href="product-list.php?CatID=' . $_GET["CatID"] . '&page=1&counter=100">100</a></li>';
     echo '</div>';
 
-    /////////////////////////Item Amount Selection Per Page///////////////////
+    ///////////////////Item Amount Selection Per Page///////////////////
     $host = 'localhost';
     $dbName = 'wideworldimporters';
     $user = 'root';
@@ -60,9 +60,7 @@ include_once 'classes/Products.php';
     $this_page_first_result = ($page - 1) * $results_per_page;
     $maxLimit = $this_page_first_result + $results_per_page;
 
-    //Nu moeten we nog via een SQL statement de juiste hoeveelheid items per pagina opvragen
-    //Hier gaat volgens mij nu nog iets fout.
-    //Op de een of andere manier wordt er nog niet per page gelimiteerd naar 25 per
+
     $sql2 = "SELECT SI.StockItemID FROM stockitems SI JOIN stockitemstockgroups SG
               ON SI.StockItemID = SG.StockItemID WHERE SG.StockGroupID = " . $_GET['CatID'] . " LIMIT " . $this_page_first_result . "," . $maxLimit;
     $result2 = mysqli_query($connection, $sql2);
@@ -84,7 +82,7 @@ include_once 'classes/Products.php';
         }
     }
 
-    /////////////End/////////////////////////////////////?>
+    ?>
 </div>
 
 

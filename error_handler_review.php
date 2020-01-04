@@ -9,7 +9,6 @@ session_start();
     $bericht = $_POST['bericht'];
     $date = date('Y-m-d H:i:s');
 
-    //Kijkt of de velden leeg zijn
     if (empty($voornaam) || empty($bericht)) {
         header("Location: writereview.php?signup=empty&naam=$voornaam&bericht=$bericht&beoordeling=$beoordeling");
         exit();

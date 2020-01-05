@@ -1,6 +1,6 @@
 <?php
-include "assets/autoloader.php";
-include "templates/navigation.php";
+include_once "assets/autoloader.php";
+include_once "templates/navigation.php";
 ?>
 
 <div class="login-bg">

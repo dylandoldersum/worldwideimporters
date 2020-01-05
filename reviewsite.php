@@ -73,42 +73,27 @@ $fullURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 }
             }
         } else {
-            foreach (paginationReviews() as $value) {
-                if (isset($_SESSION['loggedin']) && $_SESSION['logindata']['beheerder'] == 1) {
-                    if (isset($_GET['delete'])) {
-                        removeReview($_GET['delete']);
+            foreach (paginationReviews() as $value) { ?>
+                <div class="review">
+                    <?php
+                    $id = $value['reviewerID'];
+                    $name = $value['name'];
+                    $rating = $value['rating'];
+                    $message = $value['message'];
+                    $date = $value['date'];
+
+                    if (isset($_SESSION['loggedin']) && $_SESSION['logindata']['beheerder'] == 1) {
+                        if (isset($_GET['delete'])) {
+                            removeReview($_GET['delete']);
+                        }
+                        echo '<a class="remove-review" href="?delete=<?php echo $id ?>">X</a>';
                     }
                     ?>
-                    <div class="review">
-                        <?php
-                        $id = $value['reviewerID'];
-                        $name = $value['name'];
-                        $rating = $value['rating'];
-                        $message = $value['message'];
-                        $date = $value['date'];
-                        ?>
-                        <a class="remove-review" href="?delete=<?php echo $id ?>">X</a>
-                        <li><p><?php echo $name ?> - <?php echo $rating ?></p></li>
-                        <li><p class="review-omschrijving">&#8220;<?php echo $message ?>&#8221;</p></li>
-                        <li><p class="date-review"><?php echo $date ?></p></li>
-                    </div>
-                    <?php
-                } else {
-                    ?>
-                    <div class="review">
-                        <?php
-                        $id = $value['reviewerID'];
-                        $name = $value['name'];
-                        $rating = $value['rating'];
-                        $message = $value['message'];
-                        $date = $value['date'];
-                        ?>
-                        <li><p><?php echo $name ?> - <?php echo $rating ?></p></li>
-                        <li><p class="review-omschrijving">&#8220;<?php echo $message ?>&#8221;</p></li>
-                        <li><p class="date-review"><?php echo $date ?></p></li>
-                    </div>
-                    <?php
-                }
+                    <li><p><?php echo $name ?> - <?php echo $rating ?></p></li>
+                    <li><p class="review-omschrijving">&#8220;<?php echo $message ?>&#8221;</p></li>
+                    <li><p class="date-review"><?php echo $date ?></p></li>
+                </div>
+                <?php
             }
         }
         ?>

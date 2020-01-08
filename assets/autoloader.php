@@ -7,8 +7,8 @@
  * Time: 19:38
  */
 
-include 'classes/Products.php';
-include 'classes/Payment.php';
+include_once 'classes/Products.php';
+include_once 'classes/Payment.php';
 include_once 'templates/snowfalling.php';
 
 session_start();
@@ -19,5 +19,4 @@ session_start();
     <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/product-detail.css"/>
-
 </head>

@@ -17,7 +17,7 @@
 
     <div class="form-review-container">
       <div class="form-review-content">
-       <form class="" action="error_handler_review.php" method="post">
+       <form class="" action="handlers/error_handler_review.php" method="post">
          <span>Wat is je voornaam?</span> <br>
          <?php
             if (isset($_GET['naam'])) {

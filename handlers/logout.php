@@ -12,4 +12,4 @@ session_start();
 unset($_SESSION['loggedin']);
 unset($_SESSION['logindata']);
 
-header('location: index.php');
+header('location: ../index.php');

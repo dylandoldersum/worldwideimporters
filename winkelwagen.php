@@ -64,7 +64,18 @@ include_once 'templates/navigation.php';
         <span class="Subtotaal-price">Totaalprijs: &euro;<?php print $_SESSION['TOT']; ?></span>
     </div>
     <div class="betaal-btn-container">
+      <?php
+      if (isset($_SESSION['itemID']) && count($_SESSION['itemID'])>0) {
+      ?>
         <a class="betaal-btn" href="gegevens.php"> Verder naar bestellen </a>
+      <?php
+    }
+      else{
+        ?>
+        <a class="betaal-btn" href="index.php" > Verder winkelen </a>
+      <?php
+    }
+      ?>
     </div>
 </div>
 

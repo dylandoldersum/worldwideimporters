@@ -1,10 +1,6 @@
 <?php
-/** Automatisch laden van header */
 include_once 'assets/autoloader.php';
-
-/** Templates met gebruik van includes **/
 include_once 'templates/navigation.php';
-
 ?>
 
 
@@ -36,7 +32,7 @@ include_once 'templates/navigation.php';
 
 <div class="contactformulier">
     <h3>Contactformulier</h3>
-    <form action="error_handler_contactformulier.php" method="POST">
+    <form action="handlers/error_handler_contactformulier.php" method="POST">
         <?php
         if (isset($_GET['first'])) {
             $first = $_GET['first'];

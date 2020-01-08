@@ -712,6 +712,7 @@ p.review-omschrijving {
 }
 
 .review {
+    position: relative;
     max-width: 60%;
     background: #0a6db3;
     padding: 20px;
@@ -720,6 +721,21 @@ p.review-omschrijving {
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
+}
+
+a.remove-review {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: red;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+a.remove-review:hover {
+    text-decoration: none;
+    color:red;
+    background: white;
 }
 
 .date-review {
@@ -807,70 +823,67 @@ p.review-omschrijving {
 }
 
 /*------------------Accounts------------------*/
-.login {
-  border-style: solid;
-  border-color: gray;
-  background: url(../images/kerstboom.jpg) no-repeat center fixed;
-  padding: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  text-align: center;
-  height: 300px;
+.login-bg {
+    background: #0b4b77;
 }
 
-.login button {
-  background-color: #0d4b77;
-  border-style: solid;
-  border-color: #0d4b77;
-  border-radius: 10px;
-  padding: 7.5px;
-  color: white;
-  width: 168px;
+.login-container {
+    padding: 50px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.login-box {
+    max-width: 700px;
+    margin: auto;
+    background: #0a6db3;
+    padding: 20px;
+    text-align: center;
+}
+
+.login-box h3 {
+    color: white;
+}
+
+.form-control-register {
+    font-size: 14px;
+    margin: 10px auto 0 auto;
+    width: 75%;
+    height: 40px;
+    border: unset;
+    border-radius: 8px;
+    padding: 14px;
+    display: block;
+}
+
+input.email-login, input.password-login {
+    font-size: 14px;
+    margin: 20px auto 20px auto;
+    width: 75%;
+    height: 40px;
+    border: unset;
+    border-radius: 8px;
+    padding: 14px;
+    display: block;
+}
+
+button.loginbutton {
+    font-size: 14px;
+    color: white;
+    padding: 10px 35px;
+    border: unset;
+    background: #0b4b77;
     cursor: pointer;
 }
-.login button[type=submit]:hover {
-    background-color: #0349fc;
+
+a.registerbutton {
+    margin-top: 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
 }
 
-.login input {
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.register {
-  border-style: solid;
-  border-color: gray;
-  background: url(../images/kerstboom.jpg) no-repeat center fixed;
-  padding: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  text-align: center;
-  height: 600px;
-}
-
-.register button {
-  background-color: #0d4b77;
-  border-style: solid;
-  border-color: #0d4b77;
-  border-radius: 10px;
-  padding: 7.5px;
-  color: white;
-  width: 168px;
-    cursor: pointer;
-}
-.register button[type=submit]:hover {
-    background-color: #0349fc;
-}
-
-.register input {
-  padding: 5px;
-  border-radius: 10px;
-  color: blue;
-}
-
-.register h1 {
-  color: #0b6db3;
-  font-weight: bold;
+a.registerbutton:hover {
+    text-decoration: underline;
 }

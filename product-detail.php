@@ -182,12 +182,6 @@ $itemDescription = "$itemDescription2" . "<br><br>" . str_replace(str_split('"[]
                     <p class='product_text'>PRICE: €<?php echo $retailprice ?></p>
                 </a>
             </li>
-            <?php
-
-
-            ?>
-
-
         <?php } ?>
     </div>
 

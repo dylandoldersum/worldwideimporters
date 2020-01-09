@@ -10,3 +10,7 @@ function bestelgeschiedenis(){
             (SELECT stockitemID FROM orderline1 WHERE orderID IN 
             (SELECT orderID FROM order1 WHERE CustomerID =".$_SESSION['logindata']['CustomerID'];
 }
+
+
+
+

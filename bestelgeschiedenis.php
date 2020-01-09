@@ -4,6 +4,7 @@ include_once 'assets/autoloader.php';
 include_once 'templates/navigation.php';
 include_once 'classes/herkansing functies.php';
 include_once 'bestelgeschiedenis.php';
+
 If (!isset($_SESSION['loggedin'])){
     header('location: index.php');
 }

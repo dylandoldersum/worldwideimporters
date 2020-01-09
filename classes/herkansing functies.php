@@ -11,7 +11,10 @@ function bestelgeschiedenis(){
     $sql = "SELECT StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemID IN 
             (SELECT StockItemID FROM orderline1 WHERE orderID IN 
             (SELECT orderID FROM order1 WHERE CustomerID IN 
+
             (SELECT CustomerID FROM accounts WHERE email=".$_SESSION["logindata"]["CustomerID"];
+
+            
 
 
     $result = mysqli_query($connection, $sql);

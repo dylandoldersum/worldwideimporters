@@ -116,8 +116,8 @@ input.search {
     cursor: pointer;
 }
 .bestelgeschiedenisimg{
-    width: 20.99px;
     height: 20.99px;
+    padding: 0;
 }
 
 /*------------------ Categorie --------------------*/

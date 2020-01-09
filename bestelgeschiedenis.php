@@ -18,6 +18,7 @@ If (!isset($_SESSION['loggedin'])){
     <title>KBS</title>
 </head>
 <body>
+<?php  var_dump(bestelgeschiedenis()); ?>
 <div class="container_ordergeschiedenis">
 
 </div>

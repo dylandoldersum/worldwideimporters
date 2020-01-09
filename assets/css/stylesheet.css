@@ -115,6 +115,10 @@ input.search {
     top: 6px;
     cursor: pointer;
 }
+.bestelgeschiedenisimg{
+    width: 20.99px;
+    height: 20.99px;
+}
 
 /*------------------ Categorie --------------------*/
 .category-container {

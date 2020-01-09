@@ -49,6 +49,9 @@
                     <a class="tooltip" href="handlers/logout.php"><img class="profile" src="assets/images/logout-ico.png"/>
                         <span class="tooltiptext tooltip-bottom">Logout</span>
                     </a>
+                    <a class="bestelgeschiedenis" href="bestelgeschiedenis.php"><img class="bestelgeschiedenisimg" src="assets/images/orders_ico.png">
+
+                    </a>
 
                     <?php
                 } else {
@@ -57,6 +60,7 @@
                     <a class="tooltip" href="login.php"><img class="profile" src="assets/images/login-ico.png"/>
                         <span class="tooltiptext tooltip-bottom">Login</span>
                     </a>
+
                     <?php
                 }
                 ?>
@@ -65,8 +69,7 @@
                     <span class="cart-count"><?php print Countcart() ?></span>
                 </div>
             </div>
-            <a class="bestelgeschiedenis">
-                <a class="bestelgeschiedenisimg" src="assets/images/orders_ico.png"></a></div>
+
         </nav>
     </div>
 

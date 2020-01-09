@@ -1,8 +1,16 @@
 <?php
+
 include_once 'assets/autoloader.php';
 include_once 'templates/navigation.php';
 include_once 'classes/herkansing functies.php';
+
+If (!isset($_SESSION['loggedin'])){
+    header('location: ../index.php');
+}
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -10,9 +18,6 @@ include_once 'classes/herkansing functies.php';
     <title>KBS</title>
 </head>
 <body>
-<span></span>
-<?php
-echo bestelgeschiedenis();
-?>
+<span>WELKOM</span>
 </body>
 </html>

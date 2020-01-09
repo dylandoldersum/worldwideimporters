@@ -6,6 +6,8 @@ function bestelgeschiedenis(){
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "SELECT stockitems.StockItemName, stockitems.RecommendedRetailPrice stockitems.Photo FROM stockitems";
+    $sql = "SELECT StockItemName, RecommendedRetailPrice Photo FROM stockitems WHERE StockitemID IN 
+            (SELECT stockitemID FROM orderline1)
+";
 
 }

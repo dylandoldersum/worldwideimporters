@@ -19,8 +19,17 @@ If (!isset($_SESSION['loggedin'])){
     <title>KBS</title>
 </head>
 <body>
-<?php echo bestelgeschiedenis() ?>
+<?php
+$id= $_SESSION['logindata']['CustomerID'];
+foreach (bestelgeschiedenis($id) as $value){
+    $stockitemname = $value['StockItemName'];
+    $retailprice = $value['RecommendedRetailPrice'];
 
+
+
+?>
+
+<?php echo $stockitemname;?>€<?php echo $retailprice;?><br><?php } ?>
 <div class="container_ordergeschiedenis">
 
 </div>

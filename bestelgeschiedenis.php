@@ -1,4 +1,7 @@
 <?php
+If (!isset($_SESSION['loggedin'])){
+    header('location: ../index.php');
+}
 ?>
 
 

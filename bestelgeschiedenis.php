@@ -1,4 +1,6 @@
 <?php
+include_once 'assets/autoloader.php';
+include_once 'templates/navigation.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -7,6 +9,9 @@
     <title>KBS</title>
 </head>
 <body>
-<span>WELKOM</span>
+<span></span>
+<?php
+echo bestelgeschiedenis();
+?>
 </body>
 </html>

@@ -65,6 +65,8 @@
                     <span class="cart-count"><?php print Countcart() ?></span>
                 </div>
             </div>
+            <a class="bestelgeschiedenis">
+                <a class="bestelgeschiedenisimg" src="assets/images/orders_ico.png"></a></div>
         </nav>
     </div>
 

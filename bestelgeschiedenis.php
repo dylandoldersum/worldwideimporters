@@ -19,7 +19,18 @@ If (!isset($_SESSION['loggedin'])){
     <title>KBS</title>
 </head>
 <body>
-<?php  var_dump(bestelgeschiedenis()); ?>
+<?php foreach(bestelgeschiedenis() as $value) { ?>
+
+    <?php
+    $productname = $value['StockItemName'];
+    $retailprice = $value['RecommendedRetailPrice'];
+    $CustomerID = $value['CustomerID'];
+
+
+
+
+}?>
+<?php var_dump($_SESSION);  ?>
 <div class="container_ordergeschiedenis">
 
 </div>

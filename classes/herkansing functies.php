@@ -11,6 +11,3 @@ function bestelgeschiedenis(){
             (SELECT orderID FROM order1 WHERE CustomerID =".$_SESSION['logindata']['CustomerID'];
 }
 
-
-
-

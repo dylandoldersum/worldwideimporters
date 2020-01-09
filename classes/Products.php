@@ -613,3 +613,4 @@ function removeReview($id)
     echo "<script>window.location.href = 'reviewsite.php';</script>";
     exit;
 }
+

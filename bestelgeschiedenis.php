@@ -26,11 +26,14 @@ $id= $_SESSION['logindata']['CustomerID'];
 foreach (bestelgeschiedenis($id) as $value) {
     $stockitemname = $value['StockItemName'];
     $retailprice = $value['RecommendedRetailPrice'];
-
-
+    if (mysqli_num_rows($result) == 0) {
+        echo "Geen oude bestellingen gevonden";
+    }
+    else {
+        echo $stockitemname;?><br> €<?php echo $retailprice;?><br><?php }
+    }
 ?>
 
-    <?php echo $stockitemname;?><br> €<?php echo $retailprice;?><br><?php } ?>
 </div>
 </body>
 </html>

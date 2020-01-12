@@ -30,8 +30,8 @@ try {
         foreach (bestelgeschiedenis($id) as $value) {
             $stockitemname = $value['StockItemName'];
             $retailprice = $value['RecommendedRetailPrice'];
+            echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php
         }
-        echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php
     }
 }
 catch (mysqli_sql_exception $e) {

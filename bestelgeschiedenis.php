@@ -23,15 +23,19 @@ If (!isset($_SESSION['loggedin'])){
 
 <?php
 $id= $_SESSION['logindata']['CustomerID'];
-foreach (bestelgeschiedenis($id) as $value) {
-    $stockitemname = $value['StockItemName'];
-    $retailprice = $value['RecommendedRetailPrice'];
+try {
     if (mysqli_num_rows(bestelgeschiedenis($id)) == 0) {
         echo "Geen oude bestellingen gevonden";
     } else {
-            echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php }
+        foreach (bestelgeschiedenis($id) as $value) {
+            $stockitemname = $value['StockItemName'];
+            $retailprice = $value['RecommendedRetailPrice'];
+        }
+        echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php
+    }
 }
-
+catch (mysqli_sql_exception $e) {
+        return ($e);
 ?>
 
 </div>

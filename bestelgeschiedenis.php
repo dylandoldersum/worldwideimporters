@@ -31,9 +31,11 @@ foreach (bestelgeschiedenis($id) as $value) {
             echo "Geen oude bestellingen gevonden";
         } else {
             echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php }
+    } catch (mysqli_sql_exception $e) {
+        return ($e);
     }
-catch (mysqli_sql_exception $e) {
-    return ($e);
+}
+
 ?>
 
 </div>

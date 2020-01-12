@@ -27,8 +27,7 @@ foreach (bestelgeschiedenis($id) as $value) {
     $stockitemname = $value['StockItemName'];
     $retailprice = $value['RecommendedRetailPrice'];
     try {
-        bestelgeschiedenis($id);
-        if (mysqli_num_rows($result) == 0) {
+        if (mysqli_num_rows(bestelgeschiedenis($id)) == 0) {
             echo "Geen oude bestellingen gevonden";
         } else {
             echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php }

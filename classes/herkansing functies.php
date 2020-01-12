@@ -8,11 +8,9 @@ function bestelgeschiedenis($id){
     $user = 'root';
     $password = '';
     $connection = mysqli_connect($host, $user, $password, $dbName);
-    $sql = "SELECT StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemID IN (SELECT StockItemID FROM orderline1 WHERE orderID IN (SELECT orderID FROM order1 WHERE CustomerID=".$id."))";
-
-
-
-
+    $sql = "SELECT StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemID IN 
+            (SELECT StockItemID FROM orderline1 WHERE orderID IN 
+            (SELECT orderID FROM order1 WHERE CustomerID=".$id."))";
 
     $result = mysqli_query($connection, $sql);
     return $result;

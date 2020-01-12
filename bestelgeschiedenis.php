@@ -35,7 +35,8 @@ try {
     }
 }
 catch (mysqli_sql_exception $e) {
-        return ($e);
+    return ($e);
+}
 ?>
 
 </div>

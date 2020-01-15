@@ -17,6 +17,7 @@ If (!isset($_SESSION['loggedin'])){
 <head>
     <meta charset="utf-8">
     <title>KBS</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bestelgeschiedenis.css"/>
 </head>
 <body>
 <div class="container_ordergeschiedenis">
@@ -31,7 +32,6 @@ If (!isset($_SESSION['loggedin'])){
                     <a>
                         <?php
                         $id= $_SESSION['logindata']['CustomerID'];
-
                         try {
                             if (mysqli_num_rows(bestelgeschiedenis($id)) == 0) {
                                 echo "Geen oude bestellingen gevonden";
@@ -39,7 +39,10 @@ If (!isset($_SESSION['loggedin'])){
                                 foreach (bestelgeschiedenis($id) as $value) {
                                     $stockitemname = $value['StockItemName'];
                                     $retailprice = $value['RecommendedRetailPrice'];
-                                    echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php
+                                    $stockitemid = $value['StockItemID'];
+                                    $stockgroupid = $value['StockGroupID'];
+                                    ?><li class="productrij"><a href="product-detail.php?itemID=<?php echo $stockitemid ?>&CatID=<?php echo $stockgroupid ?>"><?php echo $stockitemname?></a>  <br> €<?php echo $retailprice; ?>  <br></li>
+                                    <?php
                                 }
                             }
                         }

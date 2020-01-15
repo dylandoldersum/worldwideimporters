@@ -38,3 +38,10 @@
 .item_ordergeschiedenis a{
 color: white;
 }
+
+.productrij{
+    position: relative;
+    background-color: #0d4b77;
+    padding: 10px;
+    margin: 10px;
+}

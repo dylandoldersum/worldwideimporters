@@ -20,24 +20,41 @@ If (!isset($_SESSION['loggedin'])){
 </head>
 <body>
 <div class="container_ordergeschiedenis">
+    <div class="header_ordergeschiedenis">
+        <p>Bestelgeschiedenis</p>
+    </div>
+    <div class="product_ordergeschiedenis">
+        <div class="item_ordergeschiedenis">
+            <li><img src=assets/images/logo.png width='150' height='150'></li>
+            <li>
+                <h3>
+                    <a>
+                        <?php
+                        $id= $_SESSION['logindata']['CustomerID'];
 
-<?php
-$id= $_SESSION['logindata']['CustomerID'];
-try {
-    if (mysqli_num_rows(bestelgeschiedenis($id)) == 0) {
-        echo "Geen oude bestellingen gevonden";
-    } else {
-        foreach (bestelgeschiedenis($id) as $value) {
-            $stockitemname = $value['StockItemName'];
-            $retailprice = $value['RecommendedRetailPrice'];
-            echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php
-        }
-    }
-}
-catch (mysqli_sql_exception $e) {
-    return ($e);
-}
-?>
+                        try {
+                            if (mysqli_num_rows(bestelgeschiedenis($id)) == 0) {
+                                echo "Geen oude bestellingen gevonden";
+                            } else {
+                                foreach (bestelgeschiedenis($id) as $value) {
+                                    $stockitemname = $value['StockItemName'];
+                                    $retailprice = $value['RecommendedRetailPrice'];
+                                    echo $stockitemname; ?><br> €<?php echo $retailprice; ?><br><?php
+                                }
+                            }
+                        }
+                        catch (mysqli_sql_exception $e) {
+                            return ($e);
+                        }
+                        ?>
+                    </a>
+                </h3>
+            </li>
+        </div>
+
+
+    </div>
+
 
 </div>
 </body>
